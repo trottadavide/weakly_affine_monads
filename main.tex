@@ -1,0 +1,154 @@
+\documentclass[a4paper,UKenglish,numberwithinsect,cleveref, autoref, thm-restate]{lipics-v2021}
+
+
+
+
+%\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\include{macro_davide}
+
+\usepackage{quiver}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[all,2cell]{xy}
+\UseAllTwocells
+\xyoption{v2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usepackage{tikzit}
+
+\usetikzlibrary{shapes}
+
+%\input{sample.tikzstyle}
+\usepackage{freetikz}
+\usetikzlibrary{decorations.markings,positioning,patterns}
+\usetikzlibrary{shadows}
+\usepackage{array}
+
+%\usetikzlibrary{automata, positioning, arrows}
+\input{stringdiagrams.tikzstyles}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain} %italico
+\newtheorem{mytheorem}{Theorem}[section]
+\newtheorem{mycorollary}[mytheorem]{Corollary}
+\newtheorem{mylemma}[mytheorem]{Lemma}
+\newtheorem{myproposition}[mytheorem]{Proposition}
+
+
+\theoremstyle{definition} %stampatello
+\newtheorem{mydefinition}[mytheorem]{Definition}
+\newtheorem{myproblem}[mytheorem]{Problem}
+
+\newtheorem{myremark}[mytheorem]{Remark}
+\newtheorem{myexample}[mytheorem]{Example}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\stringdiagnabla}[1]{\begin{tikzpicture}[scale=0.60, transform shape]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-4.25, 0) {};
+		\node [style=none] (1) at (-2.75, 0.5) {};
+		\node [style=none] (2) at (-2.75, -0.5) {};
+		\node [style=none] (3) at (-2, -0.5) {};
+		\node [style=none] (4) at (-2, 0.5) {};
+		\node [style=nodonero] (5) at (-3.25, 0) {};
+		\node [style=none] (7) at (-3.75, 0.25) {#1};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0.center) to (5);
+		\draw [bend left, looseness=1.25] (5) to (1.center);
+		\draw (1.center) to (4.center);
+		\draw [bend right] (5) to (2.center);
+		\draw (2.center) to (3.center);
+	\end{pgfonlayer}
+	\pgfsetbaseline{-0.4ex}
+\end{tikzpicture}}
+
+
+\newcommand{\stringdiagbang}[1]{\begin{tikzpicture}[scale=0.60, transform shape]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (8) at (2, 0) {};
+		\node [style=nodonero] (9) at (3, 0) {};
+		\node [style=none] (10) at (2.5, 0.25) {#1};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (8.center) to (9);
+	\end{pgfonlayer}
+		\pgfsetbaseline{-.4ex}
+\end{tikzpicture}}
+
+\newcommand{\stringdiagidentity}[1]{\begin{tikzpicture}[scale=0.60, transform shape]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (8) at (2, 0) {};
+		\node [style=none] (9) at (3, 0) {};
+		\node [style=none] (10) at (2.5, 0.25) {#1};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (8.center) to (9);
+	\end{pgfonlayer}
+		\pgfsetbaseline{-.4ex}
+\end{tikzpicture}}
+\newcommand{\stringdiagfreccia}[3]{\begin{tikzpicture}[scale=0.60, transform shape]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=box] (5) at (1.75, 0) {#2};
+		\node [style=none] (7) at (3, 0) {};
+		\node [style=none] (8) at (2.5, 0.25) {#3};
+		\node [style=none] (9) at (0.5, 0) {};
+		\node [style=none] (10) at (1, 0.25) {#1};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (5) to (7);
+		\draw (9.center) to (5);
+	\end{pgfonlayer}
+	\pgfsetbaseline{-.4ex}
+\end{tikzpicture}
+}
+\newcommand{\nodo}{\begin{tikzpicture}[scale=0.60, transform shape]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=nodonero] (0) at (0, 0) {};
+	\end{pgfonlayer}
+	\pgfsetbaseline{-.4ex}
+\end{tikzpicture}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\author{Paolo Perrone}{Department of Computer Science, University of Oxford}{paolo.perrone.math@gmail.com}{ }{}
+\author{Fabio Gadducci}{Department of Computer Science, University of Pisa, Pisa, IT}{fabio.gadducci@unipi.it}{ https://orcid.org/
+0000-0003-0690-3051}{}
+\author{ Davide Trotta }{Department of Computer Science, University of Pisa, Pisa, IT}{trottadavide92@gmail.com}{https://orcid.org/0000-0003-4509-594X}{}
+\authorrunning{F. Gadducci et alii}
+%The research is supported by the MIUR PRIN 2017FTXR "IT-MaTTerS"
+
+\Copyright{Fabio Gadducci and Paolo Perrone and Davide Trotta} 
+\ccsdesc[500]{}
+
+
+\keywords{string diagrams, gs-monoidal categoriess} %TODO mandatory; please add comma-separated list of keywords
+
+\title{Weakly-affine monads}
+\titlerunning{Weakly-affine monads}
+
+\begin{document}
+
+\maketitle
+
+
+
+\end{document}
+
+
+\begin{abstract}
