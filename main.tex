@@ -11,7 +11,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \include{macro_davide}
-
+\usepackage{mathtools}
 \usepackage{quiver}
 
 \usepackage{hyperref}
@@ -33,7 +33,7 @@
 
 %\usetikzlibrary{automata, positioning, arrows}
 \input{stringdiagrams.tikzstyles}
-
+\usepackage{todonotes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \theoremstyle{plain} %italico
@@ -145,10 +145,193 @@
 \begin{document}
 
 \maketitle
+\begin{abstract}
 
+\end{abstract}
+
+\section{Introduction}
+
+\section{Weakly-affine monads}
+\todo{Nome da scegliere e valutare se dare la def per una arbitraria gs}
+\begin{mydefinition}
+Let $T$ be a commutative monad on a category $\mA$ with finite products. A triple $(X,Y,Z)$ of objects of $\mA$ is said to be \textbf{TBA} if the commutative square 
+\[\begin{tikzcd}[column sep=3.3pc]
+			T(X) \times T(Y) \times T(Z) \ar{r}{\id \times c_{Y,Z}} \ar[swap]{d}{c_{X,Y} \times \id}	& T(X) \times T(Y \times Z) \ar{d}{c_{X,Y \times Z}}	\\
+			T(X \times Y) \times T(Z) \ar{r}{c_{X\times Y,Z}}						& T(X \times Y \times Z)
+		\end{tikzcd}
+		\]
+		is a pullback.
+\end{mydefinition}
+
+\todo{esempi?}
+\begin{mydefinition}
+	Let $T$ be a commutative monad on a category $\mA$ with finite products. 
+	We say that the monad $T$ is \textbf{weakly affine} if the
+	following associativity diagram is a pullback for every $X,Y,Z$ in $\mA$:
+	\begin{equation}
+		\label{c_assoc_pullback}
+		\hspace{-9pt}	% T: for centering the equation number
+		\begin{tikzcd}[column sep=3.3pc]
+			T(X) \times T(Y) \times T(Z) \ar{r}{\id \times c_{Y,Z}} \ar[swap]{d}{c_{X,Y} \times \id}	& T(X) \times T(Y \times Z) \ar{d}{c_{X,Y \times Z}}	\\
+			T(X \times Y) \times T(Z) \ar{r}{c_{X\times Y,Z}}						& T(X \times Y \times Z)
+		\end{tikzcd}
+	\end{equation}
+\end{mydefinition}
+
+Let us derive some general properties before looking at examples.
+It is a standard fact that for any commutative monad $T$, the composite arrow
+\[
+	\begin{tikzcd}
+		T(1) \times T(1) \ar{r}{c_{1,1}}	& T(1 \times 1) \ar{r}{\cong}	& T(1)		
+	\end{tikzcd}
+\]
+equips $T(1)$ with the structure of a commutative monoid internal to $\mathcal{A}$ with unit $\freccia{1}{\eta_1}{T(1)}$.
+
+\begin{mylemma}
+	\label{lem:T1_group}
+	If $T$ is weakly affine, then $T(1)$ is a group.
+\end{mylemma}
+
+%\tob{It's possible to generalize the definition of weakly affine monad to the case where $\mA$ is merely gs-monoidal or even just symmetric monoidal. However, I have not implemented this (yet) since already the proof of this lemma does not generalize straightforwardly}
+
+\begin{proof}
+	If $T$ is weakly affine, then taking $X = Y = Z = 1$ in~\eqref{c_assoc_pullback} shows that this monoid must be an abelian group:
+	assuming that $\times$ is a strict monoidal structure for simplicity, we obtain a unique arrow $\freccia{T(1)}{\iota}{T(1)}$ such that the diagram
+	\[
+		\begin{tikzcd}
+			T(1) \ar{dr}[description]{(\id,\iota,\id)} \ar[bend left]{drr}{(\id,\eta_1 !)} \ar[bend right,swap]{ddr}{(\eta_1 !,\id)} \\
+			&	T(1) \times T(1) \times T(1) \ar{r}{\id \times c_{1,1}} \ar[swap]{d}{c_{1,1} \times \id}	& T(1) \times T(1) \ar{d}{c_{1,1}}	\\
+			&	T(1) \times T(1) \ar{r}{c_{1,1}}								& T(1)
+		\end{tikzcd}
+	\]
+	and the commutativity shows that $\iota$ satisfies the equations making it the inversion map for a group structure.
+\end{proof}
+
+The following result shows that weak affinity occurs frequently. 
+Recall that a strong monad $\freccia{\mA}{T}{\mA}$ on a category $\mA$ with finite products is \textbf{affine} if $T(1)\cong 1$ (see also Remark~\ref{rem:affine monad}). Three relevant examples of affine monads are the distribution monad on $\Set$ (for discrete probability), the Giry monad on the category of measurable spaces (for measure-theoretic probability, see Examples~\ref{ex: Giry monad} and~\ref{ex:Stoch and QBS_P are gs-monoidal}), and the expectation monad, see~\cite{Jacobs16}.
+
+\begin{myproposition}\label{prop:every affine commutative monad is weakly affine}
+	Let $T$ be a commutative monad on a category $\mA$ with finite limits. 
+	If $T$ is affine, then it is weakly affine.
+\end{myproposition}
+
+\begin{proof}
+	Let $m_{X,Y} : T(X \times Y) \longrightarrow TX \times TY$
+	be the arrow defined as the pairing of $T(\pi_1)$ and $T(\pi_2)$.
+	Then it is known that $T$ is affine if and only if $m_{X,Y} c_{X,Y} = \id_{TX \times TY}$~\cite[Lemma~4.2(i)]{Jacobs1994}.\footnote{For probability monads, this equation can be interpreted as stating that the marginals of a product distribution are the original factors~\cite{Fritz2018}.}
+	In particular, $c_{X,Y}$ is a split mono and therefore mono.
+
+	To show that~\eqref{c_assoc_pullback} is a pullback, we prove the universal property starting with a diagram
+	\begin{equation}
+		\label{candidate_pullback}
+		\begin{tikzcd}[column sep=3pc]
+			A \ar[bend left]{drr}{(f_1, f_2)} \ar[bend right,swap]{ddr}{(g_1, g_2)} \ar[dashed]{dr}{\exists!}							\\
+				& TX \times TY \times TZ \ar{r}{\id \times c_{Y,Z}} \ar[swap]{d}{c_{X,Y} \times \id}	& TX \times T(Y \times Z) \ar{d}{c_{X,Y \times Z}}	\\
+				& T(X \times Y) \times TZ \ar{r}{c_{X\times Y,Z}}						& T(X \times Y \times Z)
+		\end{tikzcd}
+	\end{equation}
+	where the dashed arrow will be constructed; its uniqueness is clear since $\id \times c_{Y,Z}$ and $c_{X,Y} \times \id$ are mono, so it remains to prove existence.
+	Taking the unlabelled arrows to be (induced by) product projections, we have the commutative diagram
+	\iffalse
+	\[
+		\begin{tikzcd}[column sep=small]
+			A \ar{r}{(g_1, g_2)} \ar[swap]{d}{(f_1, f_2)}					& T(X \times Y) \times TZ \ar{r}{c_{X \times Y, Z}} 	& T(X \times Y \times Z) \ar{d}	\\
+			TX \times T(Y \times Z) \ar{rr}	\ar["c_{X,Y \times Z}" description]{urr} 	&							& T(Y \times Z)
+		\end{tikzcd}
+	\]
+	\fi
+% https://q.uiver.app/?q=WzAsNSxbMCwwLCJBIl0sWzEsMCwiVChYXFx0aW1lcyBZKVxcdGltZXMgVFoiXSxbMCwxLCJUWFxcdGltZXMgVChZXFx0aW1lcyBaKSJdLFszLDAsIlQoWFxcdGltZXMgWVxcdGltZXMgWikiXSxbMywxLCJUKFlcXHRpbWVzIFopIl0sWzAsMSwiKGdfMSxnXzIpIl0sWzAsMiwiKGZfMSxmXzIpIiwyXSxbMyw0XSxbMiw0XSxbMiwzLCJjX3tYLFlcXHRpbWVzIFp9IiwxXSxbMSwzXV0=
+\[\begin{tikzcd}[column sep=tiny]
+	A & {T(X\times Y)\times TZ} && {T(X\times Y\times Z)} \\
+	{TX\times T(Y\times Z)} &&& {T(Y\times Z)}
+	\arrow["{(g_1,g_2)}", from=1-1, to=1-2]
+	\arrow["{(f_1,f_2)}"', from=1-1, to=2-1]
+	\arrow[from=1-4, to=2-4]
+	\arrow[from=2-1, to=2-4]
+	\arrow["{c_{X,Y\times Z}}"{description}, from=2-1, to=1-4]
+	\arrow[from=1-2, to=1-4]
+\end{tikzcd}\]
+	where the upper left triangle commutes by assumption, and the lower right triangle commutes by naturality of $c$ with respect to the unique arrow $X \to 1$ together with $T1 \cong 1$ and the fact that $c_{1,Y \times Z}$ is a coherence isomorphism.
+	By the naturality of $c$, $f_2$ can be written as the composite
+	\[
+		\begin{tikzcd}[column sep=scriptsize]
+			A \ar{r}{(g_1, g_2)}	& T(X \times Y) \times TZ \ar{r}	& TY \times TZ \ar{r}{c_{Y,Z}}	& T(Y \times Z).			
+		\end{tikzcd}
+	\]
+	By analogous reasoning, we identify $g_1$ with the composite
+	\[
+		\begin{tikzcd}[column sep=scriptsize]
+			A \ar{r}{(f_1, f_2)}	& TX \times T(Y \times Z) \ar{r}	& TX \times TY \ar{r}{c_{X,Y}}	& T(X \times Y).			
+		\end{tikzcd}
+	\]
+	Getting back to~\eqref{candidate_pullback}, we take the dashed arrow to be the arrow whose component on $TX$ is given by $f_1$, on $TZ$ by $g_2$, and on $TY$ by the diagonal in the diagram
+	\[
+		\begin{tikzcd}
+			A \ar{r}{f_2} \ar[swap]{d}{g_1}	& T(Y \times Z)	\ar{d}	\\
+			T(X \times Y) \ar{r}		& TY
+		\end{tikzcd}
+	\]
+	which commutes for similar reasons as above.
+	The fact that this arrow recovers the $f_2$ component after composition with $\id \times c_{Y,Z}$ and the $g_1$ component after composition with $c_{X,Y} \times \id$ follows by the expressions for $f_2$ and $g_1$ derived above.
+	The fact that it recovers $f_1$ and $g_2$ is by construction.
+
+\end{proof}
+
+\begin{myremark}
+	We are not aware of any relation between weakly affine monads in our sense and Jacobs' \emph{strongly affine} monads~\cite{Jacobs16}, other than the fact that strongly affine implies affine implies weakly affine.
+\end{myremark}
+
+\begin{myexample}
+	\label{ex:abelian_group}
+	We present a family of examples of commutative monads that are weakly affine but not affine.
+	Let $A$ be an abelian group (written multiplicatively).
+	Then the functor $T_A \coloneqq A \times -$ on $\Set$ has a canonical structure of commutative monad, 
+	where the lax structure components $c_{X,Y}$ are given by multiplying elements in $A$ while carrying the elements 
+	of $X$ and $Y$ along.
+
+	Since $T_A \cong A$, the monad $T_A$ is clearly not affine unless $A$ is the trivial group.
+	However, $T_A$ is always weakly affine.
+	Indeed, in order to show that~\eqref{c_assoc_pullback} is a pullback, it suffices to show that the associativity square of $A$
+	\[
+		\begin{tikzcd}
+			A \times A \times A \ar{r}{\id \times \cdot} \ar{d}{\cdot \times \id}		& A \times A \ar{d}{\cdot}	\\
+			A \times A \ar{r}{\cdot}							& A
+		\end{tikzcd}
+	\]
+	is a pullback.
+	Using element-wise reasoning, this amounts to showing that the system of equations
+		$ax = c$ and $xb = d$
+	has a solution for $x \in A$ if and only if $cb = ad$, and in this case the solution is unique.
+	But this is indeed the case with $x = a^{-1} c = db^{-1}$.
+	(Note that this argument does not even require $A$ to be abelian, but we need to require this in order for $T_A$ to be commutative.)
+\end{myexample}
+
+\begin{myexample}
+	Many monads in categorical measure theory are weakly affine but not affine.
+	Let e.g. $M^* : \Set \to \Set$ be the monad assigning to every set the set of finitely supported discrete \emph{nonzero}
+	measures on $M^*$, or equivalently let $M^*(X)$ for any set $X$ be the set of nonzero finitely supported functions $X \to [0,\infty)$.
+	The monad structure is defined in terms of the same formulas as for the distribution monad on $\Set$ and the
+	components $c_{X,Y}$ are also given by the formation of product measures, or equivalently point-wise products of functions 
+	$X \to [0,\infty)$.
+
+	Since $M^* 1 \cong (0,\infty)$, this monad is clearly not affine.
+	However, it is weakly affine, and we limit ourselves to a sketch of the proof.
+	Indeed to prove that~\eqref{c_assoc_pullback} is a pullback, we again reason in terms of elements.
+	If all measures are normalised, then we are back in the situation of the distribution monad, which is affine and the claim follows.
+	In the general case, one can reduce to the normalised case by showing that the normalisation of the desired element of $M^*(Y)$ is uniquely determined.
+	This works in the same way as in Example~\ref{ex:abelian_group} with $A = (0,\infty)$.
+
+	On the other hand, if the zero measure is included, then we obtain a commutative monad $M$ which can be seen as the monad of semimodules for the semiring of nonnegative reals.
+	Since $M1 \cong [0,\infty)$ is not a group under multiplication, $M$ is not weakly affine.
+\end{myexample}
+
+The previous two examples and Lemma~\ref{lem:T1_group} suggest the following problem.
+
+\begin{myproblem}
+	Let $T$ be a commutative monoid such that $T(1)$ is an abelian group. Does it follow that $T$ is weakly affine?
+\end{myproblem}
 
 
 \end{document}
 
 
-\begin{abstract}
