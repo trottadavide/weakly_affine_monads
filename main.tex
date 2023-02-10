@@ -186,7 +186,7 @@ It is a standard fact that for any commutative monad $T$, the composite arrow
 	\end{tikzcd}
 \]
 equips $T(1)$ with the structure of a commutative monoid internal to $\mathcal{A}$ with unit $\freccia{1}{\eta_1}{T(1)}$.
-\todo{Mi sembra che se nel caso $T$ sia weakly affine allora $T(1)\cong !$ nella Kleisli $A_T$}
+
 \begin{mylemma}
 	\label{lem:T1_group}
 	If $T$ is weakly affine, then $T(1)$ is a group.
@@ -206,12 +206,12 @@ equips $T(1)$ with the structure of a commutative monoid internal to $\mathcal{A
 	\]
 	and the commutativity shows that $\iota$ satisfies the equations making it the inversion map for a group structure.
 \end{proof}
-\todo{Mi sembra che se nel caso $T$ sia weakly affine allora $T(1)\cong !$ nella Kleisli $A_T$. Bisogna vedere se è vero che $T(\eta_1)\iota=\eta_{T(1)}$ }
+\todo{Mi sembra che nel caso $T$ sia weakly affine allora $T(1)\cong !$ nella Kleisli $A_T$. Bisogna vedere se è vero che $T(\eta_1)\iota=\eta_{T(1)}$ }
 \begin{mycorollary}
 Let $T$ be a weakly affine monad. Then $T(1)\cong 1$ in the Kleisli category $\mA_T$.
 \end{mycorollary}
 \begin{proof}
-We know from Lemma~\label{lem:T1_group} that $T(1)$ is a group in $\mA$, where the arrow $\freccia{1}{\eta_1}{T(1)}$ is the unit of the group, and $\freccia{T(1)}{\iota}{T(1)}$ is the inversion map. Therefore, we have that the composition $\freccia{1}{\iota\eta_1}{T(1)}$ has to be equal to $\eta_1$. Therefore, we can consider the arrows $1\to T(1)$ and $T(1)\to 1$ in the Kleisli category $\mA_T$ given by $T(\eta_1)\eta_1$ and $\iota$ respectively. The composition $T(\eta_1)\eta_1$ with $\iota$ in $\mA_T$ is given by $\mu_{1,1}T(\iota)T(\eta_1)\eta_1$. Employing the naturality of $\eta_1$ and the fact that $\iota\eta_1=\eta_1$, it is direct to check that $\mu T(\iota)T(\eta_1)\eta_1=\eta_1$, that is the identity $1\to 1$ in $\mA_T$. Now to show that the other composition gives the identity on $T(1)$ in $\mA_T$, it is enough to show that $T(\eta_1)\iota=\eta_{T(1)}$.
+We know from Lemma~\label{lem:T1_group} that $T(1)$ is a group in $\mA$, where the arrow $\freccia{1}{\eta_1}{T(1)}$ is the unit of the group, and $\freccia{T(1)}{\iota}{T(1)}$ is the inversion map. Therefore, we have that the composition $\freccia{1}{\iota\eta_1}{T(1)}$ has to be equal to $\eta_1$. Therefore, we can consider the arrows $1\to T(1)$ and $T(1)\to 1$ in the Kleisli category $\mA_T$ given by $T(\eta_1)\eta_1$ and $\iota$ respectively. The composition $T(\eta_1)\eta_1$ with $\iota$ in $\mA_T$ is given by $\mu_{1,1}T(\iota)T(\eta_1)\eta_1$. Employing the naturality of $\eta_1$ and the fact that $\iota\eta_1=\eta_1$, it is direct to check that $\mu T(\iota)T(\eta_1)\eta_1=\eta_1$, that is the identity $1\to 1$ in $\mA_T$. Now to show that the other composition gives the identity on $T(1)$ in $\mA_T$, it is enough to show that $T(\eta_1)\iota=\eta_{T(1)}$??.
 
 
 \end{proof}
