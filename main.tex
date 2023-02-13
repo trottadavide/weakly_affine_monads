@@ -151,6 +151,32 @@
 
 \section{Introduction}
 
+For context:
+\begin{myproposition}
+ A monoid $(M,\cdot,1)$ is a group if and only if the associativity square
+ \begin{equation}\label{assoc}
+  \begin{tikzcd}
+   M \times M \times M \ar{d}{\id\times\cdot} \ar{r}{\cdot\times\id} & M\times M \ar{d}{\cdot} \\
+   M\times M \ar{r}{\cdot} & M
+  \end{tikzcd}
+ \end{equation}
+ is a pullback.
+\end{myproposition}
+\begin{proof}
+ The square~\eqref{assoc} is a pullback, both of sets and of groups, if and only if given $a,g,h,c\in M$ such that $ag=hc$, there exists a unique $b\in M$ such that $g=bc$ and $h=ab$.
+ First, suppose that $g$ is a group. The only possible choice of $b$ is 
+ \[
+  b = a^{-1}h = gc^{-1},
+ \]
+ which is unique by uniqueness of inverses. 
+ 
+ Conversely, suppose that \eqref{assoc} is a pullback. We can set $g,h=e$ and $c=a$ so that $ae=ea=a$. 
+ Instantiating the pullback property, there is a unique $b$ such that $ab=e$ and $ba=e$, that is, $b=a^{-1}$.
+\end{proof}
+
+Recall that a monoidal functor generalizes a monoid object (in turn, generalizing a monoid).
+Similarly, a \emph{weakly affine monoidal functor} generalizes a group in the sense of the proposition above. 
+
 \section{Weakly-affine monads}
 \todo{Nome da scegliere e valutare se dare la def per una arbitraria gs}
 \begin{mydefinition}
