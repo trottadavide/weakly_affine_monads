@@ -232,17 +232,28 @@ equips $T(1)$ with the structure of a commutative monoid internal to $\mathcal{A
 	\]
 	and the commutativity shows that $\iota$ satisfies the equations making it the inversion map for a group structure.
 \end{proof}
-\todo{Mi sembra che nel caso $T$ sia weakly affine allora $T(1)\cong !$ nella Kleisli $A_T$. Bisogna vedere se è vero che $T(\eta_1)\iota=\eta_{T(1)}$ }
 
-\begin{mycorollary}
-Let $T$ be a weakly affine monad. Then $T(1)\cong 1$ in the Kleisli category $\mA_T$.
-\end{mycorollary}
+\begin{myproposition}
+Let $T$ be a weakly affine monad. If the diagram
+% https://q.uiver.app/?q=WzAsNCxbMCwwLCJUKDEpIl0sWzAsMSwiVCgxKSJdLFsxLDEsIlReMigxKSJdLFsxLDAsIlQoMSkiXSxbMCwxLCJcXGlvdGEiLDJdLFsxLDIsIlQoXFxldGFfMSkiLDJdLFswLDNdLFszLDIsIlxcZXRhX3tUMX0iXV0=
+\[\begin{tikzcd}
+	{T(1)} & {T(1)} \\
+	{T(1)} & {T^2(1)}
+	\arrow["\iota"', from=1-1, to=2-1]
+	\arrow["{T(\eta_1)}"', from=2-1, to=2-2]
+	\arrow["\id",from=1-1, to=1-2]
+	\arrow["{\eta_{T1}}", from=1-2, to=2-2]
+\end{tikzcd}\]
+commutes, then $T^2(1)\cong T(1)$ in $\mA$. 
+
+\end{myproposition}
 \begin{proof}
-We know from Lemma~\label{lem:T1_group} that $T(1)$ is a group in $\mA$, where the arrow $\freccia{1}{\eta_1}{T(1)}$ is the unit of the group, and $\freccia{T(1)}{\iota}{T(1)}$ is the inversion map. Therefore, we have that the composition $\freccia{1}{\iota\eta_1}{T(1)}$ has to be equal to $\eta_1$. Therefore, we can consider the arrows $1\to T(1)$ and $T(1)\to 1$ in the Kleisli category $\mA_T$ given by $T(\eta_1)\eta_1$ and $\iota$ respectively. The composition $T(\eta_1)\eta_1$ with $\iota$ in $\mA_T$ is given by $\mu_{1,1}T(\iota)T(\eta_1)\eta_1$. Employing the naturality of $\eta_1$ and the fact that $\iota\eta_1=\eta_1$, it is direct to check that $\mu T(\iota)T(\eta_1)\eta_1=\eta_1$, that is the identity $1\to 1$ in $\mA_T$. Now to show that the other composition gives the identity on $T(1)$ in $\mA_T$, it is enough to show that $T(\eta_1)\iota=\eta_{T(1)}$??.
-
+	To prove the result it is enough to show that $T(1)\cong 1$ in the Kleisli category $\mA_T$.
+We know from Lemma~\label{lem:T1_group} that $T(1)$ is a group in $\mA$, where the arrow $\freccia{1}{\eta_1}{T(1)}$ is the unit of the group, and $\freccia{T(1)}{\iota}{T(1)}$ is the inversion map. Therefore, we have that the composition $\freccia{1}{\iota\eta_1}{T(1)}$ has to be equal to $\eta_1$. Therefore, we can consider the arrows $1\to T(1)$ and $T(1)\to 1$ in the Kleisli category $\mA_T$ given by $T(\eta_1)\eta_1$ and $\iota$ respectively. The composition $T(\eta_1)\eta_1$ with $\iota$ in $\mA_T$ is given by $\mu_{1,1}T(\iota)T(\eta_1)\eta_1$. Employing the naturality of $\eta_1$ and the fact that $\iota\eta_1=\eta_1$, it is direct to check that $\mu T(\iota)T(\eta_1)\eta_1=\eta_1$, that is the identity $1\to 1$ in $\mA_T$. Now to show that the other composition gives the identity on $T(1)$ in $\mA_T$, it is enough to show that $T(\eta_1)\iota=\eta_{T(1)}$, but this follows by hypothesis.
+\end{proof}
 \todo[inline]{(Paolo) Credo che $T(\eta_1)\iota\ne\eta_{T(1)}$ nell'esempio delle misure nonzero. Per ogni $x$ in $(0,\infty)=T1$ abbiamo che $\eta_{T(1)}(x)=\delta_x$ (delta di Dirac), mentre $T\eta_1(\iota(x)) = T\eta_1(1/x) = 1/x\,\delta_1$.}
 
-\end{proof}
+
 The following result shows that weak affinity occurs frequently. 
 Recall that a strong monad $\freccia{\mA}{T}{\mA}$ on a category $\mA$ with finite products is \textbf{affine} if $T(1)\cong 1$ (see also Remark~\ref{rem:affine monad}). Three relevant examples of affine monads are the distribution monad on $\Set$ (for discrete probability), the Giry monad on the category of measurable spaces (for measure-theoretic probability, see Examples~\ref{ex: Giry monad} and~\ref{ex:Stoch and QBS_P are gs-monoidal}), and the expectation monad, see~\cite{Jacobs16}.
 

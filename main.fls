@@ -522,9 +522,9 @@ INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmss9.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmss10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmss12.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmssbx10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmbx10.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmr7.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/mwe/example-image-plain.pdf
 INPUT /usr/share/texlive/texmf-dist/tex/latex/mwe/example-image-plain.pdf
