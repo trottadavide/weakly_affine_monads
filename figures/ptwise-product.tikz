@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, -1.5) {$X$};
+		\node [style=none] (1) at (0, -1) {};
+		\node [style=bn] (2) at (0, 0) {};
+		\node [style=none] (3) at (-1, 1) {};
+		\node [style=none] (4) at (1, 1) {};
+		\node [style=costate] (5) at (-1, 1.25) {$a$};
+		\node [style=costate] (6) at (1, 1.25) {$b$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (2) to (1.center);
+		\draw [in=165, out=-90] (3.center) to (2);
+		\draw [in=270, out=15] (2) to (4.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

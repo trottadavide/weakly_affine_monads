@@ -148,6 +148,109 @@
 To be written.
 \end{abstract}
 
+\section{Weakly Markov categories}
+
+Let $\mC$ be a GS-category. For every object $X$, the set $\mC(X,I)$ 
+\todo{How to call them? effects? co-states?}
+has a canonical commutative monoid structure as follows: the monoidal unit is the discard map $X\to I$, and given $a,b:X\to I$, their product $ab$ is given by copying, as follows.
+\ctikzfig{ptwise-product}
+If a morphism $f:X\to Y$ is copyable and discardable, precomposition with $f$ induces a morphism of monoids $\mC(Y,I)\to\mC(X,I)$. 
+
+The monoid $\mC(X,I)$ acts on the set $\mC(X,Y)$: given $a:X\to I$ and $f:X\to Y$, $a\cdot f$ is given as follows,
+\ctikzfig{action}
+and the product $(f,g)\mapsto (f\otimes g)\circ\mathrm{copy}_X$ is equivariant for this action. 
+
+\begin{mydefinition}
+ A GS-category $\mC$ is called \emph{weakly Markov} if for every object $X$, the monoid $\mC(X,I)$ is a group. 
+\end{mydefinition}
+
+Every Markov category is weakly Markov: for each $X$, the monoid $\mC(X,I)$ is the trivial group.
+
+\begin{mydefinition}
+ Given two parallel morphisms $f,g:X\to Y$ in a weakly Markov GS-category $\mC$, we say that $f$ and $g$ are \emph{equivalent}, and write $f\sim g$, if they lie in the same orbit for the action of $\mC(X,I)$.
+\end{mydefinition}
+
+\begin{mydefinition}\label{defcondind}
+ A morphism $f:A\to X_1\otimes\dots\otimes X_n$ in a A GS-category $\mC$ is said to exhibit \emph{conditional independence of the $X_i$ given $A$} if and only if it can be expressed as a product of the following form.
+ \ctikzfig{cond-ind-sep}
+\end{mydefinition}
+
+
+\begin{myproposition}\label{eqcondind}
+ Let $f:A\to X_1\otimes\dots\otimes X_n$ be a morphism in a GS-category $\mC$. Then $f$ exhibits conditional independence of the $X_i$ given $A$ if and only if it is equivalent to the product of all its marginals.
+\end{myproposition}
+\begin{proof}
+ Denote the marginals of $f$ by $f_1,\dots,f_n$.
+ Suppose that $f$ is a product as in \Cref{defcondind}. For each $i=1,\dots,n$, by marginalizing, we get that $f_i$ is equal to the following.
+  \ctikzfig{cond-ind-proof} 
+ Therefore for each $i$ we have that $f_i\sim g_i$. 
+ 
+ Conversely, suppose that $f$ is equivalent to the product of its marginals, i.e.~that there exists $a:X\to I$ such that $f$ is equal to the following.
+ \ctikzfig{cond-ind-proof2}
+ One can then choose $g_i=f_i$ for all $i<n$, and $g_n = a\cdot f_n$. 
+\end{proof} 
+ 
+\begin{myremark}
+ For $n=2$, a morphism $f:A\to X\otimes Y$ in a weakly Markov GS-category $\mC$ exhibits conditional independence of $X$ and $Y$ given $A$ 
+ if and only if the following equation holds.
+ \ctikzfig{cond-ind2} 
+\end{myremark}
+
+\begin{myproposition}
+ Let $\mC$ be a weakly Markov CD-category. Let $f:A\to X\otimes Y\otimes Z$ be a morphism exhibiting conditional independence of $X\otimes Y$ (jointly) and $Z$ given $A$, as well as conditional independence of $X$ and $Y\otimes Z$ given $A$. 
+ Then $f$ exhibits conditional independence of $X$, $Y$ and $Z$ given $A$. 
+\end{myproposition}
+
+\begin{proof}
+ By marginalizing out $X$, we have that $f_{YZ}$ exhibits conditional independence of $Y$ and $Z$ given $A$. 
+ Since by hypothesis $f$ exhibits conditional independence of $X$ and $Y\otimes Z$ given $A$, by \Cref{eqcondind} we have that $f$ is equivalent to the product  of $f_X$ and $f_{YZ}$. But, again by \Cref{eqcondind}, $f_{YZ}$ is equivalent to the product of $f_Y$ and $f_Z$, so we have that $f$ is equivalent to the product of all its marginals. Using \Cref{eqcondind} in the other direction, thie means that $f$ exhibits conditional independence of $X$, $Y$ and $Z$ given $A$. 
+\end{proof}
+
+Let's now consider the case where the GS structure comes from a commutative monad on a cartesian monoidal category $\mD$. 
+In this case, the monoid structure of Kleisli morphisms $X\to 1$ comes from the following canonical internal monoid structure of $T1$ in $\mD$, given by 
+ \[
+ \begin{tikzcd}
+  1 \ar{r}{\eta} & T1 ,
+ \end{tikzcd}
+ \qquad
+ \begin{tikzcd}
+  T1 \times T1 \ar{r}{c} & T(1\times 1) \ar{r}{\cong} & T1 .
+ \end{tikzcd}
+ \]
+ The monoid structure of Kleisli morphisms $X\to 1$ is now given as follows. The unit is
+ \[
+ \begin{tikzcd}
+  X \ar{r}{!} & 1 \ar{r}{\eta} & T1 ,
+ \end{tikzcd}
+ \]
+ and the multiplication of the morphisms $f,g:X\to T1$ is
+ \[
+ \begin{tikzcd}
+  X \ar{r}{\mathrm{copy}} & X\times X \ar{r}{f\times g} &
+  T1 \times T1 \ar{r}{c} & T(1\times 1) \ar{r}{\cong} & T1 .
+ \end{tikzcd}
+ \]
+
+\begin{myproposition}
+ Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$. The Kleisli category of $T$ is weakly Markov if and only if $T1$ with its canonical internal monoid structure is a group.
+\end{myproposition}
+\begin{proof}
+ First, suppose that $T1$ is an internal group, and denote by $\iota:T1\to T1$ its inversion map. 
+ The inverse of the morphism $f:X\to T1$ in $\mathrm{Kl}_T(X,1)$ is given by $\iota\circ f$: indeed, the following diagram commutes,
+ \[
+  \begin{tikzcd}
+  X \ar{d}[swap]{f} \ar{r}{\mathrm{copy}} & X\times X \ar{d}[swap]{f\times f} \ar{dr}{f\times(\iota\circ f)} \\
+  T1 \ar{d}[swap]{!} \ar{r}{\mathrm{copy}} & T1\times T1 \ar{r}[swap]{\id\times\iota} & T1\times T1 \ar{r}{c} & T(1\times 1) \ar{d}{\cong} \\
+  1 \ar{rrr}{\eta} &&& T1
+  \end{tikzcd}
+ \]
+ where the bottom rectangle commutes since $\iota$ is the inversion map for $T1$. The analogous diagram with $\iota\times\id$ in place of $\id\times\iota$ commutes analogously.
+ 
+ Conversely, suppose that for every $X$, the monoid structure on $\mathrm{Kl}_T(X,1)$ has inverses. Then in particular we can take $X=T1$, and the inverse of the Kleisli morphism $\id:T1\to T1$ is an inversion map for $T1$. 
+\end{proof}
+
+\todo[inline]{This feels vaguely like Yoneda, but in monoidal sauce. Can't make it precise for now, though.}
+
 \section{Introduction}
 
 For context:
