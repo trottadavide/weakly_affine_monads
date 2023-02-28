@@ -1,0 +1,46 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, -1.5) {$X$};
+		\node [style=none] (1) at (0, -1) {};
+		\node [style=bn] (2) at (0, 0) {};
+		\node [style=none] (3) at (-1, 1) {};
+		\node [style=none] (4) at (1, 1) {};
+		\node [style=none] (14) at (-1, 1) {};
+		\node [style=none] (16) at (1, 1) {};
+		\node [style=none] (18) at (0, 3) {};
+		\node [style=none] (20) at (0, 4) {G};
+		\node [style=box] (24) at (1, 1) {$a_2$};
+		\node [style=box] (27) at (-1, 1) {$a_1$};
+		\node [style=bn] (39) at (0, 2) {};
+		\node [style=none] (40) at (4, -1) {};
+		\node [style=state] (41) at (4, 0.25) {!};
+		\node [style=costate] (42) at (4, 2) {$e$};
+		\node [style=none] (43) at (4, -1.5) {X};
+		\node [style=none] (44) at (4, 4) {G};
+		\node [style=none] (45) at (4, 3) {};
+		\node [style=none] (46) at (7, -1) {};
+		\node [style=none] (47) at (7, -1.5) {};
+		\node [style=none] (48) at (7, -1.5) {};
+		\node [style=none] (49) at (7, -1.5) {X};
+		\node [style=box] (50) at (7, 0.25) {$a$};
+		\node [style=box] (51) at (7, 2) {$\iota$};
+		\node [style=none] (52) at (7, 3) {};
+		\node [style=none] (53) at (7, 4) {G};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (2) to (1.center);
+		\draw [in=165, out=-90] (3.center) to (2);
+		\draw [in=270, out=15] (2) to (4.center);
+		\draw (27) to (14.center);
+		\draw (16.center) to (24);
+		\draw (39) to (18.center);
+		\draw [bend left=45] (14.center) to (39);
+		\draw [bend left=45] (39) to (16.center);
+		\draw (40.center) to (41);
+		\draw (41) to (42);
+		\draw (42) to (45.center);
+		\draw (52.center) to (51);
+		\draw (51) to (50);
+		\draw (50) to (46.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
