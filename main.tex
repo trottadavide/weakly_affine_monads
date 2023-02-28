@@ -171,45 +171,6 @@ Every Markov category is weakly Markov: for each $X$, the monoid $\mC(X,I)$ is t
  We say they are \emph{uniquely equivalent} if there is a unique $a\in \mC(X,I)$ such that $a\cdot f=g$.
 \end{mydefinition}
 
-\begin{mydefinition}\label{defcondind}
- A morphism $f:A\to X_1\otimes\dots\otimes X_n$ in a A GS-category $\mC$ is said to exhibit \emph{conditional independence of the $X_i$ given $A$} if and only if it can be expressed as a product of the following form.
- \ctikzfig{cond-ind-sep}
-\end{mydefinition}
-
-
-\begin{myproposition}\label{eqcondind}
- Let $f:A\to X_1\otimes\dots\otimes X_n$ be a morphism in a GS-category $\mC$. Then $f$ exhibits conditional independence of the $X_i$ given $A$ if and only if it is equivalent to the product of all its marginals.
- Moreover, in that case $f$ is \emph{uniquely} equivalent to the product of its marginals.
-\end{myproposition}
-\begin{proof}
- Denote the marginals of $f$ by $f_1,\dots,f_n$.
- Suppose that $f$ is a product as in \Cref{defcondind}. For each $i=1,\dots,n$, by marginalizing, we get that $f_i$ is equal to the following.
-  \ctikzfig{cond-ind-proof} 
- Therefore for each $i$ we have that $f_i\sim g_i$. 
- 
- Conversely, suppose that $f$ is equivalent to the product of its marginals, i.e.~that there exists $a:X\to I$ such that $f$ is equal to the following.
- \ctikzfig{cond-ind-proof2}
- One can then choose $g_i=f_i$ for all $i<n$, and $g_n = a\cdot f_n$, so that $f$ is in the form of \Cref{defcondind}.
- Moreover, by marginalizing over all the $X_i$ at once, we see that 
- \ctikzfig{cond-ind-proof3}
- so that $a$ is uniquely determined.
-\end{proof} 
- 
-\begin{myremark}
- For $n=2$, a morphism $f:A\to X\otimes Y$ in a weakly Markov GS-category $\mC$ exhibits conditional independence of $X$ and $Y$ given $A$ 
- if and only if the following equation holds.
- \ctikzfig{cond-ind2} 
-\end{myremark}
-
-\begin{mylemma}\label{threeindep}
- Let $\mC$ be a weakly Markov GS-category. Let $f:A\to X\otimes Y\otimes Z$ be a morphism exhibiting conditional independence of $X\otimes Y$ (jointly) and $Z$ given $A$, as well as conditional independence of $X$ and $Y\otimes Z$ given $A$. 
- Then $f$ exhibits conditional independence of $X$, $Y$ and $Z$ given $A$. 
-\end{mylemma}
-
-\begin{proof}
- By marginalizing out $X$, we have that $f_{YZ}$ exhibits conditional independence of $Y$ and $Z$ given $A$. 
- Since by hypothesis $f$ exhibits conditional independence of $X$ and $Y\otimes Z$ given $A$, by \Cref{eqcondind} we have that $f$ is equivalent to the product  of $f_X$ and $f_{YZ}$. But, again by \Cref{eqcondind}, $f_{YZ}$ is equivalent to the product of $f_Y$ and $f_Z$, so we have that $f$ is equivalent to the product of all its marginals. Using \Cref{eqcondind} in the other direction, thie means that $f$ exhibits conditional independence of $X$, $Y$ and $Z$ given $A$. 
-\end{proof}
 
 Let's now consider the case where the GS structure comes from a commutative monad on a cartesian monoidal category $\mD$. 
 In this case, the monoid structure of Kleisli morphisms $X\to 1$ comes from the following canonical internal monoid structure of $T1$ in $\mD$, given by 
@@ -236,9 +197,15 @@ In this case, the monoid structure of Kleisli morphisms $X\to 1$ comes from the 
  \end{tikzcd}
  \]
 
-\begin{mylemma}
- Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$. The Kleisli category of $T$ is weakly Markov if and only if $T1$ with its canonical internal monoid structure is a group.
-\end{mylemma}
+
+\begin{mydefinition}
+ A commutative monad $T$ on a cartesian monoidal category is called \emph{weakly affine} if $T1$ with its canonical internal monoid structure is a group.
+\end{mydefinition}
+
+
+\begin{myproposition}\label{weaklyboth}
+ Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$. The Kleisli category of $T$ is weakly Markov if and only if $T$ is weakly affine.
+\end{myproposition}
 \begin{proof}
  First, suppose that $T1$ is an internal group, and denote by $\iota:T1\to T1$ its inversion map. 
  The inverse of the morphism $f^\sharp:X\to T1$ in $\mathrm{Kl}_T(X,1)$ is given by $\iota\circ f$: indeed, the following diagram commutes,
@@ -254,7 +221,44 @@ In this case, the monoid structure of Kleisli morphisms $X\to 1$ comes from the 
  Conversely, suppose that for every $X$, the monoid structure on $\mathrm{Kl}_T(X,1)$ has inverses. Then in particular we can take $X=T1$, and the inverse of the Kleisli morphism $\id:T1\to T1$ is an inversion map for $T1$. 
 \end{proof}
 
-\todo[inline]{This feels vaguely like Yoneda, but in monoidal sauce. Can't make it precise for now, though.}
+\todo[inline]{This feels vaguely like Yoneda, but in monoidal sauce. Can't make it precise for now.}
+
+
+\subsection{Conditional independence in weakly Markov categories}
+
+\begin{mydefinition}\label{defcondind}
+ A morphism $f:A\to X_1\otimes\dots\otimes X_n$ in a A GS-category $\mC$ is said to exhibit \emph{conditional independence of the $X_i$ given $A$} if and only if it can be expressed as a product of the following form.
+ \ctikzfig{cond-ind-sep}
+\end{mydefinition}
+
+Note that this is slightly different from \cite[Definition~6.6]{cho_jacobs_2019}, although it is equivalent for the case of Markov categories.
+
+\begin{myproposition}\label{eqcondind}
+ Let $f:A\to X_1\otimes\dots\otimes X_n$ be a morphism in a GS-category $\mC$. Then $f$ exhibits conditional independence of the $X_i$ given $A$ if and only if it is equivalent to the product of all its marginals.
+ Moreover, in that case $f$ is \emph{uniquely} equivalent to the product of its marginals.
+\end{myproposition}
+
+This generalizes the fact that, in Markov categories, a distribution exhibiting conditional independence is the product of its marginals~\cite[Section~12]{Fritz_2020}.
+
+\begin{proof}
+ Denote the marginals of $f$ by $f_1,\dots,f_n$.
+ Suppose that $f$ is a product as in \Cref{defcondind}. For each $i=1,\dots,n$, by marginalizing, we get that $f_i$ is equal to the following.
+  \ctikzfig{cond-ind-proof} 
+ Therefore for each $i$ we have that $f_i\sim g_i$. 
+ 
+ Conversely, suppose that $f$ is equivalent to the product of its marginals, i.e.~that there exists $a:X\to I$ such that $f$ is equal to the following.
+ \ctikzfig{cond-ind-proof2}
+ One can then choose $g_i=f_i$ for all $i<n$, and $g_n = a\cdot f_n$, so that $f$ is in the form of \Cref{defcondind}.
+ Moreover, by marginalizing over all the $X_i$ at once, we see that 
+ \ctikzfig{cond-ind-proof3}
+ so that $a$ is uniquely determined.
+\end{proof} 
+ 
+\begin{myremark}
+ For $n=2$, a morphism $f:A\to X\otimes Y$ in a weakly Markov GS-category $\mC$ exhibits conditional independence of $X$ and $Y$ given $A$ 
+ if and only if the following equation holds.
+ \ctikzfig{cond-ind2} 
+\end{myremark}
 
 
 \begin{mylemma}\label{indepkleisli}
@@ -280,15 +284,43 @@ In this case, the monoid structure of Kleisli morphisms $X\to 1$ comes from the 
 \end{proof}
 
 
-\begin{mylemma}
- Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$ where $T1$ with its canonical monoid structure is a group (or equivalently, where the Kleisli category is weakly Markov).
- Then \eqref{c_assoc_pullback} is a pullback. 
-\end{mylemma}
 
-\todo[inline]{proof still incomplete}
+\begin{mydefinition}
+ Let $\mC$ be a GS-category. We say that $\mC$ satisfies the \emph{localized independence property} if whenever a morphism 
+ $f:A\to X\otimes Y\otimes Z$ exhibits conditional independence of $X\otimes Y$ (jointly) and $Z$ given $A$, as well as conditional independence of $X$ and $Y\otimes Z$ given $A$, then it exhibits conditional independence of $X$, $Y$ and $Z$ given $A$. 
+\end{mydefinition}
+
+
+\begin{mytheorem}
+ Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$.
+ The following conditions are equivalent.
+ \begin{enumerate}
+  \item\label{condgroup} $T$ is weakly affine;
+  \item\label{condwm} $\mathrm{Kl}(T)$ is weakly Markov;
+  \item\label{condlocal} $\mathrm{Kl}(T)$ satisfies the localized independence property;
+  \item\label{condpullback} For all objects $X$, $Y$, and $Z$, the following associativity diagram is a pullback.
+	\begin{equation}
+		\label{assoc_pullback}
+		\hspace{-9pt}	% T: for centering the equation number
+		\begin{tikzcd}[column sep=3.3pc]
+			T(X) \times T(Y) \times T(Z) \ar{r}{\id \times c_{Y,Z}} \ar[swap]{d}{c_{X,Y} \times \id}	& T(X) \times T(Y \times Z) \ar{d}{c_{X,Y \times Z}}	\\
+			T(X \times Y) \times T(Z) \ar{r}{c_{X\times Y,Z}}						& T(X \times Y \times Z)
+		\end{tikzcd}
+	\end{equation}
+ \end{enumerate}
+\end{mytheorem}
 
 \begin{proof}
-By the universal property of products, a cone over the cospan in \eqref{c_assoc_pullback} consists of maps $g_1^\sharp:A\to TX$, $g_{23}^\sharp:A\to T(Y\times Z)$, $g_{12}^\sharp:A\to T(X\times Y)$ and $g_3^\sharp:A\to TZ$ such that the following diagram commutes. 
+ $\ref{condgroup}\Leftrightarrow\ref{condwm}$: 
+ see \Cref{weaklyboth}.
+ 
+ $\ref{condwm}\Rightarrow\ref{condlocal}$: 
+ Suppose $f:A\to X\otimes Y\otimes Z$ exhibits conditional independence of $X\otimes Y$ (jointly) and $Z$ given $A$, as well as conditional independence of $X$ and $Y\otimes Z$ given $A$
+ By marginalizing out $X$, we have that $f_{YZ}$ exhibits conditional independence of $Y$ and $Z$ given $A$. 
+ Since by hypothesis $f$ exhibits conditional independence of $X$ and $Y\otimes Z$ given $A$, by \Cref{eqcondind} we have that $f$ is equivalent to the product  of $f_X$ and $f_{YZ}$. But, again by \Cref{eqcondind}, $f_{YZ}$ is equivalent to the product of $f_Y$ and $f_Z$, so we have that $f$ is equivalent to the product of all its marginals. Using \Cref{eqcondind} in the other direction, thie means that $f$ exhibits conditional independence of $X$, $Y$ and $Z$ given $A$. 
+ 
+ $\ref{condlocal}\Rightarrow\ref{condpullback}$: 
+ By the universal property of products, a cone over the cospan in \eqref{assoc_pullback} consists of maps $g_1^\sharp:A\to TX$, $g_{23}^\sharp:A\to T(Y\times Z)$, $g_{12}^\sharp:A\to T(X\times Y)$ and $g_3^\sharp:A\to TZ$ such that the following diagram commutes. 
  \[
   \begin{tikzcd}[column sep=3.3pc]
    A \ar[bend left=10]{drr}{(g_1^\sharp,g_{23}^\sharp)} \ar[bend right=15]{ddr}[swap]{(g_{12}^\sharp,g_3^\sharp)} \\
@@ -296,7 +328,7 @@ By the universal property of products, a cone over the cospan in \eqref{c_assoc_
    & T(X \times Y) \times T(Z) \ar{r}[swap]{c_{X\times Y,Z}}						& T(X \times Y \times Z)
   \end{tikzcd}
  \]
- By \Cref{indepkleisli}, this amounts to a Kleisli map $f^\sharp:A\to T(X\times Y\times Z)$ exhibiting conditional independence of $X$ and $Y\otimes Z$ given $A$, as well as of $X\otimes Y$ and $Z$ given $A$. By \Cref{threeindep}, we then have that $f$ exhibits conditional independence of all $X$, $Y$ and $Z$ given $A$, and so, again by \Cref{indepkleisli}, $f^\sharp$ factors through the product $TX\times TY\times TZ$. 
+ By \Cref{indepkleisli}, this amounts to a Kleisli map $f^\sharp:A\to T(X\times Y\times Z)$ exhibiting conditional independence of $X$ and $Y\otimes Z$ given $A$, as well as of $X\otimes Y$ and $Z$ given $A$. By \Cref{condlocal}, we then have that $f$ exhibits conditional independence of all $X$, $Y$ and $Z$ given $A$, and so, again by \Cref{indepkleisli}, $f^\sharp$ factors through the product $TX\times TY\times TZ$. 
  More specifically, by marginalizing over $Z$, we have that $g_{12}^\sharp$ factors through $TX\times TY$, i.e.~the following diagram on the left commutes for some $h_1^\sharp:A\to TX$ and $h_2^\sharp:A\to TY$, and similarly, by marginalizing over $X$, the diagram on the right commutes for some $\ell_2^\sharp:A\to TY$ and $\ell_3^\sharp:A\to TZ$.
  \[
   \begin{tikzcd}
@@ -338,47 +370,47 @@ By the universal property of products, a cone over the cospan in \eqref{c_assoc_
   \end{tikzcd}
  \]
  Now, marginalizing over $Z$ and $Z$, we see that necessarily $a\cdot h_2=c\cdot \ell_2$. 
- Therefore there is a unique map $A\to TX\times TY\times TZ$ making the whole diagram commute, which means that \eqref{c_assoc_pullback} is a pullback.
-\end{proof}
-
-\begin{mytheorem}
- Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$.
- The following conditions are equivalent.
- \begin{enumerate}
-  \item $T1$ with its canonical internal monoid structure is an internal group.
-  \item \eqref{c_assoc_pullback} is a pullback
-  \item The Kleisli category of $T$ is weakly Markov.
- \end{enumerate}
-\end{mytheorem}
-
-
-\section{Introduction}
-
-For context:
-\begin{myproposition}
- A monoid $(M,\cdot,1)$ is a group if and only if the associativity square
- \begin{equation}\label{assoc}
-  \begin{tikzcd}
-   M \times M \times M \ar{d}{\id\times\cdot} \ar{r}{\cdot\times\id} & M\times M \ar{d}{\cdot} \\
-   M\times M \ar{r}{\cdot} & M
-  \end{tikzcd}
- \end{equation}
- is a pullback.
-\end{myproposition}
-\begin{proof}
- The square~\eqref{assoc} is a pullback, both of sets and of groups, if and only if given $a,g,h,c\in M$ such that $ag=hc$, there exists a unique $b\in M$ such that $g=bc$ and $h=ab$.
- First, suppose that $g$ is a group. The only possible choice of $b$ is 
- \[
-  b = a^{-1}h = gc^{-1},
- \]
- which is unique by uniqueness of inverses. 
+ Therefore there is a unique map $A\to TX\times TY\times TZ$ making the whole diagram commute, which means that \eqref{assoc_pullback} is a pullback.
  
- Conversely, suppose that \eqref{assoc} is a pullback. We can set $g,h=e$ and $c=a$ so that $ae=ea=a$. 
- Instantiating the pullback property, there is a unique $b$ such that $ab=e$ and $ba=e$, that is, $b=a^{-1}$.
+ $\ref{condpullback}\Rightarrow\ref{condgroup}$:
+ If $T$ is weakly affine, then taking $X = Y = Z = 1$ in~\eqref{assoc_pullback} shows that this monoid must be an abelian group: we obtain a unique arrow $\freccia{T(1)}{\iota}{T(1)}$ making the following diagram commute,
+	\[
+		\begin{tikzcd}
+			T1 \ar{dr}[description]{(\id,\iota,\id)} \ar[bend left=15]{drr}{(\id,\eta_1 !)} \ar[bend right,swap]{ddr}{(\eta_1 !,\id)} \\
+			&	T1 \times T1 \times T1 \ar{r}{\id \times c_{1,1}} \ar[swap]{d}{c_{1,1} \times \id}	& T1 \times T(1\times 1) \ar{d}{c_{1,1\times 1}} \ar{r}{\cong} & T1\times T1 \ar{d}{c_{1,1}}	\\
+			&	T(1\times 1) \times T1 \ar{r}{c_{1\times 1,1}} \ar{d}[swap]{\cong}	& T(1\times 1\times 1) \ar{d}{\cong} \ar{r}{\cong} & T(1\times 1) \ar{d}{\cong} \\
+			& T1\times T1 \ar{r}[swap]{c_{1,1}} & T(1\times 1) \ar{r}[swap]{\cong} & T1
+		\end{tikzcd}
+	\]
+	and the commutativity shows that $\iota$ satisfies the equations making it the inversion map for a group structure.
 \end{proof}
 
-Recall that a monoidal functor generalizes a monoid object (in turn, generalizing a monoid).
-Similarly, a \emph{weakly affine monoidal functor} generalizes a group in the sense of the proposition above. 
+
+
+% For context:
+% \begin{myproposition}
+%  A monoid $(M,\cdot,1)$ is a group if and only if the associativity square
+%  \begin{equation}\label{assoc}
+%   \begin{tikzcd}
+%    M \times M \times M \ar{d}{\id\times\cdot} \ar{r}{\cdot\times\id} & M\times M \ar{d}{\cdot} \\
+%    M\times M \ar{r}{\cdot} & M
+%   \end{tikzcd}
+%  \end{equation}
+%  is a pullback.
+% \end{myproposition}
+% \begin{proof}
+%  The square~\eqref{assoc} is a pullback, both of sets and of groups, if and only if given $a,g,h,c\in M$ such that $ag=hc$, there exists a unique $b\in M$ such that $g=bc$ and $h=ab$.
+%  First, suppose that $g$ is a group. The only possible choice of $b$ is 
+%  \[
+%   b = a^{-1}h = gc^{-1},
+%  \]
+%  which is unique by uniqueness of inverses. 
+%  
+%  Conversely, suppose that \eqref{assoc} is a pullback. We can set $g,h=e$ and $c=a$ so that $ae=ea=a$. 
+%  Instantiating the pullback property, there is a unique $b$ such that $ab=e$ and $ba=e$, that is, $b=a^{-1}$.
+% \end{proof}
+
+
 
 \section{Weakly-affine monads}
 \todo{Nome da scegliere e valutare se dare la def per una arbitraria gs}
