@@ -148,7 +148,7 @@
 To be written.
 \end{abstract}
 
-\section{Weakly Markov categories}
+\section{Weakly Markov categories and weakly affine monads}
 \iffalse
 \todo[inline]{Se vogliamo generalizzare esempio la proposizione 1.5 da weakly monad su cartesiana a weakly monad su weakly markov, mi sembra che la codizione da chiedere potrebbe essere che T1 sia un gruppo, e che sia ``compatibile'' con la struttura GS. Ho abbazato una possibile definizione }
 \begin{mydefinition}
@@ -169,7 +169,7 @@ If a morphism $f:X\to Y$ is copyable and discardable, precomposition with $f$ in
 
 The monoid $\mC(X,I)$ acts on the set $\mC(X,Y)$: given $a:X\to I$ and $f:X\to Y$, $a\cdot f$ is given as follows,
 \ctikzfig{action}
-and the product $(f,g)\mapsto (f\otimes g)\circ\mathrm{copy}_X$ is equivariant for this action. 
+and the product $(f,g)\mapsto f\cdot g \coloneqq (f\otimes g)\circ\mathrm{copy}_X$ is equivariant for this action in both variables. 
 
 \begin{mydefinition}
  A GS-category $\mC$ is called \emph{weakly Markov} if for every object $X$, the monoid $\mC(X,I)$ is a group. 
@@ -207,14 +207,11 @@ In this case, the monoid structure of Kleisli morphisms $X\to 1$ comes from the 
   T1 \times T1 \ar{r}{c} & T(1\times 1) \ar{r}{\cong} & T1 .
  \end{tikzcd}
  \]
-
-
-
+ 
 
 \begin{mydefinition}
  A commutative monad $T$ on a cartesian monoidal category is called \emph{weakly affine} if $T1$ with its canonical internal monoid structure is a group.
 \end{mydefinition}
-
 
 \begin{myproposition}\label{weaklyboth}
  Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$. The Kleisli category of $T$ is weakly Markov if and only if $T$ is weakly affine.
@@ -235,6 +232,34 @@ In this case, the monoid structure of Kleisli morphisms $X\to 1$ comes from the 
 \end{proof}
 
 \todo[inline]{This feels vaguely like Yoneda, but in monoidal sauce. Can't make it precise for now.}
+
+\subsection{Examples of weakly affine monads} 
+
+\begin{myexample}
+	\label{ex:abelian_group}
+	We present a family of examples of commutative monads that are weakly affine but not affine.
+	Let $A$ be a commutative monoid (written multiplicatively).
+	Then the functor $T_A \coloneqq A \times -$ on $\Set$ has a canonical structure of commutative monad, 
+	where the lax structure components $c_{X,Y}$ are given by multiplying elements in $A$ while carrying the elements 
+	of $X$ and $Y$ along.
+
+	Since $T_A(1) \cong A$, the monad $T_A$ is weakly affine if and only if $A$ is a group, and affine if and only if $A\cong 1$.
+\end{myexample}
+
+\begin{myexample}
+    \label{ex:nonzero_measures}
+	Let $M^* : \Set \to \Set$ be the monad assigning to every set the set of finitely supported discrete \emph{nonzero}
+	measures on $M^*$, or equivalently let $M^*(X)$ for any set $X$ be the set of nonzero finitely supported functions $X \to [0,\infty)$.
+	The monad structure is defined in terms of the same formulas as for the distribution monad on $\Set$ and the
+	components $c_{X,Y}$ are also given by the formation of product measures, or equivalently point-wise products of functions 
+	$X \to [0,\infty)$.
+
+	Since $M^* 1 \cong (0,\infty)\ncong 1$, this monad is not affine. However the monoid structure of $(0,\infty)$ induced by $M^*$ is the usual multiplication of positive real numbers, which form a group. Therefore $M^*$ is weakly affine, and its Kleisli category is weakly Markov.
+
+	On the other hand, if the zero measure is included, then we obtain a commutative monad $M$ which can be seen as the monad of semimodules for the semiring of nonnegative reals.
+	Since $M1 \cong [0,\infty)$ is not a group under multiplication, $M$ is not weakly affine.
+\end{myexample}
+
 
 
 \subsection{Conditional independence in weakly Markov categories}
@@ -341,7 +366,7 @@ This generalizes the fact that, in Markov categories, a distribution exhibiting 
    & T(X \times Y) \times T(Z) \ar{r}[swap]{c_{X\times Y,Z}}						& T(X \times Y \times Z)
   \end{tikzcd}
  \]
- By \Cref{indepkleisli}, this amounts to a Kleisli map $f^\sharp:A\to T(X\times Y\times Z)$ exhibiting conditional independence of $X$ and $Y\otimes Z$ given $A$, as well as of $X\otimes Y$ and $Z$ given $A$. By \Cref{condlocal}, we then have that $f$ exhibits conditional independence of all $X$, $Y$ and $Z$ given $A$, and so, again by \Cref{indepkleisli}, $f^\sharp$ factors through the product $TX\times TY\times TZ$. 
+ By \Cref{indepkleisli}, this amounts to a Kleisli map $f^\sharp:A\to T(X\times Y\times Z)$ exhibiting conditional independence of $X$ and $Y\otimes Z$ given $A$, as well as of $X\otimes Y$ and $Z$ given $A$. By the localized independence property, we then have that $f$ exhibits conditional independence of all $X$, $Y$ and $Z$ given $A$, and so, again by \Cref{indepkleisli}, $f^\sharp$ factors through the product $TX\times TY\times TZ$. 
  More specifically, by marginalizing over $Z$, we have that $g_{12}^\sharp$ factors through $TX\times TY$, i.e.~the following diagram on the left commutes for some $h_1^\sharp:A\to TX$ and $h_2^\sharp:A\to TY$, and similarly, by marginalizing over $X$, the diagram on the right commutes for some $\ell_2^\sharp:A\to TY$ and $\ell_3^\sharp:A\to TZ$.
  \[
   \begin{tikzcd}
@@ -669,55 +694,9 @@ Recall that a strong monad $\freccia{\mA}{T}{\mA}$ on a category $\mA$ with fini
 	We are not aware of any relation between weakly affine monads in our sense and Jacobs' \emph{strongly affine} monads~\cite{Jacobs16}, other than the fact that strongly affine implies affine implies weakly affine.
 \end{myremark}
 
-\begin{myexample}
-	\label{ex:abelian_group}
-	We present a family of examples of commutative monads that are weakly affine but not affine.
-	Let $A$ be an abelian group (written multiplicatively).
-	Then the functor $T_A \coloneqq A \times -$ on $\Set$ has a canonical structure of commutative monad, 
-	where the lax structure components $c_{X,Y}$ are given by multiplying elements in $A$ while carrying the elements 
-	of $X$ and $Y$ along.
 
-	Since $T_A \cong A$, the monad $T_A$ is clearly not affine unless $A$ is the trivial group.
-	However, $T_A$ is always weakly affine.
-	Indeed, in order to show that~\eqref{c_assoc_pullback} is a pullback, it suffices to show that the associativity square of $A$
-	\[
-		\begin{tikzcd}
-			A \times A \times A \ar{r}{\id \times \cdot} \ar{d}{\cdot \times \id}		& A \times A \ar{d}{\cdot}	\\
-			A \times A \ar{r}{\cdot}							& A
-		\end{tikzcd}
-	\]
-	is a pullback.
-	Using element-wise reasoning, this amounts to showing that the system of equations
-		$ax = c$ and $xb = d$
-	has a solution for $x \in A$ if and only if $cb = ad$, and in this case the solution is unique.
-	But this is indeed the case with $x = a^{-1} c = db^{-1}$.
-	(Note that this argument does not even require $A$ to be abelian, but we need to require this in order for $T_A$ to be commutative.)
-\end{myexample}
 
-\begin{myexample}
-	Many monads in categorical measure theory are weakly affine but not affine.
-	Let e.g. $M^* : \Set \to \Set$ be the monad assigning to every set the set of finitely supported discrete \emph{nonzero}
-	measures on $M^*$, or equivalently let $M^*(X)$ for any set $X$ be the set of nonzero finitely supported functions $X \to [0,\infty)$.
-	The monad structure is defined in terms of the same formulas as for the distribution monad on $\Set$ and the
-	components $c_{X,Y}$ are also given by the formation of product measures, or equivalently point-wise products of functions 
-	$X \to [0,\infty)$.
 
-	Since $M^* 1 \cong (0,\infty)$, this monad is clearly not affine.
-	However, it is weakly affine, and we limit ourselves to a sketch of the proof.
-	Indeed to prove that~\eqref{c_assoc_pullback} is a pullback, we again reason in terms of elements.
-	If all measures are normalised, then we are back in the situation of the distribution monad, which is affine and the claim follows.
-	In the general case, one can reduce to the normalised case by showing that the normalisation of the desired element of $M^*(Y)$ is uniquely determined.
-	This works in the same way as in Example~\ref{ex:abelian_group} with $A = (0,\infty)$.
-
-	On the other hand, if the zero measure is included, then we obtain a commutative monad $M$ which can be seen as the monad of semimodules for the semiring of nonnegative reals.
-	Since $M1 \cong [0,\infty)$ is not a group under multiplication, $M$ is not weakly affine.
-\end{myexample}
-
-The previous two examples and Lemma~\ref{lem:T1_group} suggest the following problem.
-
-\begin{myproblem}
-	Let $T$ be a commutative monoid such that $T(1)$ is an abelian group. Does it follow that $T$ is weakly affine?
-\end{myproblem}
 
 
 \end{document}
