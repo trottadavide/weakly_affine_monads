@@ -13,7 +13,7 @@
 \include{macro_davide}
 \usepackage{mathtools}
 \usepackage{quiver}
-
+\usepackage{cleveref}
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage[all,2cell]{xy}
@@ -196,6 +196,8 @@ In this case, the monoid structure of Kleisli morphisms $X\to 1$ comes from the 
   T1 \times T1 \ar{r}{c} & T(1\times 1) \ar{r}{\cong} & T1 .
  \end{tikzcd}
  \]
+\todo{mi sembra che la proposizione 1.7 funzioni in generale per con $\mD$ GS, no?}
+
 
 
 \begin{mydefinition}
@@ -411,7 +413,56 @@ This generalizes the fact that, in Markov categories, a distribution exhibiting 
 % \end{proof}
 
 
+\section{Additional material (to be added to section)}
 
+\begin{myproposition}\label{prop:actio_group_as_pullback}
+ Let $(G,\cdot,1)$ be a group and let $X$ be a set. A function $\alpha: M\times X\to X$ determines a left action if and only if the square
+ \begin{equation}\label{action}
+  \begin{tikzcd}
+   G \times G \times X \ar{d}{\id\times\alpha} \ar{r}{\cdot\times\id} & M\times X \ar{d}{\alpha} \\
+   G\times X \ar{r}{\alpha} & X
+  \end{tikzcd}
+ \end{equation}
+ commutes and it is a pullback.
+\end{myproposition}
+\begin{proof}
+By definition, the square \eqref{action} commutes if and only if $\alpha$ and $\cdot$ are compatible. Now we show that the commutative square \eqref{action} is a pullback if and only if $\alpha$ satisfies the identity axiom, i.e. $\alpha(e,x)=x$ for every $x$ in $X$.
+Now, if \eqref{action} is a pullback, then there exists a function $\beta:X\to G$ such that the diagram
+% https://q.uiver.app/?q=WzAsNSxbMSwxLCJNXFx0aW1lcyBNXFx0aW1lcyBYIl0sWzMsMSwiTVxcdGltZXMgWCJdLFsxLDMsIk1cXHRpbWVzIFgiXSxbMywzLCJYIl0sWzAsMCwiIFgiXSxbMCwxLCJpZFxcdGltZXMgXFxhbHBoYSJdLFswLDIsIlxcY2RvdFxcdGltZXMgaWQiLDJdLFsyLDMsIlxcYWxwaGEiLDJdLFsxLDMsIlxcYWxwaGEiXSxbNCwyLCJlISxpZCIsMix7ImN1cnZlIjo1fV0sWzQsMSwiZSEsaWQiLDAseyJjdXJ2ZSI6LTV9XSxbNCwwLCJlISxcXGJldGEsaWQiLDFdXQ==
+\[\begin{tikzcd}
+	{ X} \\
+	& {G\times G\times X} && {G\times X} \\
+	\\
+	& {G\times X} && X
+	\arrow["{id\times \alpha}", from=2-2, to=2-4]
+	\arrow["{\cdot\times id}"', from=2-2, to=4-2]
+	\arrow["\alpha"', from=4-2, to=4-4]
+	\arrow["\alpha", from=2-4, to=4-4]
+	\arrow["\angbr{e!}{\id}"', curve={height=30pt}, from=1-1, to=4-2]
+	\arrow["\angbr{e!}{\id}", curve={height=-30pt}, from=1-1, to=2-4]
+	\arrow["\angbr{e!}{\beta,\id}"{description}, from=1-1, to=2-2]
+\end{tikzcd}\]
+commutes, where $e!:X\to G$ is the function assigning the identity element $e$ to every element $x$ of $X$. Now, since the left triangle commutes, then we have that $e=e\cdot \beta (x)$ for every $x$ of $X$, i.e. $\beta(x)=e$ for every $x$ of $X$. Now, since the right triangle commutes, we can conclude that $\alpha (\beta(x),x)=\alpha (e,x)=x$ for every $x$ in $X$. 
+
+Now we show that $\alpha (e,x)=x$ implies that  the commutative square \eqref{action} is a pullback. Let us consider a set $Y$ and the functions $\angbr{f_1}{f_2}:Y\to G\times X$ and  $\angbr{g_1}{g_2}:Y\to G\times X$ such that $\alpha( f_1(y),f_2(y))=\alpha( g_1(y),g_2(y))$. By applying $\alpha (f_1(y)^{-1},-)$ to both sides, and then combining the compatibility of $\alpha$ with the assumption that $\alpha (e,x)=x$, we can conclude that $f_2(y)=\alpha (f_1(y)^{-1}\cdot g_1(y),g_2(y))$.
+%similarly, that $g_2(y)=\alpha (g_1(y)^{-1}\cdot f_1(y),f_2(y))$. 
+Therefore, we can conclude that the diagram 
+% https://q.uiver.app/?q=WzAsNSxbMSwxLCJNXFx0aW1lcyBNXFx0aW1lcyBYIl0sWzMsMSwiTVxcdGltZXMgWCJdLFsxLDMsIk1cXHRpbWVzIFgiXSxbMywzLCJYIl0sWzAsMCwiIFkiXSxbMCwxLCJpZFxcdGltZXMgXFxhbHBoYSJdLFswLDIsIlxcY2RvdFxcdGltZXMgaWQiLDJdLFsyLDMsIlxcYWxwaGEiLDJdLFsxLDMsIlxcYWxwaGEiXSxbNCwyLCJnXzEuZ18yIiwyLHsiY3VydmUiOjV9XSxbNCwxLCJmXzEsZl8yIiwwLHsiY3VydmUiOi01fV0sWzQsMCwiZl8xLGZfMV57LTF9Z18xLGdfMiIsMV1d
+\[\begin{tikzcd}
+	{ Y} \\
+	& {M\times M\times X} && {M\times X} \\
+	\\
+	& {M\times X} && X
+	\arrow["{id\times \alpha}", from=2-2, to=2-4]
+	\arrow["{\cdot\times id}"', from=2-2, to=4-2]
+	\arrow["\alpha"', from=4-2, to=4-4]
+	\arrow["\alpha", from=2-4, to=4-4]
+	\arrow["\angbr{g_1}{g_2}"', curve={height=30pt}, from=1-1, to=4-2]
+	\arrow["\angbr{f_1}{f_2}", curve={height=-30pt}, from=1-1, to=2-4]
+	\arrow["\angbr{f_1}{\gamma,g_2}"{description}, from=1-1, to=2-2]
+\end{tikzcd}\]
+commutes, where the function $\gamma: Y \to M$ is defined by $\gamma (y):= f_1^{-1}(y)\cdot g_1 (y)$. By the unicity of the inverse in a group, this function is also unique, and hence we can conclude that the commutative square \eqref{action} is a pullback.
+\end{proof}
 \section{Weakly-affine monads}
 \todo{Nome da scegliere e valutare se dare la def per una arbitraria gs}
 \begin{mydefinition}
@@ -467,22 +518,22 @@ equips $T(1)$ with the structure of a commutative monoid internal to $\mathcal{A
 	\]
 	and the commutativity shows that $\iota$ satisfies the equations making it the inversion map for a group structure.
 \end{proof}
-\todo{ovviamente abbiamo anche un'azione destra.... devo finire di controllare se $\gamma$ viene l'identità o in generale no}
+
 \begin{myproposition}
 	\label{lem:group_action}
-	If $T$ is weakly affine, then for every object $X$ there exists a unique morphism $\gamma:T(X)\to T(X)$ such that the composition $c_{1,X}\circ (\id_{T1}\times \gamma): T(1)\times T(X)\to T(X)$ is a (left) group action. 
+	If $T$ is weakly affine, then for every object $X$, the morphism $c_{1,X}: T(1)\times T(X)\to T(X)$ determines a (left) group action. 
 
 \end{myproposition}
 \begin{proof}
-Let $\freccia{T(X)}{\gamma}{T(X)}$ be the unique morphism such that the diagram
-	\[
-		\begin{tikzcd}
-			T(X) \ar{dr}[description]{(\eta_1!,\gamma,\eta_1!)} \ar[bend left]{drr}{(\eta_1!,\id)} \ar[bend right,swap]{ddr}{(\id,\eta_1!)} \\
-			&	T(1) \times T(X) \times T(1) \ar{r}{\id \times c_{X,1}} \ar[swap]{d}{c_{1,X} \times \id}	& T(1) \times T(X) \ar{d}{c_{1,X}}	\\
-			&	T(X) \times T(1) \ar{r}{c_{X,1}}								& T(X)
-		\end{tikzcd}
-	\]
-	commutes. Now we show that the morphism $c_{1,X}\circ (\id_{T1}\times \gamma): T(1)\times T(X)\to T(X)$ provides an action of the group $T(1)$ on $T(X)$. First, notice that identity axiom, i.e. $(c_{1,X} (\id_{T1}\times \gamma))(\eta_1!, \id)=\id$, is satisfied by definition of $\gamma$, because $c_{1,X}(\eta_1!,\gamma)=\id$. 
+%Let $\freccia{T(X)}{\gamma}{T(X)}$ be the unique morphism such that the diagram
+%	\[
+%		\begin{tikzcd}
+%			T(X) \ar{dr}[description]{(\eta_1!,\gamma,\eta_1!)} \ar[bend left]{drr}{(\eta_1!,\id)} \ar[bend right,swap]{ddr}{(\id,\eta_1!)} \\
+%			&	T(1) \times T(X) \times T(1) \ar{r}{\id \times c_{X,1}} \ar[swap]{d}{c_{1,X} \times \id}	& T(1) \times T(X) \ar{d}{c_{1,X}}	\\
+%			&	T(X) \times T(1) \ar{r}{c_{X,1}}								& T(X)
+%		\end{tikzcd}
+%	\]
+%	commutes. Now we show that the morphism $c_{1,X}\circ (\id_{T1}\times \gamma): T(1)\times T(X)\to T(X)$ provides an action of the group $T(1)$ on $T(X)$. First, notice that identity axiom, i.e. $(c_{1,X} (\id_{T1}\times \gamma))(\eta_1!, \id)=\id$, is satisfied by definition of $\gamma$, because $c_{1,X}(\eta_1!,\gamma)=\id$. 
 	The compatibility axiom follows from the fact that the diagram
 	% https://q.uiver.app/?q=WzAsNCxbMCwwLCJUKDEpXFx0aW1lcyBUKDEpXFx0aW1lcyBUKFgpIl0sWzIsMCwiVCgxKVxcdGltZXMgVChYKSJdLFsyLDEsIlQoWCkiXSxbMCwxLCJUKDEpXFx0aW1lcyBUKFgpIl0sWzAsMSwiaWRcXHRpbWVzIGNfezEsWH0iXSxbMSwyLCJjX3sxLFh9Il0sWzAsMywiY197MSwxfVxcdGltZXMgaWQiLDJdLFszLDIsImNfezEsWH0iLDJdXQ==
 \[\begin{tikzcd}
@@ -493,7 +544,7 @@ Let $\freccia{T(X)}{\gamma}{T(X)}$ be the unique morphism such that the diagram
 	\arrow["{c_{1,1}\times \id}"', from=1-1, to=2-1]
 	\arrow["{c_{1,X}}"', from=2-1, to=2-3]
 \end{tikzcd}\]
-commutes.
+commutes for every strong and commutative monad. Moreover, following the same proof used for \Cref{prop:actio_group_as_pullback}, we can conclude that the identity axiom is satisfied since $T$ is weakly affine. In particular, because $T(1)$ is a group by \Cref{lem_T1_group}, and the previous square is a pullbackc (by definition of weakly affine monad).
 \end{proof}
 
 
