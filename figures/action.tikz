@@ -5,7 +5,7 @@
 		\node [style=bn] (2) at (0, 0) {};
 		\node [style=none] (3) at (-1, 1) {};
 		\node [style=none] (4) at (1, 1) {};
-		\node [style=costate] (5) at (-1, 1.25) {$a$};
+		\node [style=costate] (5) at (-1, 1) {$a$};
 		\node [style=none] (6) at (1, 2) {};
 		\node [style=none] (7) at (1, 2.5) {$Y$};
 		\node [style=box] (8) at (1, 1.25) {$f$};
