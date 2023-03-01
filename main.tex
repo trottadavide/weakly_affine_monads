@@ -260,6 +260,13 @@ In this case, the monoid structure of Kleisli morphisms $X\to 1$ comes from the 
 	Since $M1 \cong [0,\infty)$ is not a group under multiplication, $M$ is not weakly affine.
 \end{myexample}
 
+\begin{myexample}
+    \label{ex:nonexample}
+    Here is a negative example.
+    Consider the free abelian group monad $F$ on $\Set$. Its functor takes a set $X$ and forms the set $FX$ of finite multisets (with repetition, where order does not matter) of elements of $X$ and their formal inverses. 
+    We have that $F1\cong \mathbb{Z}$, which is an abelian group under addition. 
+    However, the monoid structure on $F1$ induced by the monoidal structure of the monad corresponds to the \emph{multiplication} in $\mathbb{Z}$, which does not have inverses. Therefore $F$ is not weakly affine. 
+\end{myexample}
 
 
 \subsection{Conditional independence in weakly Markov categories}
