@@ -232,6 +232,78 @@ In this case, the monoid structure of Kleisli morphisms $X\to 1$ comes from the 
 \end{proof}
 
 
+\subsection{In terms of the Yoneda embedding}
+
+For context:
+\begin{myproposition}\label{assoc_group}
+ A monoid $(M,m,e)$ is a group if and only if the associativity square
+ \begin{equation}\label{assoc}
+  \begin{tikzcd}
+   M \times M \times M \ar{d}{\id\times m} \ar{r}{m\times\id} & M\times M \ar{d}{m} \\
+   M\times M \ar{r}{m} & M
+  \end{tikzcd}
+ \end{equation}
+ is a pullback.
+\end{myproposition}
+The same can be said more generally for a monoid object in a cartesian monoidal category.
+\begin{proof}
+ The square~\eqref{assoc} is a pullback, both of sets and of groups, if and only if given $a,g,h,c\in M$ such that $ag=hc$, there exists a unique $b\in M$ such that $g=bc$ and $h=ab$.
+ First, suppose that $g$ is a group. The only possible choice of $b$ is 
+ \[
+  b = a^{-1}h = gc^{-1},
+ \]
+ which is unique by uniqueness of inverses. 
+ 
+ Conversely, suppose that \eqref{assoc} is a pullback. We can set $g,h=e$ and $c=a$ so that $ae=ea=a$. 
+ Instantiating the pullback property, there is a unique $b$ such that $ab=e$ and $ba=e$, that is, $b=a^{-1}$.
+\end{proof}
+
+
+Let $\mD$ be a cartesian monoidal category.
+Consider the presheaf category $[\mD^\mathrm{op},\Set]$, equipped with the Day convolution product,
+\[
+ F\boxtimes G \cong \int^{A,B\in\mD} \mD(-, A\times B) \times F(A) \times G(B) .
+\]
+The Yoneda embedding $\mD\to [\mD^\mathrm{op},\Set]$ is strong monoidal: indeed, for each $X$,
+\[
+ 1 \cong \mD(X,1) ,
+\]
+since $1$ is terminal, and for each $X$ and $Y$, by Yoneda reduction,
+\begin{align*}
+ \mD(-,X) \boxtimes \mD(-,Y) &\cong \int^{A,B\in\mD} \mD(-, A\times B) \times \mD(-,X) \times \mD(-,Y) \\
+  &\cong \mD(-, X\times Y) .
+\end{align*}
+Therefore, and by the universal property of products, at the level of individual hom-sets the Day convolution product of representable presheaves just takes the cartesian products of sets: 
+\[
+ \big(\mD(-,X) \boxtimes \mD(-,Y)\big)(A) \cong  \mD(A, X\times Y) \cong \mD(A,X) \times \mD(A,Y) .
+\]
+Take now an object $M$ of $\mD$. Since the Yoneda embedding is fully faithful and strong monoidal, a monoid structure $(M,m,e)$ on $M$ is equivalently a monoid structure on the representable presheaf $\mD(-,M)$. 
+This makes the individual hom-sets monoids, with unit and multiplication as follows for each object $X$:
+\[
+ \begin{tikzcd}[row sep=tiny]
+  1 \ar{r}{\cong} & \mD(X,1) \ar{r}{e_*} & \mD(X,M) \\
+  \mD(X,M) \times \mD(X,M) \ar{r}{\cong} & \mD(X,M\times M) \ar{r}{m_*} & \mD(X,M) 
+ \end{tikzcd}
+\]
+This is precisely the monoid structure that we have defined in the previous section for $M=T1$. 
+
+\begin{myproposition}
+ $M$ is an internal group if and only if all the monoids $\mD(X,M)$ are groups.
+\end{myproposition}
+\begin{proof}
+ By \Cref{assoc_group}, $M$ is a group object if and only if its associativity square \eqref{assoc} is a pullback. Since the hom-functor preserves and reflects all limits in its second argument, we have that \eqref{assoc} is a pullback if and only if for each object $X$, the following diagram (or equivalently, its bottom right square) is a pullback,
+ \[
+  \begin{tikzcd}[column sep=small]
+  \mD(X,M) \times \mD(X,M) \times \mD(X,M) \ar{dr}[swap]{\cong} \ar{dd} \ar{rr} && \mD(X,M) \times \mD(X,M) \ar{d}{\cong} \\
+  & \mD(X,M\times M\times M) \ar{r}[swap]{(m\times\id)_*} \ar{d}{(\id\times m)_*} & \mD(X,M\times M) \ar{d}{m_*} \\
+  \mD(X,M) \times \mD(X,M) \ar{r}[swap]{\cong} & \mD(X,M\times M) \ar{r}[swap]{m_*} & \mD(X,M)
+  \end{tikzcd}
+ \]
+ where the unlabelled arrows are the unique ones that make the diagram commute.
+ Again by \Cref{assoc_group}, the diagram above is a pullback if and only if $\mD(X,M)$ is a group.
+\end{proof}
+
+
 \subsection{Examples of weakly affine monads} 
 
 \begin{myexample}
@@ -428,31 +500,6 @@ This generalizes the fact that, in Markov categories, a distribution exhibiting 
 	\]
 	and the commutativity shows that $\iota$ satisfies the equations making it the inversion map for a group structure.
 \end{proof}
-
-
-
-% For context:
-% \begin{myproposition}
-%  A monoid $(M,\cdot,1)$ is a group if and only if the associativity square
-%  \begin{equation}\label{assoc}
-%   \begin{tikzcd}
-%    M \times M \times M \ar{d}{\id\times\cdot} \ar{r}{\cdot\times\id} & M\times M \ar{d}{\cdot} \\
-%    M\times M \ar{r}{\cdot} & M
-%   \end{tikzcd}
-%  \end{equation}
-%  is a pullback.
-% \end{myproposition}
-% \begin{proof}
-%  The square~\eqref{assoc} is a pullback, both of sets and of groups, if and only if given $a,g,h,c\in M$ such that $ag=hc$, there exists a unique $b\in M$ such that $g=bc$ and $h=ab$.
-%  First, suppose that $g$ is a group. The only possible choice of $b$ is 
-%  \[
-%   b = a^{-1}h = gc^{-1},
-%  \]
-%  which is unique by uniqueness of inverses. 
-%  
-%  Conversely, suppose that \eqref{assoc} is a pullback. We can set $g,h=e$ and $c=a$ so that $ae=ea=a$. 
-%  Instantiating the pullback property, there is a unique $b$ such that $ab=e$ and $ba=e$, that is, $b=a^{-1}$.
-% \end{proof}
 
 
 \section{Additional material (to be added to section)}
