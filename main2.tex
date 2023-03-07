@@ -176,11 +176,6 @@ The same can be said more generally for a monoid object in a cartesian monoidal 
  Conversely, suppose that \eqref{assoc} is a pullback. We can set $g,h=e$ and $c=a$ so that $ae=ea=a$. 
  Instantiating the pullback property, there is a unique $b$ such that $ab=e$ and $ba=e$, that is, $b=a^{-1}$.
 \end{proof}
-
-
-\subsection{GS and Markov categories}
-
-
 \begin{definition}\label{monadM}
  Let $X$ be a set. Denote by $MX$ the set of \emph{finitely supported measures on $X$}, i.e.~functions $m:X\to[0,\infty)$ which are zero for all but a finite number of $x\in X$. 
  Given a function $f:X\to Y$, denote by $Mf:MX\to MY$ the function sending $m\in MX$ to the assignment
@@ -217,8 +212,33 @@ The same can be said more generally for a monoid object in a cartesian monoidal 
  $D$ forms a submonad of $M$ called the \emph{distribution monad}.
 \end{definition}
 
+\subsection{GS and Markov categories}
+
+The notion of \emph{gs-monoidal category} has been originally introduced in the context of algebraic approaches to term graph rewriting~\cite{CorradiniGadducci97}, and then
+developed in a series of papers \cite{CorradiniGadducci99, CorradiniGadducci02, CorradiniGadducci99b}.
+We recall here the basic definitions adopting the graphical formalism of string diagrams, 
+%at the same time highlighting all the basic 
+%    properties underlying its structure.
+%
+%
+%in terms of string diagrams.
+referring to \cite{Selinger2011} for an overview of various notions of monoidal categories and their associated diagrammatic calculus.
+
+
 % def of gs and markov cat
 % monoidal monad
+
+\begin{definition}
+A \textbf{gs-monoidal category} is a symmetric monoidal category $(\mC, \otimes, I)$
+with a commutative comonoid structure on each object X, consisting of a comultiplication
+and counit,
+\ctikzfig{copy_del}
+which satisfy the commutative comonoid equations:
+\ctikzfig{comonoid_equation}
+These comonoid structures must be multiplicative with respect to the monoidal structure:
+\end{definition}
+
+
 
 % examples with M and D, Stoch etc
 
@@ -648,7 +668,7 @@ and which always commutes by naturality of the strength. One can then call the m
 All the examples of weakly affine monads that we have are positive in this sense, so one may wonder if every weakly affine monad is positive. For now, this remains an open question.
 \end{myremark}
 
-
+\bibliographystyle{plain}
 
 \bibliography{biblio_davide}
 
