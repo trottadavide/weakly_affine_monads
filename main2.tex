@@ -217,13 +217,17 @@ The same can be said more generally for a monoid object in a cartesian monoidal 
  $D$ forms a submonad of $M$ called the \emph{distribution monad}.
 \end{definition}
 
-% def of gs and markov cat
+% def of gs cat
 % monoidal monad
 
 % examples with M and D, Stoch etc
 
-% copyable and discardable morphisms
-
+\begin{definition}
+ A morphism $f:X\to Y$ in a GS category is called \emph{copyable} or \emph{functional} if and only if
+ \ctikzfig{functional}
+ It is called \emph{discardable} or \emph{full} if 
+ \ctikzfig{full}
+\end{definition}
 
 
 \begin{proposition}
@@ -637,7 +641,7 @@ By weak affineness, $T(1)$ is a group. If $\eta_{T1}=T(\eta_{1})\iota$, then we 
 where $s$ denotes the strength and $\eta$ denotes the unit of the monad. Every strongly affine monad is affine. 
 The corresponding condition on the (Markov) category $\mathrm{Kl}(T)$ is called \emph{positivity}~\cite[Section~2]{fritz2022dilations}.
 
-Note that for a generic commutative monad, the diagram above may even fail to commute (take for example the measure monad $M$, and start with $(x,0)$ in the bottom left corner). One can however consider the following diagram, which reduces to the one above (up to isomorphism) in the affine case,
+Note that for a generic commutative monad, the diagram above may even fail to commute (take for example the measure monad $M$, and start with $(x,0)$ in the top left corner). One can however consider the following diagram, which reduces to the one above (up to isomorphism) in the affine case,
 \[
  \begin{tikzcd}
    X \times TY \ar{d}{\id\times T!} \ar{r}{s} & T(X\times Y) \ar{d}{T(\id\times!)} \\

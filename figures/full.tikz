@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (2, -1) {$X$};
+		\node [style=none] (4) at (2, -0.5) {};
+		\node [style=none] (11) at (0, 0.25) {$=$};
+		\node [style=none] (12) at (-2, -1) {$X$};
+		\node [style=none] (13) at (-2, -0.5) {};
+		\node [style=box] (19) at (-2, 0.5) {$f$};
+		\node [style=bn] (21) at (2, 0.5) {};
+		\node [style=bn] (22) at (-2, 1.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (22) to (13.center);
+		\draw (21) to (4.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
