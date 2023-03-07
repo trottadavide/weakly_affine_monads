@@ -233,6 +233,8 @@ and counit,
 which satisfy the commutative comonoid equations:
 \ctikzfig{comonoid_equation}
 These comonoid structures must be multiplicative with respect to the monoidal structure:
+\ctikzfig{comon-struct-mult}
+A gs-monoidal category is a \textbf{Markov category} if the monoidal unit I is terminal
 \end{definition}
 
 
@@ -241,19 +243,19 @@ These comonoid structures must be multiplicative with respect to the monoidal st
 % examples with M and D, Stoch etc
 
 \begin{definition}
- A morphism $f:X\to Y$ in a GS category is called \emph{copyable} or \emph{functional} if and only if
+ A morphism $f:X\to Y$ in a gs-monoidal category is called \textbf{copyable} or \textbf{functional} if and only if
  \ctikzfig{functional}
- It is called \emph{discardable} or \emph{full} if 
+ It is called \textbf{discardable} or \textbf{full} if 
  \ctikzfig{full}
 \end{definition}
 
 
 \begin{proposition}
- Every cartesian monoidal category is canonically a GS category with the copy and discard maps given by the diagonal and the terminal maps.
+ Every cartesian monoidal category is canonically a gs-monoidal category with the copy and discard maps given by the diagonal and the terminal maps.
 \end{proposition}
 
 \begin{proposition}
- The following conditions are equivalent for a GS category $\mC$:
+ The following conditions are equivalent for a gs-monoidal category $\mC$:
  \begin{itemize}
   \item $\mC$ is cartesian monoidal;
   \item Every morphism is copyable and discardable;
@@ -263,11 +265,11 @@ These comonoid structures must be multiplicative with respect to the monoidal st
 
 \begin{proposition}\label{monoidalgs}
  Let $T$ be a monoidal (equivalently, commutative) monad on a cartesian monoidal category $\mD$. 
- Then $\mathrm{Kl}(T)$ is canonically a GS category with copy and discard structure induced by those of $\mD$.
+ Then $\mathrm{Kl}(T)$ is canonically a gs-monoidal category with copy and discard structure induced by those of $\mD$.
 \end{proposition}
 
 \begin{definition}
- A GS category is called \emph{Markov} if any (hence all) of the following equivalent conditions are satisfied:
+ A gs-monoidal category is called \emph{Markov} if any (hence all) of the following equivalent conditions are satisfied:
  \begin{itemize}
   \item The monoidal unit is terminal;
   \item The discard map is natural;
@@ -291,7 +293,7 @@ In this work we want to introduce an intermediate level between GS and Markov, w
 
 \subsection{The monoid of effects}\label{monoids}
 
-In a GS category $\mC$ we call a \emph{state} a morphism from the monoidal unit $p:I\to X$, and \emph{effect} or \emph{co-state} a morphism to the monoidal unit $a:X\to I$. We represent them as triangles as follows.
+In a gs-monoidal category $\mC$ we call a \emph{state} a morphism from the monoidal unit $p:I\to X$, and \emph{effect} or \emph{co-state} a morphism to the monoidal unit $a:X\to I$. We represent them as triangles as follows.
  \ctikzfig{state-costate}
 
 Effects, i.e.~elements of the set $\mC(X,I)$, form canonically a commutative monoid as follows: the monoidal unit is the discard map $X\to I$, and given $a,b:X\to I$, their product $ab$ is given by copying, as follows.

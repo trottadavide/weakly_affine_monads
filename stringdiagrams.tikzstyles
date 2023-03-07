@@ -13,3 +13,4 @@
 \tikzstyle{comp}=[fill={rgb,255: red,191; green,0; blue,64}, draw={rgb,255: red,191; green,0; blue,64}, shape=circle, inner sep=1.5pt]
 
 % Edge styles
+\tikzstyle{ds}=[-, dashed, dash pattern=on 1mm off 1mm]
