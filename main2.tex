@@ -402,12 +402,46 @@ Some of those concepts can be translated and generalized to the setting of weakl
 
 Note that this is slightly different from \cite[Definition~6.6]{cho_jacobs_2019}, although it is equivalent for the case of Markov categories.
 
+
+Here is what conditional independence looks like in the Kleisli case.
+
+\begin{myproposition}\label{indepkleisli}
+ Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$.
+ A Kleisli morphism $f^\sharp:A\to T(X_1\times\dots\times X_n)$ exhibits conditional independence of the $X_i$ given $A$ if and only if it factors as follows
+ \[
+ \begin{tikzcd}
+  A \ar{d}[swap]{(g_1^\sharp,\dots,g_n^\sharp)} \ar{dr}{f^\sharp} \\
+  TX_1\times\dots\times TX_n \ar{r}[swap]{c} & T(X_1\times\dots\times X_n) ,
+ \end{tikzcd}
+ \]
+ for some Kleisli maps $g_i^\sharp:A\to TX_i$,
+ where the map $c$ above is the one obtained by iterating the multiplication of the monoidal structure (such a map is unique by associativity). 
+\end{myproposition}
+\begin{proof}
+ In terms of the base category $\mD$, a Kleisli morphism in the form of \Cref{defcondind} reads as follows.
+ \[
+  \begin{tikzcd}[sep=large]
+   A \ar{r}{\mathrm{copy}} & A\times\dots\times A \ar{r}{g_1^\sharp\times\dots\times g_n^\sharp} & TX_1\times\dots\times TX_n \ar{r}{c} & T(X_1\times\dots\times X_n) .
+  \end{tikzcd}
+ \]
+ Therefore $f^\sharp:A\to T(X_1\times\dots\times X_n)$ is exhibiting conditional independence if and only if it is in the form above.
+\end{proof}
+
+\begin{myexample}
+ In the Kleisli category of the distribution monad $D$, which is Markov, a morphism $f:A\to X\otimes Y$ exhibits conditional independence if and only if it is is the product of its marginals~\cite[Section~12]{Fritz_2020}.
+\end{myexample}
+
+\begin{myexample}
+ In the Kleisli category of the measure monad $M$, the zero measure always displays conditional independence of its outputs given its inputs: for example, for $A=1$, the zero measure on $X\times Y$ is the product of the zero measure on $X$ and the zero (or any other) measure on $Y$.
+ Notice that both marginals of the zero measure are zero measures---therefore, the factors appearing in the product are not necessarily related to the marginals.
+\end{myexample}
+
+In a weakly Markov category, the situation is similar to the Markov case, but up to equivalence. 
+
 \begin{myproposition}\label{eqcondind}
- Let $f:A\to X_1\otimes\dots\otimes X_n$ be a morphism in a GS-category $\mC$. Then $f$ exhibits conditional independence of the $X_i$ given $A$ if and only if it is equivalent to the product of all its marginals.
+ Let $f:A\to X_1\otimes\dots\otimes X_n$ be a morphism in a weakly Markov GS-category $\mC$. Then $f$ exhibits conditional independence of the $X_i$ given $A$ if and only if it is equivalent to the product of all its marginals.
  Moreover, in that case $f$ is \emph{uniquely} equivalent to the product of its marginals.
 \end{myproposition}
-
-This generalizes the fact that, in Markov categories, a distribution exhibiting conditional independence is the product of its marginals~\cite[Section~12]{Fritz_2020}.
 
 \begin{proof}
  Denote the marginals of $f$ by $f_1,\dots,f_n$.
@@ -429,47 +463,19 @@ This generalizes the fact that, in Markov categories, a distribution exhibiting 
  \ctikzfig{cond-ind2} 
 \end{myremark}
 
-The next result concerns conditional independence in the Kleisli case.
-
-\begin{mylemma}\label{indepkleisli}
- Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$.
- A Kleisli morphism $f^\sharp:A\to T(X_1\times\dots\times X_n)$ exhibits conditional independence of the $X_i$ given $A$ if and only if it factors as follows
- \[
- \begin{tikzcd}
-  A \ar{d}[swap]{(g_1^\sharp,\dots,g_n^\sharp)} \ar{dr}{f^\sharp} \\
-  TX_1\times\dots\times TX_n \ar{r}[swap]{c} & T(X_1\times\dots\times X_n) ,
- \end{tikzcd}
- \]
- for some Kleisli maps $g_i^\sharp:A\to TX_i$,
- where the map $c$ above is the one obtained by iterating the multiplication of the monoidal structure (such a map is unique by associativity). 
-\end{mylemma}
-\begin{proof}
- In terms of the base category $\mD$, a Kleisli morphism in the form of \Cref{defcondind} reads as follows.
- \[
-  \begin{tikzcd}[sep=large]
-   A \ar{r}{\mathrm{copy}} & A\times\dots\times A \ar{r}{g_1^\sharp\times\dots\times g_n^\sharp} & TX_1\times\dots\times TX_n \ar{r}{c} & T(X_1\times\dots\times X_n) .
-  \end{tikzcd}
- \]
- Therefore $f^\sharp:A\to T(X_1\times\dots\times X_n)$ is exhibiting conditional independence if and only if it is in the form above.
-\end{proof}
-
 
 \subsection{Main result}
 
 
-\begin{mydefinition}
- Let $\mC$ be a GS-category. We say that $\mC$ satisfies the \emph{localized independence property} if whenever a morphism 
- $f:A\to X\otimes Y\otimes Z$ exhibits conditional independence of $X\otimes Y$ (jointly) and $Z$ given $A$, as well as conditional independence of $X$ and $Y\otimes Z$ given $A$, then it exhibits conditional independence of $X$, $Y$ and $Z$ given $A$. 
-\end{mydefinition}
 
 
-\begin{mytheorem}
+
+\begin{mytheorem}\label{mainthm}
  Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$.
  The following conditions are equivalent.
  \begin{enumerate}
   \item\label{condgroup} $T$ is weakly affine;
   \item\label{condwm} $\mathrm{Kl}(T)$ is weakly Markov;
-  \item\label{condlocal} $\mathrm{Kl}(T)$ satisfies the localized independence property;
   \item\label{condpullback} For all objects $X$, $Y$, and $Z$, the following associativity diagram is a pullback.
 	\begin{equation}
 		\label{assoc_pullback}
@@ -482,16 +488,24 @@ The next result concerns conditional independence in the Kleisli case.
  \end{enumerate}
 \end{mytheorem}
 
-\begin{proof}
+We prove the theorem by means of the following property of weakly Markov categories.
+
+\begin{mylemma}[localized independence property]\label{local}
+ Let $\mC$ be a weakly Markov GS-category. Whenever a morphism  $f:A\to X\otimes Y\otimes Z$ exhibits conditional independence of $X\otimes Y$ (jointly) and $Z$ given $A$, as well as conditional independence of $X$ and $Y\otimes Z$ given $A$, then it exhibits conditional independence of $X$, $Y$ and $Z$ given $A$. 
+\end{mylemma}
+\begin{proof}[Proof of \Cref{local}]
+ Suppose $f:A\to X\otimes Y\otimes Z$ exhibits conditional independence of $X\otimes Y$ (jointly) and $Z$ given $A$, as well as conditional independence of $X$ and $Y\otimes Z$ given $A$.
+ By marginalizing out $X$, we have that $f_{YZ}$ exhibits conditional independence of $Y$ and $Z$ given $A$. 
+ Since by hypothesis $f$ exhibits conditional independence of $X$ and $Y\otimes Z$ given $A$, by \Cref{eqcondind} we have that $f$ is equivalent to the product  of $f_X$ and $f_{YZ}$. But, again by \Cref{eqcondind}, $f_{YZ}$ is equivalent to the product of $f_Y$ and $f_Z$, so we have that $f$ is equivalent to the product of all its marginals. Using \Cref{eqcondind} in the other direction, this means that $f$ exhibits conditional independence of $X$, $Y$ and $Z$ given $A$. 
+\end{proof}
+ 
+We are now ready to prove the theorem.
+
+\begin{proof}[Proof of \Cref{mainthm}]
  $\ref{condgroup}\Leftrightarrow\ref{condwm}$: 
  see \Cref{weaklyboth}.
  
- $\ref{condwm}\Rightarrow\ref{condlocal}$: 
- Suppose $f:A\to X\otimes Y\otimes Z$ exhibits conditional independence of $X\otimes Y$ (jointly) and $Z$ given $A$, as well as conditional independence of $X$ and $Y\otimes Z$ given $A$
- By marginalizing out $X$, we have that $f_{YZ}$ exhibits conditional independence of $Y$ and $Z$ given $A$. 
- Since by hypothesis $f$ exhibits conditional independence of $X$ and $Y\otimes Z$ given $A$, by \Cref{eqcondind} we have that $f$ is equivalent to the product  of $f_X$ and $f_{YZ}$. But, again by \Cref{eqcondind}, $f_{YZ}$ is equivalent to the product of $f_Y$ and $f_Z$, so we have that $f$ is equivalent to the product of all its marginals. Using \Cref{eqcondind} in the other direction, thie means that $f$ exhibits conditional independence of $X$, $Y$ and $Z$ given $A$. 
- 
- $\ref{condlocal}\Rightarrow\ref{condpullback}$: 
+ $\ref{condgroup}\Rightarrow\ref{condpullback}$: 
  By the universal property of products, a cone over the cospan in \eqref{assoc_pullback} consists of maps $g_1^\sharp:A\to TX$, $g_{23}^\sharp:A\to T(Y\times Z)$, $g_{12}^\sharp:A\to T(X\times Y)$ and $g_3^\sharp:A\to TZ$ such that the following diagram commutes. 
  \[
   \begin{tikzcd}[column sep=3.3pc]
@@ -500,7 +514,7 @@ The next result concerns conditional independence in the Kleisli case.
    & T(X \times Y) \times T(Z) \ar{r}[swap]{c_{X\times Y,Z}}						& T(X \times Y \times Z)
   \end{tikzcd}
  \]
- By \Cref{indepkleisli}, this amounts to a Kleisli map $f^\sharp:A\to T(X\times Y\times Z)$ exhibiting conditional independence of $X$ and $Y\otimes Z$ given $A$, as well as of $X\otimes Y$ and $Z$ given $A$. By the localized independence property, we then have that $f$ exhibits conditional independence of all $X$, $Y$ and $Z$ given $A$, and so, again by \Cref{indepkleisli}, $f^\sharp$ factors through the product $TX\times TY\times TZ$. 
+ By \Cref{indepkleisli}, this amounts to a Kleisli map $f^\sharp:A\to T(X\times Y\times Z)$ exhibiting conditional independence of $X$ and $Y\otimes Z$ given $A$, as well as of $X\otimes Y$ and $Z$ given $A$. By the localized independence property (\Cref{local}), we then have that $f$ exhibits conditional independence of all $X$, $Y$ and $Z$ given $A$, and so, again by \Cref{indepkleisli}, $f^\sharp$ factors through the product $TX\times TY\times TZ$. 
  More specifically, by marginalizing over $Z$, we have that $g_{12}^\sharp$ factors through $TX\times TY$, i.e.~the following diagram on the left commutes for some $h_1^\sharp:A\to TX$ and $h_2^\sharp:A\to TY$, and similarly, by marginalizing over $X$, the diagram on the right commutes for some $\ell_2^\sharp:A\to TY$ and $\ell_3^\sharp:A\to TZ$.
  \[
   \begin{tikzcd}
@@ -522,7 +536,7 @@ The next result concerns conditional independence in the Kleisli case.
    & T(X \times Y) \times T(Z) \ar{r}[swap]{c_{X\times Y,Z}}						& T(X \times Y \times Z)
   \end{tikzcd}
  \]
- By marginalizing over $Y$ and $Z$, there exists a unique $a^\sharp:A\to T1$ such that $h_1 = a\cdot g_1$. 
+ By marginalizing over $Y$ and $Z$, and by weak affinity of $T$, there exists a unique $a^\sharp:A\to T1$ such that $h_1 = a\cdot g_1$. 
  Therefore
  \[
   g_{12} = h_1\cdot h_2 = (a\cdot g_1) \cdot h_2 = g_1\cdot (a\cdot h_2) ,
@@ -558,85 +572,7 @@ The next result concerns conditional independence in the Kleisli case.
 \end{proof}
 
 
-\section{Additional material (to be added to section)}
-
-\begin{myproposition}\label{prop:actio_group_as_pullback}
- Let $(G,\cdot,1)$ be a group and let $X$ be a set. A function $\alpha: M\times X\to X$ determines a left action if and only if the square
- \begin{equation}\label{action}
-  \begin{tikzcd}
-   G \times G \times X \ar{d}{\id\times\alpha} \ar{r}{\cdot\times\id} & M\times X \ar{d}{\alpha} \\
-   G\times X \ar{r}{\alpha} & X
-  \end{tikzcd}
- \end{equation}
- commutes and it is a pullback.
-\end{myproposition}
-\begin{proof}
-By definition, the square \eqref{action} commutes if and only if $\alpha$ and $\cdot$ are compatible. Now we show that the commutative square \eqref{action} is a pullback if and only if $\alpha$ satisfies the identity axiom, i.e. $\alpha(e,x)=x$ for every $x$ in $X$.
-Now, if \eqref{action} is a pullback, then there exists a function $\beta:X\to G$ such that the diagram
-% https://q.uiver.app/?q=WzAsNSxbMSwxLCJNXFx0aW1lcyBNXFx0aW1lcyBYIl0sWzMsMSwiTVxcdGltZXMgWCJdLFsxLDMsIk1cXHRpbWVzIFgiXSxbMywzLCJYIl0sWzAsMCwiIFgiXSxbMCwxLCJpZFxcdGltZXMgXFxhbHBoYSJdLFswLDIsIlxcY2RvdFxcdGltZXMgaWQiLDJdLFsyLDMsIlxcYWxwaGEiLDJdLFsxLDMsIlxcYWxwaGEiXSxbNCwyLCJlISxpZCIsMix7ImN1cnZlIjo1fV0sWzQsMSwiZSEsaWQiLDAseyJjdXJ2ZSI6LTV9XSxbNCwwLCJlISxcXGJldGEsaWQiLDFdXQ==
-\[\begin{tikzcd}
-	{ X} \\
-	& {G\times G\times X} && {G\times X} \\
-	\\
-	& {G\times X} && X
-	\arrow["{id\times \alpha}", from=2-2, to=2-4]
-	\arrow["{\cdot\times id}"', from=2-2, to=4-2]
-	\arrow["\alpha"', from=4-2, to=4-4]
-	\arrow["\alpha", from=2-4, to=4-4]
-	\arrow["\angbr{e!}{\id}"', curve={height=30pt}, from=1-1, to=4-2]
-	\arrow["\angbr{e!}{\id}", curve={height=-30pt}, from=1-1, to=2-4]
-	\arrow["\angbr{e!}{\beta,\id}"{description}, from=1-1, to=2-2]
-\end{tikzcd}\]
-commutes, where $e!:X\to G$ is the function assigning the identity element $e$ to every element $x$ of $X$. Now, since the left triangle commutes, then we have that $e=e\cdot \beta (x)$ for every $x$ of $X$, i.e. $\beta(x)=e$ for every $x$ of $X$. Now, since the right triangle commutes, we can conclude that $\alpha (\beta(x),x)=\alpha (e,x)=x$ for every $x$ in $X$. 
-
-Now we show that $\alpha (e,x)=x$ implies that  the commutative square \eqref{action} is a pullback. Let us consider a set $Y$ and the functions $\angbr{f_1}{f_2}:Y\to G\times X$ and  $\angbr{g_1}{g_2}:Y\to G\times X$ such that $\alpha( f_1(y),f_2(y))=\alpha( g_1(y),g_2(y))$. By applying $\alpha (f_1(y)^{-1},-)$ to both sides, and then combining the compatibility of $\alpha$ with the assumption that $\alpha (e,x)=x$, we can conclude that $f_2(y)=\alpha (f_1(y)^{-1}\cdot g_1(y),g_2(y))$.
-%similarly, that $g_2(y)=\alpha (g_1(y)^{-1}\cdot f_1(y),f_2(y))$. 
-Therefore, we can conclude that the diagram 
-% https://q.uiver.app/?q=WzAsNSxbMSwxLCJNXFx0aW1lcyBNXFx0aW1lcyBYIl0sWzMsMSwiTVxcdGltZXMgWCJdLFsxLDMsIk1cXHRpbWVzIFgiXSxbMywzLCJYIl0sWzAsMCwiIFkiXSxbMCwxLCJpZFxcdGltZXMgXFxhbHBoYSJdLFswLDIsIlxcY2RvdFxcdGltZXMgaWQiLDJdLFsyLDMsIlxcYWxwaGEiLDJdLFsxLDMsIlxcYWxwaGEiXSxbNCwyLCJnXzEuZ18yIiwyLHsiY3VydmUiOjV9XSxbNCwxLCJmXzEsZl8yIiwwLHsiY3VydmUiOi01fV0sWzQsMCwiZl8xLGZfMV57LTF9Z18xLGdfMiIsMV1d
-\[\begin{tikzcd}
-	{ Y} \\
-	& {M\times M\times X} && {M\times X} \\
-	\\
-	& {M\times X} && X
-	\arrow["{id\times \alpha}", from=2-2, to=2-4]
-	\arrow["{\cdot\times id}"', from=2-2, to=4-2]
-	\arrow["\alpha"', from=4-2, to=4-4]
-	\arrow["\alpha", from=2-4, to=4-4]
-	\arrow["\angbr{g_1}{g_2}"', curve={height=30pt}, from=1-1, to=4-2]
-	\arrow["\angbr{f_1}{f_2}", curve={height=-30pt}, from=1-1, to=2-4]
-	\arrow["\angbr{f_1}{\gamma,g_2}"{description}, from=1-1, to=2-2]
-\end{tikzcd}\]
-commutes, where the function $\gamma: Y \to M$ is defined by $\gamma (y):= f_1^{-1}(y)\cdot g_1 (y)$. By the unicity of the inverse in a group, this function is also unique, and hence we can conclude that the commutative square \eqref{action} is a pullback.
-\end{proof}
-
-
-\begin{myproposition}
-	\label{lem:group_action}
-	If $T$ is weakly affine, then for every object $X$, the morphism $c_{1,X}: T(1)\times T(X)\to T(X)$ determines a (left) group action. 
-
-\end{myproposition}
-\begin{proof}
-%Let $\freccia{T(X)}{\gamma}{T(X)}$ be the unique morphism such that the diagram
-%	\[
-%		\begin{tikzcd}
-%			T(X) \ar{dr}[description]{(\eta_1!,\gamma,\eta_1!)} \ar[bend left]{drr}{(\eta_1!,\id)} \ar[bend right,swap]{ddr}{(\id,\eta_1!)} \\
-%			&	T(1) \times T(X) \times T(1) \ar{r}{\id \times c_{X,1}} \ar[swap]{d}{c_{1,X} \times \id}	& T(1) \times T(X) \ar{d}{c_{1,X}}	\\
-%			&	T(X) \times T(1) \ar{r}{c_{X,1}}								& T(X)
-%		\end{tikzcd}
-%	\]
-%	commutes. Now we show that the morphism $c_{1,X}\circ (\id_{T1}\times \gamma): T(1)\times T(X)\to T(X)$ provides an action of the group $T(1)$ on $T(X)$. First, notice that identity axiom, i.e. $(c_{1,X} (\id_{T1}\times \gamma))(\eta_1!, \id)=\id$, is satisfied by definition of $\gamma$, because $c_{1,X}(\eta_1!,\gamma)=\id$. 
-	The compatibility axiom follows from the fact that the diagram
-	% https://q.uiver.app/?q=WzAsNCxbMCwwLCJUKDEpXFx0aW1lcyBUKDEpXFx0aW1lcyBUKFgpIl0sWzIsMCwiVCgxKVxcdGltZXMgVChYKSJdLFsyLDEsIlQoWCkiXSxbMCwxLCJUKDEpXFx0aW1lcyBUKFgpIl0sWzAsMSwiaWRcXHRpbWVzIGNfezEsWH0iXSxbMSwyLCJjX3sxLFh9Il0sWzAsMywiY197MSwxfVxcdGltZXMgaWQiLDJdLFszLDIsImNfezEsWH0iLDJdXQ==
-\[\begin{tikzcd}
-	{T(1)\times T(1)\times T(X)} && {T(1)\times T(X)} \\
-	{T(1)\times T(X)} && {T(X)}
-	\arrow["{\id\times c_{1,X}}", from=1-1, to=1-3]
-	\arrow["{c_{1,X}}", from=1-3, to=2-3]
-	\arrow["{c_{1,1}\times \id}"', from=1-1, to=2-1]
-	\arrow["{c_{1,X}}"', from=2-1, to=2-3]
-\end{tikzcd}\]
-commutes for every strong and commutative monad. Moreover, following the same proof used for \Cref{prop:actio_group_as_pullback}, we can conclude that the identity axiom is satisfied since $T$ is weakly affine. In particular, because $T(1)$ is a group by \Cref{lem_T1_group}, and the previous square is a pullbackc (by definition of weakly affine monad).
-\end{proof}
+\section{Further results}
 
 
 \begin{myproposition}
@@ -657,7 +593,8 @@ commutes, then $T^2(1)\cong T(1)$ in $\mA$.
 	To prove the result it is enough to show that $T(1)\cong 1$ in the Kleisli category $\mA_T$.
 We know from Lemma~\label{lem:T1_group} that $T(1)$ is a group in $\mA$, where the arrow $\freccia{1}{\eta_1}{T(1)}$ is the unit of the group, and $\freccia{T(1)}{\iota}{T(1)}$ is the inversion map. Therefore, we have that the composition $\freccia{1}{\iota\eta_1}{T(1)}$ has to be equal to $\eta_1$. Therefore, we can consider the arrows $1\to T(1)$ and $T(1)\to 1$ in the Kleisli category $\mA_T$ given by $T(\eta_1)\eta_1$ and $\iota$ respectively. The composition $T(\eta_1)\eta_1$ with $\iota$ in $\mA_T$ is given by $\mu_{1,1}T(\iota)T(\eta_1)\eta_1$. Employing the naturality of $\eta_1$ and the fact that $\iota\eta_1=\eta_1$, it is direct to check that $\mu T(\iota)T(\eta_1)\eta_1=\eta_1$, that is the identity $1\to 1$ in $\mA_T$. Now to show that the other composition gives the identity on $T(1)$ in $\mA_T$, it is enough to show that $T(\eta_1)\iota=\eta_{T(1)}$, but this follows by hypothesis.
 \end{proof}
-\todo[inline]{(Paolo) Credo che $T(\eta_1)\iota\ne\eta_{T(1)}$ nell'esempio delle misure nonzero. Per ogni $x$ in $(0,\infty)=T1$ abbiamo che $\eta_{T(1)}(x)=\delta_x$ (delta di Dirac), mentre $T\eta_1(\iota(x)) = T\eta_1(1/x) = 1/x\,\delta_1$.}
+
+
 \begin{mycorollary}
 	Let $T$ be a weakly affine monad. If the diagram
 	% https://q.uiver.app/?q=WzAsNCxbMCwwLCJUKDEpIl0sWzAsMSwiVCgxKSJdLFsxLDEsIlReMigxKSJdLFsxLDAsIlQoMSkiXSxbMCwxLCJcXGlvdGEiLDJdLFsxLDIsIlQoXFxldGFfMSkiLDJdLFswLDNdLFszLDIsIlxcZXRhX3tUMX0iXV0=
@@ -687,15 +624,15 @@ By \Cref{lem_T1_group} we have that $T(1)$ is a group. If $\eta_{T1}=T(\eta_{1})
 where $s$ denotes the strength and $\eta$ denotes the unit of the monad. Every strongly affine monad is affine. 
 The corresponding condition on the (Markov) category $\mathrm{Kl}(T)$ is called \emph{positivity}~\cite[Section~2]{fritz2022dilations}.
 
-Note that for a generic commutative monad, the diagram above may even fail to commute (take for example the measure monad $M$, and start with $(x,0)$ in the bottom left corner). One can however consider the following new diagram, which reduces to the one above (up to isomorphism) in the affine case,
+Note that for a generic commutative monad, the diagram above may even fail to commute (take for example the measure monad $M$, and start with $(x,0)$ in the bottom left corner). One can however consider the following diagram, which reduces to the one above (up to isomorphism) in the affine case,
 \[
  \begin{tikzcd}
    X \times TY \ar{d}{\id\times T!} \ar{r}{s} & T(X\times Y) \ar{d}{T(\id\times!)} \\
    X \times T1 \ar{r}{s} & T(X\times 1) \cong TX
   \end{tikzcd}
 \]
-and which always commutes by naturality of the strengh. One can then call the monad $T$ \emph{positive} if this second diagram is a pullback (and possibly define \emph{positive GS categories} analogously to positive Markov categories). 
-All the examples of weakly affine monads that we have are positive in this sense, so one may wonder if every weakly affine monad is positive. 
+and which always commutes by naturality of the strength. One can then call the monad $T$ \emph{positive} if this second diagram is a pullback (and possibly define \emph{positive GS categories} analogously to positive Markov categories). 
+All the examples of weakly affine monads that we have are positive in this sense, so one may wonder if every weakly affine monad is positive. For now, this remains an open question.
 \end{myremark}
 
 
