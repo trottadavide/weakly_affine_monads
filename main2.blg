@@ -6,7 +6,7 @@ I couldn't open style file plainurl.bst
  : \bibstyle{plainurl
  :                   }
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 111 of file main2.aux
+Illegal, another \bibstyle command---line 115 of file main2.aux
  : \bibstyle
  :          {plain}
 I'm skipping whatever remains of this command

@@ -234,9 +234,8 @@ which satisfy the commutative comonoid equations:
 \ctikzfig{comonoid_equation}
 These comonoid structures must be multiplicative with respect to the monoidal structure:
 \ctikzfig{comon-struct-mult}
-A gs-monoidal category is a \textbf{Markov category} if the monoidal unit I is terminal
-\end{definition}
 
+\end{definition}
 
 
 % monoidal monad
@@ -249,20 +248,18 @@ A gs-monoidal category is a \textbf{Markov category} if the monoidal unit I is t
  \ctikzfig{full}
 \end{definition}
 
-
-\begin{proposition}
- Every cartesian monoidal category is canonically a gs-monoidal category with the copy and discard maps given by the diagonal and the terminal maps.
-\end{proposition}
-
-\begin{proposition}
- The following conditions are equivalent for a gs-monoidal category $\mC$:
+\begin{example}
+The category $\Rel$ of sets and relations with the monoidal operation $\otimes : \Rel \times \Rel\to \Rel$ given by the given by the direct product of sets is a gs-monoidal category \cite{CorradiniGadducci02}. In this gs-monoidal category, copyble arrows are precisely partial functions, and discardable arrows are total relations.
+\end{example}
+\begin{remark}
+It is well-known that if duplicators and dischargers of a given gs-monoidal category $\mC$ satisfy naturality, then the monoidal product is the categorical product, and thus the category is cartesian monoidal \cite{Fox:CACC}, i.e. the following conditions are equivalent for a gs-monoidal category $\mC$:
  \begin{itemize}
   \item $\mC$ is cartesian monoidal;
-  \item Every morphism is copyable and discardable;
-  \item The copy and discard maps are natural.
+  \item every morphism is copyable and discardable;
+  \item the copy and discard maps are natural.
  \end{itemize}
-\end{proposition}
-
+\end{remark}
+In recent works \cite{tba} it has been proved that the gs-monoidal structure naturally arises in several situations, such as when Kleisli categories of commutative monads or span categories. In the following proposition, we recall the result regarding Kleisli categories:
 \begin{proposition}\label{monoidalgs}
  Let $T$ be a monoidal (equivalently, commutative) monad on a cartesian monoidal category $\mD$. 
  Then $\mathrm{Kl}(T)$ is canonically a gs-monoidal category with copy and discard structure induced by those of $\mD$.
