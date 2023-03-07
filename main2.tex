@@ -1,6 +1,6 @@
 \documentclass[a4paper,UKenglish,numberwithinsect,cleveref, autoref, thm-restate]{lipics-v2021}
 
-
+\bibliographystyle{plainurl} % the mandatory bibstyle
 
 
 %\usepackage{natbib}
@@ -392,8 +392,8 @@ Every affine monad is a weakly affine monad. Here are less trivial examples.
 
 \section{Conditional independence in weakly Markov categories}
 
-Markov categories have a rich theory of conditional independence and independence \cite{fritz2022dseparation}. 
-Some of those concepts can be translated and generalized to the setting of weakly Markov categories. 
+Markov categories have a rich theory of conditional dependence and independence \cite{fritz2022dseparation}. 
+Some of those ideas can be translated and generalized to the setting of weakly Markov categories. 
 
 \begin{mydefinition}\label{defcondind}
  A morphism $f:A\to X_1\otimes\dots\otimes X_n$ in a A GS-category $\mC$ is said to exhibit \emph{conditional independence of the $X_i$ given $A$} if and only if it can be expressed as a product of the following form.
@@ -466,9 +466,8 @@ In a weakly Markov category, the situation is similar to the Markov case, but up
 
 \subsection{Main result}
 
-
-
-
+The concept of conditional independence for general weakly Markov categories allow us to give an equivalent characterization of affine monads. 
+The condition is in terms of a pullback condition on the associativity diagram, and can be seen as a generalization of \Cref{assoc_group}.
 
 \begin{mytheorem}\label{mainthm}
  Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$.
@@ -572,6 +571,20 @@ We are now ready to prove the theorem.
 \end{proof}
 
 
+\begin{myexample}
+ In the Kleisli category of the measure monad $\mathrm{Kl}(M)$ (which is not weakly affine) consider the following diagram.
+ \[
+		\hspace{-9pt}	% T: for centering the equation number
+		\begin{tikzcd}[column sep=3.3pc]
+			MX \times MY \times MZ \ar{r}{\id \times c_{Y,Z}} \ar[swap]{d}{c_{X,Y} \times \id}	& MX \times M(Y \times Z) \ar{d}{c_{X,Y \times Z}}	\\
+			M(X \times Y) \times MZ \ar{r}{c_{X\times Y,Z}}						& M(X \times Y \times Z)
+		\end{tikzcd}
+	\]
+ In the top-right corner $MX\times M(Y\times Z)$ take the pair $(0,p)$ where $p$ is a nonzero measure on $Y\times Z$, and similarly, in the bottom-left corner take the pair $(q,0)$ where $q$ is a nonzero measure on $X\times Y$. Following the diagram, both pairs are mapped to the zero measure in the bottom-right corner. If the diagram were a pullback, we would be able to express the top-right and bottom-left corners as coming from the same triplet in $MX\times MY\times MZ$, that is, there would exist a measure $m$ on $Y$ such that $m\cdot 0=p$ and $0\cdot m=q$. Since $p$ and $q$ are nonzero, this is not possible.
+\end{myexample}
+
+
+
 \section{Further results}
 
 
@@ -609,7 +622,7 @@ We know from Lemma~\label{lem:T1_group} that $T(1)$ is a group in $\mA$, where t
 	commutes, then $T(1)$ is an idempotent group, namely $\iota=\id_{T1}$.
 \end{mycorollary}
 \begin{proof}
-By \Cref{lem_T1_group} we have that $T(1)$ is a group. If $\eta_{T1}=T(\eta_{1})\iota$, then  we can apply the multiplication of the monad to both sides, obtaining $\iota=\id_{T1}$.
+By weak affineness, $T(1)$ is a group. If $\eta_{T1}=T(\eta_{1})\iota$, then we can apply the multiplication of the monad to both sides, obtaining $\iota=\id_{T1}$.
 \end{proof}
 
 
@@ -637,10 +650,12 @@ All the examples of weakly affine monads that we have are positive in this sense
 
 
 
+\bibliography{biblio_davide}
+
 
 \appendix
 
-\section{Yoneda embedding intepretation of \Cref{weaklyboth}}\label{yoneda}
+\section{Yoneda embedding interpretation of \Cref{weaklyboth}}\label{yoneda}
 
 We can interpret \Cref{weaklyboth} more abstractly in terms of presheaves.
 Let $\mD$ be a cartesian monoidal category.
@@ -686,7 +701,6 @@ This is precisely the monoid structure that we have defined in \Cref{monoids} fo
  where the unlabelled arrows are the unique ones that make the diagram commute.
  Again by \Cref{assoc_group}, the diagram above is a pullback if and only if $\mD(X,M)$ is a group.
 \end{proof}
-
 
 
 \end{document}
