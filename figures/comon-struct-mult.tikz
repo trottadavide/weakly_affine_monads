@@ -24,13 +24,13 @@
 		\node [style=none] (60) at (1, 2) {};
 		\node [style=none] (61) at (5, -1) {};
 		\node [style=none] (62) at (5, -1.5) {$X\otimes Y$};
-		\node [style=none] (64) at (5, 2) {};
-		\node [style=bn] (65) at (5, 2) {};
+		\node [style=none] (64) at (5, 1) {};
+		\node [style=bn] (65) at (5, 1) {};
 		\node [style=none] (66) at (7, 0.5) {$=$};
 		\node [style=none] (67) at (9, -1) {};
 		\node [style=none] (68) at (11, -1) {};
-		\node [style=bn] (69) at (9, 2) {};
-		\node [style=bn] (70) at (11, 2) {};
+		\node [style=bn] (69) at (9, 1) {};
+		\node [style=bn] (70) at (11, 1) {};
 		\node [style=none] (71) at (9, -1.5) {$X$};
 		\node [style=none] (72) at (11, -1.5) {$Y$};
 		\node [style=none] (73) at (-1, -4) {};
@@ -44,8 +44,8 @@
 		\node [style=none] (81) at (12, -4) {};
 		\node [style=none] (82) at (5, -7) {};
 		\node [style=none] (83) at (5, -7.5) {$I$};
-		\node [style=none] (85) at (5, -4) {};
-		\node [style=bn] (86) at (5, -4) {};
+		\node [style=none] (85) at (5, -5) {};
+		\node [style=bn] (86) at (5, -5) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (2) to (1.center);

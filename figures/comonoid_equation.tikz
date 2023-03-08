@@ -17,12 +17,12 @@
 		\node [style=none] (18) at (4, -1.5) {$X$};
 		\node [style=none] (19) at (4, -1) {};
 		\node [style=bn] (20) at (4, 0) {};
-		\node [style=none] (21) at (3, 3) {};
+		\node [style=none] (21) at (3, 2) {};
 		\node [style=none] (22) at (5, 3) {};
 		\node [style=none] (23) at (-5, 2) {};
 		\node [style=none] (24) at (-4, 3) {};
 		\node [style=none] (25) at (-6, 3) {};
-		\node [style=bn] (26) at (3, 3) {};
+		\node [style=bn] (26) at (3, 2) {};
 		\node [style=none] (27) at (8, 3) {};
 		\node [style=none] (28) at (8, 3) {};
 		\node [style=none] (29) at (12, -1.5) {$X$};

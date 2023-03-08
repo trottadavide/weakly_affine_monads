@@ -1,0 +1,82 @@
+\begin{thebibliography}{10}
+
+\bibitem{cho_jacobs_2019}
+K.~Cho and B.~Jacobs.
+\newblock Disintegration and {B}ayesian inversion via string diagrams.
+\newblock {\em Mathematical Structures in Computer Science}, 29(7):938–971,
+  2019.
+\newblock \href {https://doi.org/10.1017/S0960129518000488}
+  {\path{doi:10.1017/S0960129518000488}}.
+
+\bibitem{coecke2011phasegroups}
+Bob Coecke, Bill Edwards, and Robert~W. Spekkens.
+\newblock Phase groups and the origin of non-locality for qubits.
+\newblock In {\em Proceedings of the 6th International Workshop on Quantum
+  Physics and Logic (QPL 2009)}, volume 270 of {\em ENTCS}, 2011.
+\newblock \href{https://arxiv.org/abs/1003.5005}{arXiv:1003.5005}.
+
+\bibitem{CorradiniGadducci97}
+A.~Corradini and F.~Gadducci.
+\newblock A 2-categorical presentation of term graph rewriting.
+\newblock In E.~Moggi and G.~Rosolini, editors, {\em CTCS 1997}, volume 1290 of
+  {\em LNCS}, pages 87--105. Springer, 1997.
+
+\bibitem{CorradiniGadducci99}
+A.~Corradini and F.~Gadducci.
+\newblock An algebraic presentation of term graphs, via gs-monoidal categories.
+\newblock {\em Applied Categorical Structures}, 7:299--331, 1999.
+
+\bibitem{CorradiniGadducci99b}
+A.~Corradini and F.~Gadducci.
+\newblock Rewriting on cyclic structures: equivalence between the operational
+  and the categorical description.
+\newblock {\em RAIRO - Theoretical Informatics and Applications - Informatique
+  Th\'eorique et Applications}, 33(4-5):467--493, 1999.
+
+\bibitem{CorradiniGadducci02}
+A.~Corradini and F.~Gadducci.
+\newblock A functorial semantics for multi-algebras and partial algebras, with
+  applications to syntax.
+\newblock {\em Theoretical Computer Science}, 286:293--322, 2002.
+
+\bibitem{Fox:CACC}
+T.~Fox.
+\newblock Coalgebras and cartesian categories.
+\newblock {\em Communications in Algebra}, 4:665--667, 1976.
+
+\bibitem{Fritz_2020}
+T.~Fritz.
+\newblock A synthetic approach to {M}arkov kernels, conditional independence
+  and theorems on sufficient statistics.
+\newblock {\em Advances in Mathematics}, 370:107239, 2020.
+
+\bibitem{fritz2022dilations}
+Tobias Fritz, Tom{\'a}{\v{s}} Gonda, Paolo Perrone, and Dario Stein.
+\newblock Dilations and information flow axioms in categorical probability.
+\newblock \href{https://arxiv.org/abs/2211.02507}{arXiv:2211.02507}.
+
+\bibitem{fritz2022dseparation}
+Tobias Fritz and Andreas Klingler.
+\newblock The $d$-separation criterion in categorical probability.
+\newblock {\em J. Mach. Learn. Res.}, 24(46):1--49, 2023.
+\newblock \href{https://arxiv.org/abs/2207.05740}{arXiv:2207.05740}.
+
+\bibitem{Jacobs16}
+B.~Jacobs.
+\newblock Affine monads and side-effect-freeness.
+\newblock In I.~Hasuo, editor, {\em CMCS 2016}, volume 9608 of {\em LNCS},
+  pages 53--72. Springer, 2016.
+
+\bibitem{kock2012distributions}
+Anders Kock.
+\newblock Commutative monads as a theory of distributions.
+\newblock {\em Theory Appl. Categ.}, 26, 2012.
+\newblock \href{https://arxiv.org/abs/1108.5952}{arXiv:1108.5952}.
+
+\bibitem{Selinger2011}
+P.~Selinger.
+\newblock A survey of graphical languages for monoidal categories.
+\newblock In B.~Coecke, editor, {\em New Structures for Physics}, volume 813 of
+  {\em Lecture Notes in Physics}, pages 289--355. Springer, 2011.
+
+\end{thebibliography}
