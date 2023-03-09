@@ -667,7 +667,8 @@ Let $T$ be a weakly affine monad. If the diagram
 commutes, then:
 \begin{enumerate}
 	\item $T^2(1)\cong T(1)$ in $\mD$. 
-	\item the internal group $T(1)$ has exponent $2$, namely $\iota=\id_{T1}$.
+	\item the internal group $T(1)$ has exponent $2$, namely $\iota=\id_{T1}$;
+	\item the group $\mathrm{Kl}_T(X,1)$ has exponent $2$.
 \end{enumerate}
 \end{myproposition}
 
@@ -679,6 +680,8 @@ commutes, then:
 	Hence we can consider the arrows $1\to T(1)$ and $T(1)\to 1$ in the Kleisli category $\mathrm{Kl}_T$ represented by $T(\eta_1)\eta_1$ and $\iota$, respectively. The composition $T(\eta_1)\eta_1$ with $\iota$ in $\mathrm{Kl}_T$ is given by $\mu_{1,1}T(\iota)T(\eta_1)\eta_1$. Employing the naturality of $\eta_1$ and the fact that $\iota\eta_1=\eta_1$, it is direct to check that $\mu T(\iota)T(\eta_1)\eta_1=\eta_1$, that is the identity $1\to 1$ in $\mathrm{Kl}_T$. Now to show that the other composition gives the identity on $T(1)$ in $\mathrm{Kl}_T$, it is enough to show that $T(\eta_1)\iota=\eta_{T(1)}$, but this follows by hypothesis.
 
 	For the second claim, we can compose the diagram with the monad multiplication, obtaining $\iota=\id_{T1}$.
+	
+	The last claim follows by combining the second one with the explicit construction of inverses in $\mathrm{Kl}_T(X,1)$ (see the proof of \Cref{weaklyboth}).
 \end{proof}
 
 
