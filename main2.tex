@@ -248,7 +248,7 @@ We recall here the basic definitions adopting the graphical formalism of string 
 %in terms of string diagrams.
 referring to \cite{Selinger2011} for background on various notions of monoidal categories and their associated diagrammatic calculus.
 
-\todo[inline]{T: The text has contained both terms ``gs-monoidal category'' and ``GS-category'', and it would probably be better to stick with one of these two. I've opted for the former now since that's what it's in the literature, but ``GS category'' with or without dash seems fine too (and perhaps the people who prefer to say ``CD category'' could be convinced to say ``GS category'' instead)}
+%\todo[inline]{T: The text has contained both terms ``gs-monoidal category'' and ``GS-category'', and it would probably be better to stick with one of these two. I've opted for the former now since that's what it's in the literature, but ``GS category'' with or without dash seems fine too (and perhaps the people who prefer to say ``CD category'' could be convinced to say ``GS category'' instead)}
 
 \begin{definition}
 A \textbf{gs-monoidal category} is a symmetric monoidal category $(\mC, \otimes, I)$
@@ -289,28 +289,34 @@ In recent works \cite{tba} it has been proved that gs-monoidal structure natural
  Let $T$ be a symmetric monoidal (equivalently, commutative) monad on a cartesian monoidal category $\mD$. 
  Then $\mathrm{Kl}_T$ is canonically a gs-monoidal category with copy and discard structure induced by that of $\mD$.
 \end{proposition}
+Nowadays, \emph{Markov categories}~\cite{Fritz_2020} represent one of the more interesting specializations of the notion of gs-monoidal category. Based on the interpretation of their arrows
+ as generalised Markov kernels, Markov categories are considered the foundation for a categorical approach to probability theory.
 
+
+In the following, we recall some (equivalent) definition of such categories:
 \begin{definition}
- A gs-monoidal category is called \emph{Markov} if any (hence all) of the following equivalent conditions are satisfied:
+ A gs-monoidal category is said to be a \textbf{Markov category} if any (hence all) of the following equivalent conditions are satisfied:
  \begin{itemize}
-  \item The monoidal unit is terminal;
-  \item The discard map is natural;
-  \item Every morphism is discardable.
+  \item the monoidal unit is terminal;
+  \item the discard map is natural;
+  \item every morphism is discardable.
  \end{itemize}
 \end{definition}
+%examples
 
+We recall from \cite{Kock71,Jacobs1994} the notion of \emph{affine monad}:
 \begin{definition}
- A monad $T$ on a cartesian monoidal category is called \emph{affine} if $T1\cong 1$.
+ A monad $T$ on a cartesian monoidal category is called \textbf{affine} if $T1\cong 1$.
 \end{definition}
-
+It was observed in~\cite[Corollary~3.2]{Fritz_2020} that if the monad preserves the terminal object, then every arrow of the Kleisli category is discardable, and this makes Kleisli category into a Markov category. Therefore, we have the following specialization of \Cref{monoidalgs}:
 \begin{proposition}\label{affinemarkov}
- In the hypotheses of \Cref{monoidalgs}, we have that $\mathrm{Kl}_T$ is Markov if and only if $T$ is affine.
+Let $T$ be a symmetric monoidal (equivalently, commutative) monad on a cartesian monoidal category $\mD$. Then $\mathrm{Kl}_T$ is Markov if and only if $T$ is affine.
 \end{proposition}
-
-In this work, we introduce an intermediate level between gs-monoidal and Markov called \emph{weakly Markov}, and its corresponding notion for monads, which we call \emph{weakly affine}. 
+ 
 
 \section{Weakly Markov categories and weakly affine monads}
 
+In this section, we introduce an intermediate level between gs-monoidal and Markov called \emph{weakly Markov}, and its corresponding notion for monads, which we call \emph{weakly affine}.
 \subsection{The monoid of effects}\label{monoids}
 
 In a gs-monoidal category $\mC$ we call a \emph{state} a morphism from the monoidal unit $p:I\to X$, and \emph{effect} or \emph{co-state} a morphism to the monoidal unit $a:X\to I$. We represent them as triangles as follows.
@@ -342,7 +348,7 @@ In this case, the monoid structure of Kleisli morphisms $X\to 1$ comes from the 
  and the multiplication of the morphisms $f^\sharp,g^\sharp:X\to T1$ is
  \[
  \begin{tikzcd}
-  X \ar{r}{\mathrm{copy}} & X\times X \ar{r}{f^\sharp\times g^\sharp} &
+  X \ar{r}{\mathrm{copy}_X} & X\times X \ar{r}{f^\sharp\times g^\sharp} &
   T1 \times T1 \ar{r}{c} & T(1\times 1) \ar{r}{\cong} & T1 .
  \end{tikzcd}
  \]
@@ -357,7 +363,7 @@ For the monad of measures $M$, this action amounts to a pointwise rescaling.
 
 
 \begin{mydefinition}
- A gs-monoidal category $\mC$ is called \emph{weakly Markov} if for every object $X$, the monoid $\mC(X,I)$ is a group. 
+ A gs-monoidal category $\mC$ is called \textbf{weakly Markov} if for every object $X$, the monoid $\mC(X,I)$ is a group. 
 \end{mydefinition}
 
 Every Markov category is weakly Markov: for each $X$, the monoid $\mC(X,I)$ is the trivial group.
@@ -383,7 +389,7 @@ Every Markov category is weakly Markov: for each $X$, the monoid $\mC(X,I)$ is t
 Let's now look at the Kleisli case.
 
 \begin{mydefinition}
- A commutative monad $T$ on a cartesian monoidal category is called \emph{weakly affine} if $T1$ with its canonical internal monoid structure is a group.
+ A commutative monad $T$ on a cartesian monoidal category is called \textbf{weakly affine} if $T1$ with its canonical internal monoid structure is a group.
 \end{mydefinition}
 
 This choice of terminology is motivated by the following proposition, which can be seen as a ``weakly'' version of \Cref{affinemarkov}.
@@ -396,8 +402,8 @@ This choice of terminology is motivated by the following proposition, which can 
  The inverse of a Kleisli morphism $a : X \to 1$ in $\mathrm{Kl}_T(X,1)$ represented by $a^\sharp:X\to T1$ is represented by $\iota\circ a^\sharp$: indeed, the following diagram in $\mD$ commutes,
  \[
   \begin{tikzcd}
-  X \ar[bend right=5pc]{dd}[swap]{!} \ar{d}[swap]{a^\sharp} \ar{r}{\mathrm{copy}} & X\times X \ar{d}[swap]{a^\sharp\times a^\sharp} \ar{dr}{a^\sharp\times(\iota\circ a^\sharp)} \\
-  T1 \ar{d}[swap]{!} \ar{r}[swap]{\mathrm{copy}} & T1\times T1 \ar{r}[swap]{\id\times\iota} & T1\times T1 \ar{r}{c} & T(1\times 1) \ar{d}{\cong} \\
+  X \ar[bend right=5pc]{dd}[swap]{!} \ar{d}[swap]{a^\sharp} \ar{r}{\mathrm{copy}_X} & X\times X \ar{d}[swap]{a^\sharp\times a^\sharp} \ar{dr}{a^\sharp\times(\iota\circ a^\sharp)} \\
+  T1 \ar{d}[swap]{!} \ar{r}[swap]{\mathrm{copy}_X} & T1\times T1 \ar{r}[swap]{\id\times\iota} & T1\times T1 \ar{r}{c} & T(1\times 1) \ar{d}{\cong} \\
   1 \ar{rrr}{\eta} &&& T1
   \end{tikzcd}
  \]
@@ -661,9 +667,8 @@ Let $T$ be a weakly affine monad. If the diagram
 commutes, then:
 \begin{enumerate}
 	\item $T^2(1)\cong T(1)$ in $\mD$. 
-	\item $T(1)$ is an idempotent group, namely $\iota=\id_{T1}$.
+	\item the internal group $T(1)$ has exponent $2$, namely $\iota=\id_{T1}$.
 \end{enumerate}
-\todo[inline]{T: Idempotency usually means that $xx = x$ for every group/monoid element $x$, right? The correct term here would be exponent 2, see \href{https://math.stackexchange.com/questions/1228513/what-is-the-exponent-of-a-group}{math.stackexchange.com/questions/1228513/what-is-the-exponent-of-a-group}}
 \end{myproposition}
 
 \todo[inline]{T: Having a nontrivial example of this statement would help to motivate and illustrate it. Like this, its meaning and significance remains quite unclear}

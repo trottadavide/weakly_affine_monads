@@ -1,54 +1,49 @@
-This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main2.aux
-The style file: plainurl.bst
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=200001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
+The style file: plain.bst
 Database file #1: biblio_davide.bib
 Warning--I didn't find a database entry for "tba"
 Warning--can't use both volume and number fields in coecke2011phasegroups
-You've used 13 entries,
-            2882 wiz_defined-function locations,
-            725 strings with 7354 characters,
-and the built_in function-call counts, 6056 in all, are:
-= -- 634
-> -- 191
+You've used 15 entries,
+            2118 wiz_defined-function locations,
+            613 strings with 6480 characters,
+and the built_in function-call counts, 5056 in all, are:
+= -- 509
+> -- 184
 < -- 7
-+ -- 71
-- -- 52
-* -- 328
-:= -- 866
-add.period$ -- 46
-call.type$ -- 13
-change.case$ -- 63
++ -- 77
+- -- 56
+* -- 352
+:= -- 827
+add.period$ -- 51
+call.type$ -- 15
+change.case$ -- 71
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 178
-empty$ -- 593
-format.name$ -- 52
-if$ -- 1579
+cite$ -- 16
+duplicate$ -- 200
+empty$ -- 429
+format.name$ -- 56
+if$ -- 1070
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 12
-newline$ -- 72
-num.names$ -- 32
-pop$ -- 121
+int.to.str$ -- 15
+missing$ -- 14
+newline$ -- 81
+num.names$ -- 36
+pop$ -- 61
 preamble$ -- 1
-purify$ -- 50
+purify$ -- 56
 quote$ -- 0
-skip$ -- 431
+skip$ -- 140
 stack$ -- 0
-substring$ -- 307
+substring$ -- 364
 swap$ -- 50
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
+type$ -- 60
 warning$ -- 1
-while$ -- 48
-width$ -- 15
-write$ -- 157
+while$ -- 56
+width$ -- 17
+write$ -- 177
 (There were 2 warnings)
