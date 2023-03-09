@@ -5,8 +5,6 @@ K.~Cho and B.~Jacobs.
 \newblock Disintegration and {B}ayesian inversion via string diagrams.
 \newblock {\em Mathematical Structures in Computer Science}, 29(7):938–971,
   2019.
-\newblock \href {https://doi.org/10.1017/S0960129518000488}
-  {\path{doi:10.1017/S0960129518000488}}.
 
 \bibitem{coecke2011phasegroups}
 Bob Coecke, Bill Edwards, and Robert~W. Spekkens.
@@ -61,11 +59,21 @@ Tobias Fritz and Andreas Klingler.
 \newblock {\em J. Mach. Learn. Res.}, 24(46):1--49, 2023.
 \newblock \href{https://arxiv.org/abs/2207.05740}{arXiv:2207.05740}.
 
+\bibitem{Jacobs1994}
+B.~Jacobs.
+\newblock Semantics of weakening and contraction.
+\newblock {\em Annals of Pure and Applied Logic}, 69(1):73--106, 1994.
+
 \bibitem{Jacobs16}
 B.~Jacobs.
 \newblock Affine monads and side-effect-freeness.
 \newblock In I.~Hasuo, editor, {\em CMCS 2016}, volume 9608 of {\em LNCS},
   pages 53--72. Springer, 2016.
+
+\bibitem{Kock71}
+A.~Kock.
+\newblock Bilinearity and cartesian closed monads.
+\newblock {\em Mathematica Scandinavica}, 29(2):161--174, 1971.
 
 \bibitem{kock2012distributions}
 Anders Kock.

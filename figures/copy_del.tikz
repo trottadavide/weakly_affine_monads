@@ -9,8 +9,8 @@
 		\node [style=none] (7) at (8, -1) {};
 		\node [style=none] (8) at (8, -1.5) {$X$};
 		\node [style=none] (9) at (6, 0) {$=$};
-		\node [style=none] (10) at (-4, 0) {$\mathsf{copy}_X$};
-		\node [style=none] (11) at (4, 0) {$\mathsf{del}_X$};
+		\node [style=none] (10) at (-4, 0) {$\mathrm{copy}_X$};
+		\node [style=none] (11) at (4, 0) {$\mathrm{del}_X$};
 		\node [style=bn] (12) at (8, 1) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
