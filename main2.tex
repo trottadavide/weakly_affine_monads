@@ -342,6 +342,7 @@ For the monad of measures $M$, this action amounts to a pointwise rescaling.
 Every Markov category is weakly Markov: for each $X$, the monoid $\mC(X,I)$ is the trivial group.
 
 \todo[inline]{T: Instead of saying ``weakly Markov GS-category'', perhaps we can just say ``weakly Markov category''?}
+\todo[inline]{P: Right. At the risk of starting a grammar discussion, I feel I should point out that ``weak Markov'' sound better. (Is ``Markov'' also an adjective in English? In Italian we would have ``markoviano'' for that.}
 
 \begin{mydefinition}
  Given two parallel morphisms $f,g:X\to Y$ in a weakly Markov category $\mC$, we say that $f$ and $g$ are:
@@ -352,8 +353,11 @@ Every Markov category is weakly Markov: for each $X$, the monoid $\mC(X,I)$ is t
 \end{mydefinition}
 
 \todo[inline]{T: Isn't the equivalence always unique? The action of $\mC(X, I)$ on $\mC(X, Y)$ is free, as one can easily see by discarding $Y$. That's basically also the argument used in \Cref{eqcondind} below}
+\todo[inline]{P: Oh, good point. This simplifies things, let me write the changes.}
 
 \todo[inline]{T: Is it worth noting that the equivalence classes form a Markov cat, which is isomorphic to the Markov cat of discardable morphisms?}
+\todo[inline]{P: Yes, I was thinking about it. It is interesting for nonzero measures, because we get the usual FinStoch, but for the example of $G\times -$ we just get the terminal monad. It's true though that it's worth mentioning.}
+
 
 Let's now look at the Kleisli case.
 
@@ -675,6 +679,8 @@ and which always commutes by naturality of the strength.
 One can then call the monad $T$ \emph{positive} if this second diagram is a pullback (and possibly define \emph{positive gs-monoidal categories} analogously to positive Markov categories). 
 All the examples of weakly affine monads that we have are positive in this sense, so one may wonder if every weakly affine monad is positive. For now, this remains an open question.
 \todo[inline]{T: Isn't the answer clearly negative since we have affine monads that are not strongly affine?}
+\todo[inline]{P: Good point. Okay, it was not clear to me :)}
+
 \end{myremark}
 
 \bibliography{biblio_davide}
