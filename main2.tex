@@ -366,22 +366,16 @@ For the monad of measures $M$, this action amounts to a pointwise rescaling.
 
 Every Markov category is weakly Markov: for each $X$, the monoid $\mC(X,I)$ is the trivial group.
 
-\todo[inline]{T: Instead of saying ``weakly Markov GS-category'', perhaps we can just say ``weakly Markov category''?}
-\todo[inline]{P: Right. At the risk of starting a grammar discussion, I feel I should point out that ``weak Markov'' sound better. (Is ``Markov'' also an adjective in English? In Italian we would have ``markoviano'' for that.}
-
 \begin{mydefinition}
- Given two parallel morphisms $f,g:X\to Y$ in a weakly Markov category $\mC$, we say that $f$ and $g$ are:
- \begin{enumerate}
-  \item \emph{equivalent}, denoted $f\sim g$, if they lie in the same orbit for the action of $\mC(X,I)$, i.e.~if there is $a\in \mC(X,I)$ such that $a\cdot f=g$.
-  \item \emph{uniquely equivalent} if there is a unique $a\in \mC(X,I)$ such that $a\cdot f=g$.
- \end{enumerate}
+ Given two parallel morphisms $f,g:X\to Y$ in a weakly Markov category $\mC$, we say that $f$ and $g$ are called \emph{equivalent}, denoted $f\sim g$, if they lie in the same orbit for the action of $\mC(X,I)$, i.e.~if there is $a\in \mC(X,I)$ such that $a\cdot f=g$
 \end{mydefinition}
 
-\todo[inline]{T: Isn't the equivalence always unique? The action of $\mC(X, I)$ on $\mC(X, Y)$ is free, as one can easily see by discarding $Y$. That's basically also the argument used in \Cref{eqcondind} below}
-\todo[inline]{P: Oh, good point. This simplifies things, let me write the changes.}
+Note that if $a\cdot f=g$ for some $a$, then $a$ is unique. This can be seen by marginalizing over $Y$ the following diagram.
+\ctikzfig{free-action}
+In other words, the action of $\mC(X,I)$ on $\mC(X,Y)$ is free, i.e.~it has trivial stabilizers.
 
 \todo[inline]{T: Is it worth noting that the equivalence classes form a Markov cat, which is isomorphic to the Markov cat of discardable morphisms?}
-\todo[inline]{P: Yes, I was thinking about it. It is interesting for nonzero measures, because we get the usual FinStoch, but for the example of $G\times -$ we just get the terminal monad. It's true though that it's worth mentioning.}
+\todo[inline]{P: It's not entirely clear to me how composition is well defined for generic (non-copyable) morphisms.}
 
 
 Let's now look at the Kleisli case.
@@ -461,10 +455,7 @@ Some of those ideas can be translated and generalized to the setting of weakly M
  \ctikzfig{cond-ind-sep}
 \end{mydefinition}
 
-Note that this is slightly different from \cite[Definition~6.6]{cho_jacobs_2019}, although it is equivalent for the case of Markov categories.
-
-\todo[inline]{How is it different? It looks to me like they consider it only for conditionals of states and require that equation to hold only with almost sure equality, but that means that it's slightly different already for Markov cats}
-
+Note that this is slightly different from \cite[Definition~6.6]{cho_jacobs_2019}, although for the case of Markov categories it is the same up to almost-sure equality.
 
 Here is what conditional independence looks like in the Kleisli case.
 
@@ -503,7 +494,6 @@ In a weakly Markov category, the situation is similar to the Markov case, but up
 
 \begin{myproposition}\label{eqcondind}
  Let $f:A\to X_1\otimes\dots\otimes X_n$ be a morphism in a weakly Markov category $\mC$. Then $f$ exhibits conditional independence of the $X_i$ given $A$ if and only if it is equivalent to the product of all its marginals.
- Moreover, in that case $f$ is \emph{uniquely} equivalent to the product of its marginals.
 \end{myproposition}
 
 \begin{proof}
@@ -515,9 +505,6 @@ In a weakly Markov category, the situation is similar to the Markov case, but up
  Conversely, suppose that $f$ is equivalent to the product of its marginals, i.e.~that there exists $a:X\to I$ such that $f$ is equal to the following.
  \ctikzfig{cond-ind-proof2}
  One can then choose $g_i=f_i$ for all $i<n$, and $g_n = a\cdot f_n$, so that $f$ is in the form of \Cref{defcondind}.
- Moreover, by marginalizing over all the $X_i$ at once, we see that 
- \ctikzfig{cond-ind-proof3}
- so that $a$ is uniquely determined.
 \end{proof} 
  
 \begin{myremark}
@@ -704,11 +691,8 @@ Note that for a generic commutative monad, the diagram above may even fail to co
 and which always commutes by naturality of the strength.
 \todo[inline]{T: Oh yes! Now Bart's diagram makes a lot more sense}
 One can then call the monad $T$ \emph{positive} if this second diagram is a pullback (and possibly define \emph{positive gs-monoidal categories} analogously to positive Markov categories). 
-All the examples of weakly affine monads that we have are positive in this sense, so one may wonder if every weakly affine monad is positive. For now, this remains an open question.
-\todo[inline]{T: Isn't the answer clearly negative since we have affine monads that are not strongly affine?}
-\todo[inline]{P: Good point. Okay, it was not clear to me :)}
-
 \end{myremark}
+
 
 \bibliography{biblio_davide}
 
