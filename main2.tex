@@ -1,6 +1,6 @@
 \documentclass[a4paper,UKenglish,numberwithinsect,cleveref, autoref, thm-restate]{lipics-v2021}
 
-\bibliographystyle{plainurl} % the mandatory bibstyle
+\bibliographystyle{plain} % the mandatory bibstyle
 
 
 %\usepackage{natbib}
@@ -306,7 +306,7 @@ We recall from \cite{Kock71,Jacobs1994} the notion of \emph{affine monad}:
 \begin{definition}
  A monad $T$ on a cartesian monoidal category is called \textbf{affine} if $T1\cong 1$.
 \end{definition}
-It was observed in~\cite[Corollary~3.2]{Fritz_2020} that if the monad preserves the terminal object, then every arrow of the Kleisli category is discardable, and this makes Kleisli category into a Markov category. Therefore, we have the following specialization of \Cref{monoidalgs}:
+It was observed in~\cite[Corollary~3.2]{Fritz_2020} that if the monad preserves the terminal object, then every arrow of the Kleisli category is discardable, and this makes the Kleisli category into a Markov category. Therefore, we have the following specialization of \Cref{monoidalgs}:
 \begin{proposition}\label{affinemarkov}
 Let $T$ be a symmetric monoidal (equivalently, commutative) monad on a cartesian monoidal category $\mD$. Then $\mathrm{Kl}_T$ is Markov if and only if $T$ is affine.
 \end{proposition}
@@ -367,7 +367,7 @@ For the monad of measures $M$, this action amounts to a pointwise rescaling.
 Every Markov category is weakly Markov: for each $X$, the monoid $\mC(X,I)$ is the trivial group.
 
 \begin{mydefinition}
- Given two parallel morphisms $f,g:X\to Y$ in a weakly Markov category $\mC$, we say that $f$ and $g$ are called \emph{equivalent}, denoted $f\sim g$, if they lie in the same orbit for the action of $\mC(X,I)$, i.e.~if there is $a\in \mC(X,I)$ such that $a\cdot f=g$
+ Given two parallel morphisms $f,g:X\to Y$ in a weakly Markov category $\mC$, we say that $f$ and $g$ are called \textbf{equivalent}, denoted $f\sim g$, if they lie in the same orbit for the action of $\mC(X,I)$, i.e.~if there is $a\in \mC(X,I)$ such that $a\cdot f=g$.
 \end{mydefinition}
 
 Note that if $a\cdot f=g$ for some $a$, then $a$ is unique. This can be seen by marginalizing over $Y$ the following diagram.
@@ -451,7 +451,7 @@ Markov categories have a rich theory of conditional dependence and independence 
 Some of those ideas can be translated and generalized to the setting of weakly Markov categories. 
 
 \begin{mydefinition}\label{defcondind}
- A morphism $f:A\to X_1\otimes\dots\otimes X_n$ in a gs-monoidal category $\mC$ is said to exhibit \emph{conditional independence of the $X_i$ given $A$} if and only if it can be expressed as a product of the following form.
+ A morphism $f:A\to X_1\otimes\dots\otimes X_n$ in a gs-monoidal category $\mC$ is said to exhibit \textbf{conditional independence of the $X_i$ given $A$} if and only if it can be expressed as a product of the following form.
  \ctikzfig{cond-ind-sep}
 \end{mydefinition}
 
@@ -490,7 +490,7 @@ Here is what conditional independence looks like in the Kleisli case.
  Notice that both marginals of the zero measure are zero measures---therefore, the factors appearing in the product are not necessarily related to the marginals.
 \end{myexample}
 
-In a weakly Markov category, the situation is similar to the Markov case, but up to equivalence. 
+In a weakly Markov category, the situation is similar to the Markov case, but up to equivalence, i.e. an arrow exhibits conditional independence if and only if it is \emph{equivalent to} the product of all its marginals (recall that, given a morphism $f:A\to X\otimes Y$, composing with $\mathrm{del}_X \otimes \id_Y$ provides the \emph{marginalization} over $X$).
 
 \begin{myproposition}\label{eqcondind}
  Let $f:A\to X_1\otimes\dots\otimes X_n$ be a morphism in a weakly Markov category $\mC$. Then $f$ exhibits conditional independence of the $X_i$ given $A$ if and only if it is equivalent to the product of all its marginals.
@@ -658,7 +658,7 @@ commutes, then:
 \end{myproposition}
 
 \todo[inline]{T: Having a nontrivial example of this statement would help to motivate and illustrate it. Like this, its meaning and significance remains quite unclear}
-
+ 
 \begin{proof}
 	To prove the first claim, it is enough to show that $T(1)\cong 1$ in the Kleisli category $\mathrm{Kl}_T$.
 	By weak affinity, $T(1)$ is a group in $\mD$, where the arrow $\freccia{1}{\eta_1}{T(1)}$ is the unit of the group and $\freccia{T(1)}{\iota}{T(1)}$ is the inversion map. Therefore, we have that the composition $\freccia{1}{\iota\eta_1}{T(1)}$ has to be equal to $\eta_1$.
