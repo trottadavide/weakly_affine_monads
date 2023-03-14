@@ -213,7 +213,7 @@ To begin, the following categorical characterization of groups will be useful to
 For the consideration of categorical probability, we now recall the simplest version of a commutative monad of measures.
 This works with measures taking values in any semiring instead of $[0,\infty)$ (see e.g.~\cite[Section~5.1]{coumans2013scalars}), but we restrict to the concrete case of $[0,\infty)$ for simplicity.
 
-\begin{definition}\label{monadM}
+\begin{mydefinition}\label{monadM}
  Let $X$ be a set. Denote by $MX$ the set of \emph{finitely supported measures on $X$}, i.e.~functions $m:X\to[0,\infty)$ which are zero for all but a finite number of $x\in X$. 
  Given a function $f:X\to Y$, denote by $Mf:MX\to MY$ the function sending $m\in MX$ to the assignment
  \[
@@ -247,7 +247,7 @@ This works with measures taking values in any semiring instead of $[0,\infty)$ (
   \sum_{x\in X} p(x) = 1 .
  \]
  $D$ forms a submonad of $M$ called the \emph{distribution monad}.
-\end{definition}
+\end{mydefinition}
 
 It is well-known that $M$ is even a commutative monad~\cite{coumans2013scalars}.
 The corresponding lax monoidal structure
@@ -270,7 +270,7 @@ We recall here the basic definitions adopting the graphical formalism of string 
 referring to \cite{Selinger2011} for background on various notions of monoidal categories and their associated diagrammatic calculus.
 
 
-\begin{definition}
+\begin{mydefinition}
 A \textbf{gs-monoidal category} is a symmetric monoidal category $(\mC, \otimes, I)$
 with a commutative comonoid structure on each object $X$ consisting of a comultiplication
 and a counit,
@@ -280,23 +280,24 @@ which satisfy the commutative comonoid equations:
 These comonoid structures must be multiplicative with respect to the monoidal structure:
 \ctikzfig{comon-struct-mult}
 
-\end{definition}
+\end{mydefinition}
 
 
 % monoidal monad
 % examples with M and D, Stoch etc
 
-\begin{definition}
+\begin{mydefinition}
  A morphism $f:X\to Y$ in a gs-monoidal category is called \textbf{copyable} or \textbf{functional} if and only if
  \ctikzfig{functional}
  It is called \textbf{discardable} or \textbf{full} if 
  \ctikzfig{full}
-\end{definition}
+\end{mydefinition}
 
-\begin{example}
+\begin{myexample}
 The category $\Rel$ of sets and relations with the monoidal operation $\otimes : \Rel \times \Rel\to \Rel$ given by the direct product of sets is a gs-monoidal category \cite{CorradiniGadducci02}. In this gs-monoidal category, the copyable arrows are precisely the partial functions, and the discardable arrows are the total relations.
-\end{example}
-\begin{remark}
+\end{myexample}
+
+\begin{myremark}
 It is well-known that if every morphism is copyable and discardable, or equivalently if the copy and discard maps are natural, then the monoidal product is the categorical product, and thus the category is cartesian monoidal \cite{Fox:CACC}.
 More concisely, the following conditions are equivalent for a gs-monoidal category $\mC$:
  \begin{itemize}
@@ -304,37 +305,43 @@ More concisely, the following conditions are equivalent for a gs-monoidal catego
   \item every morphism is copyable and discardable;
   \item the copy and discard maps are natural.
  \end{itemize}
-\end{remark}
+\end{myremark}
 
 In recent works \cite{tba}
 \todo{add ref}
 it has been shown that gs-monoidal categories naturally arise in several ways, such as Kleisli categories of commutative monads or span categories. In the following proposition, we recall the result regarding Kleisli categories:
-\begin{proposition}\label{monoidalgs}
+
+\begin{myproposition}\label{monoidalgs}
  Let $T$ be a commutative monad on a cartesian monoidal category $\mD$. 
  Then its Kleisli category $\mathrm{Kl}_T$ is canonically a gs-monoidal category with copy and discard structure induced by that of $\mD$.
-\end{proposition}
+\end{myproposition}
+
 Nowadays, \emph{Markov categories}~\cite{Fritz_2020} represent one of the more interesting specializations of the notion of gs-monoidal category. Based on the interpretation of their arrows
  as generalised Markov kernels, Markov categories are considered the foundation for a categorical approach to probability theory.
 
-\begin{definition}
+\begin{mydefinition}
  A gs-monoidal category is said to be a \textbf{Markov category} if any (hence all) of the following equivalent conditions are satisfied:
  \begin{itemize}
   \item the monoidal unit is terminal;
   \item the discard maps are natural;
   \item every morphism is discardable.
  \end{itemize}
-\end{definition}
+\end{mydefinition}
+
 %examples
 
 We recall from \cite{Kock71,Jacobs1994} the notion of \emph{affine monad}:
-\begin{definition}
+
+\begin{mydefinition}
  A monad $T$ on a cartesian monoidal category is called \textbf{affine} if $T1\cong 1$.
-\end{definition}
+\end{mydefinition}
+
 It was observed in~\cite[Corollary~3.2]{Fritz_2020} that if the monad preserves the terminal object, then every arrow of the Kleisli category is discardable, and this makes the Kleisli category into a Markov category.
 In other words, we have the following specialization of \Cref{monoidalgs}:
-\begin{proposition}\label{affinemarkov}
+
+\begin{myproposition}\label{affinemarkov}
 Let $T$ be a symmetric monoidal (equivalently, commutative) monad on a cartesian monoidal category $\mD$. Then $\mathrm{Kl}_T$ is Markov if and only if $T$ is affine.
-\end{proposition}
+\end{myproposition}
  
 
 \section{Weakly Markov categories and weakly affine monads}
