@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.4.26)  14 MAR 2023 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.4.26)  14 MAR 2023 16:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1134,15 +1134,6 @@ Package hyperref Info: bookmark level for unknown mydefinition defaults to 0 on 
 
 LaTeX Warning: Reference `yoneda' on page 1 undefined on input line 439.
 
-./main2.tex:440: Undefined control sequence.
-l.440 \tob
-          {rewrite what we are trying to say here}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 Package hyperref Info: bookmark level for unknown myexample defaults to 0 on input line 448.
 [7.7] (./figures/cond-ind-sep.tikz) (./figures/marginal.tikz) [8.8] (./figures/cond-ind-proof.tikz) (./figures/cond-ind-proof2.tikz) (./figures/cond-ind2.tikz)
 Package hyperref Info: bookmark level for unknown mytheorem defaults to 0 on input line 559.
@@ -1165,18 +1156,18 @@ Package rerunfilecheck Info: File `main2.out' has not changed.
 (rerunfilecheck)             Checksum: 151A9F3DB06BBBE9B6A76848F00F9B1E;2008.
  ) 
 Here is how much of TeX's memory you used:
- 44919 strings out of 478287
- 884260 string characters out of 5849289
- 1241707 words of memory out of 5000000
- 61780 multiletter control sequences out of 15000+600000
+ 44922 strings out of 478287
+ 884313 string characters out of 5849289
+ 1241756 words of memory out of 5000000
+ 61782 multiletter control sequences out of 15000+600000
  630968 words of font info for 298 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,22n,117p,3231b,1265s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Regular.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main2.pdf (14 pages, 505269 bytes).
+Output written on main2.pdf (14 pages, 505466 bytes).
 PDF statistics:
- 472 PDF objects out of 1000 (max. 8388607)
- 379 compressed objects within 4 object streams
- 113 named destinations out of 1000 (max. 500000)
+ 473 PDF objects out of 1000 (max. 8388607)
+ 380 compressed objects within 4 object streams
+ 114 named destinations out of 1000 (max. 500000)
  92354 words of extra memory for PDF output out of 106986 (max. 10000000)
 
