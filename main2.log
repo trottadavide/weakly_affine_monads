@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.4.26)  14 MAR 2023 10:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.4.26)  14 MAR 2023 13:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1131,16 +1131,17 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 Package hyperref Info: bookmark level for unknown mydefinition defaults to 0 on input line 386.
  (./figures/free-action.tikz) [6.6]
 Package hyperref Info: bookmark level for unknown myexample defaults to 0 on input line 437.
- (./figures/cond-ind-sep.tikz) [7.7] (./figures/cond-ind-proof.tikz) [8.8] (./figures/cond-ind-proof2.tikz)
-Package hyperref Info: bookmark level for unknown myremark defaults to 0 on input line 533.
+ (./figures/cond-ind-sep.tikz) [7.7] [8.8] (./figures/cond-ind-proof.tikz) (./figures/cond-ind-proof2.tikz)
+Package hyperref Info: bookmark level for unknown myremark defaults to 0 on input line 539.
  (./figures/cond-ind2.tikz)
-Package hyperref Info: bookmark level for unknown mytheorem defaults to 0 on input line 544.
+Package hyperref Info: bookmark level for unknown mytheorem defaults to 0 on input line 550.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 548.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 554.
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 548.
-Package hyperref Info: bookmark level for unknown mylemma defaults to 0 on input line 564.
- [9.9] [10.10] [11.11] [12.12] (./main2.bbl
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 554.
+ [9.9]
+Package hyperref Info: bookmark level for unknown mylemma defaults to 0 on input line 570.
+ [10.10] [11.11] [12.12] (./main2.bbl
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 65.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1148,7 +1149,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 723.
+(hyperref)                removing `\new@ifnextchar' on input line 729.
 
 [13.13] [14.14] (./main2.aux)
 
@@ -1158,18 +1159,18 @@ Package rerunfilecheck Info: File `main2.out' has not changed.
 (rerunfilecheck)             Checksum: 024FE21845BDDBCCC5FA8512136F3ED9;2303.
  ) 
 Here is how much of TeX's memory you used:
- 45068 strings out of 478287
- 887856 string characters out of 5849289
- 1239586 words of memory out of 5000000
- 61918 multiletter control sequences out of 15000+600000
- 631530 words of font info for 304 fonts, out of 8000000 for 9000
+ 45072 strings out of 478287
+ 887948 string characters out of 5849289
+ 1240720 words of memory out of 5000000
+ 61922 multiletter control sequences out of 15000+600000
+ 631371 words of font info for 303 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,22n,117p,3231b,1265s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Regular.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main2.pdf (14 pages, 510814 bytes).
+Output written on main2.pdf (14 pages, 512092 bytes).
 PDF statistics:
- 482 PDF objects out of 1000 (max. 8388607)
- 389 compressed objects within 4 object streams
- 115 named destinations out of 1000 (max. 500000)
+ 484 PDF objects out of 1000 (max. 8388607)
+ 391 compressed objects within 4 object streams
+ 117 named destinations out of 1000 (max. 500000)
  92362 words of extra memory for PDF output out of 106986 (max. 10000000)
 

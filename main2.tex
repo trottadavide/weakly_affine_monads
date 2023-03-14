@@ -403,7 +403,7 @@ In other words, the action of $\mC(X,I)$ on $\mC(X,Y)$ is free, i.e.~it has triv
 Let's now look at the Kleisli case.
 
 \begin{mydefinition}
- A commutative monad $T$ on a cartesian monoidal category is called \textbf{weakly affine} if $T1$ with its canonical internal monoid structure is a group.
+ A commutative monad $T$ on a cartesian monoidal category is called \textbf{weakly affine} if $T1$ with its canonical internal commutative monoid structure is a group.
 \end{mydefinition}
 
 This choice of terminology is motivated by the following proposition, which can be seen as a ``weakly'' version of \Cref{affinemarkov}.
@@ -437,8 +437,8 @@ Every affine monad is a weakly affine monad. Here are less trivial examples.
     \label{ex:nonzero_measures}
 	Let $M^* : \Set \to \Set$ be the monad assigning to every set the set of finitely supported discrete \emph{nonzero}
 	measures on $M^*$, or equivalently let $M^*(X)$ for any set $X$ be the set of nonzero finitely supported functions $X \to [0,\infty)$.
-	The monad structure is defined in terms of the same formulas as for the monad of measures $M$ (\Cref{monadM}) and the
-	components $c_{X,Y}$ are also given by the formation of product measures, or equivalently pointwise products of functions 
+	It is a submonad $M^* \subseteq M$, meaning that the monad structure is defined in terms of the same formulas as for the monad of measures $M$ (\Cref{monadM}).
+	Similarly, the lax structure components $c_{X,Y}$ are also given by the formation of product measures, or equivalently pointwise products of functions 
 	$X \to [0,\infty)$.
 
 	Since $M^* 1 \cong (0,\infty)\ncong 1$, this monad is not affine. However the monoid structure of $(0,\infty)$ induced by $M^*$ is the usual multiplication of positive real numbers, which form a group. Therefore $M^*$ is weakly affine, and its Kleisli category is weakly Markov.
@@ -463,13 +463,13 @@ Every affine monad is a weakly affine monad. Here are less trivial examples.
     Here is a negative example.
     Consider the free abelian group monad $F$ on $\Set$. Its functor takes a set $X$ and forms the set $FX$ of finite multisets (with repetition, where order does not matter) of elements of $X$ and their formal inverses. 
     We have that $F1\cong \mathbb{Z}$, which is an abelian group under addition. 
-    However, the monoid structure on $F1$ induced by the monoidal structure of the monad corresponds to the \emph{multiplication} in $\mathbb{Z}$, which does not have inverses. Therefore $F$ is not weakly affine. 
+    However, the monoid structure on $F1$ induced by the monoidal structure of the monad corresponds to the \emph{multiplication} on $\mathbb{Z}$, which does not have inverses. Therefore $F$ is not weakly affine. 
 \end{myexample}
 
 
 \section{Conditional independence in weakly Markov categories}
 
-Markov categories have a rich theory of conditional dependence and independence \cite{fritz2022dseparation}. 
+Markov categories have a rich theory of conditional independence in the sense of probability theory~\cite{fritz2022dseparation}. 
 Some of those ideas can be translated and generalized to the setting of weakly Markov categories. 
 
 \begin{mydefinition}\label{defcondind}
@@ -477,7 +477,9 @@ Some of those ideas can be translated and generalized to the setting of weakly M
  \ctikzfig{cond-ind-sep}
 \end{mydefinition}
 
-Note that this is slightly different from \cite[Definition~6.6]{cho_jacobs_2019}, although for the case of Markov categories it is the same up to almost-sure equality.
+Note that this is slightly different from \cite[Definition~6.6]{cho_jacobs_2019} since we do not start with a state.
+
+\todo[inline]{T: fixed this, correct?}
 
 Here is what conditional independence looks like in the Kleisli case.
 
@@ -491,7 +493,7 @@ Here is what conditional independence looks like in the Kleisli case.
  \end{tikzcd}
  \]
  for some Kleisli maps $g_i^\sharp:A\to TX_i$,
- where the map $c$ above is the one obtained by iterating the multiplication of the monoidal structure (such a map is unique by associativity). 
+ where the map $c$ above is the one obtained by iterating the lax monoidal structure (which is unique by associativity). 
 \end{myproposition}
 \begin{proof}
  In terms of the base category $\mD$, a Kleisli morphism in the form of \Cref{defcondind} reads as follows.
@@ -503,16 +505,20 @@ Here is what conditional independence looks like in the Kleisli case.
  Therefore $f^\sharp:A\to T(X_1\times\dots\times X_n)$ exhibits the conditional independence if and only if it is of the form above.
 \end{proof}
 
+Recall that, given a morphism $f:A\to X \otimes Y$, composing with $\mathrm{del}_X \otimes \id_Y$ provides the \emph{marginalization} over $X$ or equivalently the \emph{marginal} on $Y$, and similarly if the codomain is a tensor product of more than two factors.
+
 \begin{myexample}
- In the Kleisli category of the distribution monad $D$, which is Markov, a morphism $f:A\to X\otimes Y$ exhibits conditional independence if and only if it is is the product of its marginals~\cite[Section~12]{Fritz_2020}.
+ In the Kleisli category of the distribution monad $D$, which is Markov, a morphism $f:A\to X\otimes Y$ exhibits conditional independence if and only if its value at every $a \in A$ is the product of its marginals~\cite[Section~12]{Fritz_2020}.
 \end{myexample}
 
 \begin{myexample}
- In the Kleisli category of the measure monad $M$, the zero measure always displays conditional independence of its outputs given its inputs: for example, for $A=1$, the zero measure on $X\times Y$ is the product of the zero measure on $X$ and the zero (or any other) measure on $Y$.
+	In the Kleisli category of the measure monad $M$, and for any objects, the morphism $A \to X_1 \otimes \cdots \otimes X_n$ given by the zero measure on every $a \in A$ exhibits conditional independence of its outputs given its input. For example, for $A=1$, the zero measure on $X\times Y$ is the product of the zero measure on $X$ and the zero (or any other) measure on $Y$.
  Notice that both marginals of the zero measure are zero measures---therefore, the factors appearing in the product are not necessarily related to the marginals.
 \end{myexample}
 
-In a weakly Markov category, the situation is similar to the Markov case, but up to equivalence, i.e. an arrow exhibits conditional independence if and only if it is \emph{equivalent to} the product of all its marginals (recall that, given a morphism $f:A\to X\otimes Y$, composing with $\mathrm{del}_X \otimes \id_Y$ provides the \emph{marginalization} over $X$).
+In a weakly Markov category, the situation is similar to the Markov case,
+\todo[inline]{T: do we want to say what the situation in the Markov case is? (In general.)}
+but up to equivalence, i.e.~an arrow exhibits conditional independence if and only if it is \emph{equivalent to} the product of all its marginals.
 
 \begin{myproposition}\label{eqcondind}
  Let $f:A\to X_1\otimes\dots\otimes X_n$ be a morphism in a weakly Markov category $\mC$. Then $f$ exhibits conditional independence of the $X_i$ given $A$ if and only if it is equivalent to the product of all its marginals.
