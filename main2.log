@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.4.26)  14 MAR 2023 13:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.4.26)  14 MAR 2023 16:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1093,84 +1093,90 @@ LaTeX Font Info:    Font shape `U/fontawesomebrands1/solid/n' in size <9> not av
 \openout3 = `main2.vtc'.
 
 Package hyperref Info: bookmark level for unknown myproposition defaults to 0 on input line 179.
-<example-image-plain.pdf, id=83, 321.2pt x 240.9pt>
+<example-image-plain.pdf, id=80, 321.2pt x 240.9pt>
 File: example-image-plain.pdf Graphic file (type pdf)
 <use example-image-plain.pdf>
-Package pdftex.def Info: example-image-plain.pdf  used on input line 191.
+Package pdftex.def Info: example-image-plain.pdf  used on input line 192.
 (pdftex.def)             Requested size: 39.99796pt x 13.99756pt.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 191.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 192.
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 File: example-image-plain.pdf Graphic file (type pdf)
 <use example-image-plain.pdf>
-Package pdftex.def Info: example-image-plain.pdf  used on input line 191.
+Package pdftex.def Info: example-image-plain.pdf  used on input line 192.
 (pdftex.def)             Requested size: 61.99905pt x 13.99756pt.
  [1.1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </usr/share/texlive/texmf-dist/tex/latex/mwe/example-image-plain.pdf>]
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 205.
- [2.2] (./figures/copy_del.tikz) (./figures/comonoid_equation.tikz) (./figures/comon-struct-mult.tikz) (./figures/functional.tikz) (./figures/full.tikz)
-Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 286.
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 289.
- [3.3]
+Package hyperref Info: bookmark level for unknown myremark defaults to 0 on input line 204.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 215.
+ [2.2] (./figures/copy_del.tikz) (./figures/comonoid_equation.tikz) (./figures/comon-struct-mult.tikz) (./figures/functional.tikz) (./figures/full.tikz) [3.3]
+Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 296.
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 299.
 
-LaTeX Warning: Citation `tba' on page 4 undefined on input line 298.
 
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 299.
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 301.
-(./figures/state-costate.tikz) [4.4]
-LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 338.
+LaTeX Warning: Citation `tba' on page 4 undefined on input line 308.
+
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 309.
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 311.
+[4.4] (./figures/state-costate.tikz)
+LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 348.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8.5> on input line 338.
+(Font)              <8.5> on input line 348.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.94997> on input line 338.
+(Font)              <5.94997> on input line 348.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <4.25> on input line 338.
+(Font)              <4.25> on input line 348.
  (./figures/ptwise-product.tikz) (./figures/action.tikz) [5.5]
-Package hyperref Info: bookmark level for unknown mydefinition defaults to 0 on input line 386.
+Package hyperref Info: bookmark level for unknown mydefinition defaults to 0 on input line 396.
  (./figures/free-action.tikz) [6.6]
-Package hyperref Info: bookmark level for unknown myexample defaults to 0 on input line 437.
- (./figures/cond-ind-sep.tikz) [7.7] [8.8] (./figures/cond-ind-proof.tikz) (./figures/cond-ind-proof2.tikz)
-Package hyperref Info: bookmark level for unknown myremark defaults to 0 on input line 539.
- (./figures/cond-ind2.tikz)
-Package hyperref Info: bookmark level for unknown mytheorem defaults to 0 on input line 550.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 554.
-LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 554.
+
+LaTeX Warning: Reference `yoneda' on page 1 undefined on input line 439.
+
+./main2.tex:440: Undefined control sequence.
+l.440 \tob
+          {rewrite what we are trying to say here}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package hyperref Info: bookmark level for unknown myexample defaults to 0 on input line 448.
+[7.7] (./figures/cond-ind-sep.tikz) (./figures/marginal.tikz) [8.8] (./figures/cond-ind-proof.tikz) (./figures/cond-ind-proof2.tikz) (./figures/cond-ind2.tikz)
+Package hyperref Info: bookmark level for unknown mytheorem defaults to 0 on input line 559.
  [9.9]
-Package hyperref Info: bookmark level for unknown mylemma defaults to 0 on input line 570.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 563.
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 563.
+Package hyperref Info: bookmark level for unknown mylemma defaults to 0 on input line 579.
  [10.10] [11.11] [12.12] (./main2.bbl
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 65.
+(Font)              <9> on input line 66.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 65.
-)
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 729.
-
-[13.13] [14.14] (./main2.aux)
+(Font)              <6> on input line 66.
+ [13.13]) [14.14] (./main2.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main2.out' has not changed.
-(rerunfilecheck)             Checksum: 024FE21845BDDBCCC5FA8512136F3ED9;2303.
+(rerunfilecheck)             Checksum: 151A9F3DB06BBBE9B6A76848F00F9B1E;2008.
  ) 
 Here is how much of TeX's memory you used:
- 45072 strings out of 478287
- 887948 string characters out of 5849289
- 1240720 words of memory out of 5000000
- 61922 multiletter control sequences out of 15000+600000
- 631371 words of font info for 303 fonts, out of 8000000 for 9000
+ 44919 strings out of 478287
+ 884260 string characters out of 5849289
+ 1241707 words of memory out of 5000000
+ 61780 multiletter control sequences out of 15000+600000
+ 630968 words of font info for 298 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,22n,117p,3231b,1265s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Regular.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main2.pdf (14 pages, 512092 bytes).
+Output written on main2.pdf (14 pages, 505269 bytes).
 PDF statistics:
- 484 PDF objects out of 1000 (max. 8388607)
- 391 compressed objects within 4 object streams
- 117 named destinations out of 1000 (max. 500000)
- 92362 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 472 PDF objects out of 1000 (max. 8388607)
+ 379 compressed objects within 4 object streams
+ 113 named destinations out of 1000 (max. 500000)
+ 92354 words of extra memory for PDF output out of 106986 (max. 10000000)
 

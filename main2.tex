@@ -177,7 +177,7 @@
 In this section, we develop some relevant background material for later reference.
 To begin, the following categorical characterization of groups will be useful to keep in mind.
 \begin{myproposition}\label{assoc_group}
- A monoid $(M,m,e)$ is a group if and only if the associativity square
+ A monoid $(M,m,e)$ in $\Set$ is a group if and only if the associativity square
  \begin{equation}\label{assoc}
   \begin{tikzcd}
    M \times M \times M \ar{d}{\id\times m} \ar{r}{m\times\id} & M\times M \ar{d}{m} \\
@@ -186,7 +186,6 @@ To begin, the following categorical characterization of groups will be useful to
  \end{equation}
  is a pullback.
 \end{myproposition}
-This statement holds generally for a monoid object in a cartesian monoidal category, where the following elementwise proof still applies by the Yoneda lemma.
 \begin{proof}
  The square~\eqref{assoc} is a pullback of sets if and only if given $a,g,h,c\in M$ such that $ag=hc$, there exists a unique $b\in M$ such that $g=bc$ and $h=ab$.
  First, suppose that $G$ is a group. Then the only possible choice of $b$ is 
@@ -199,7 +198,18 @@ This statement holds generally for a monoid object in a cartesian monoidal categ
  Instantiating the pullback property on these elements gives $b$ such that $ab=e$ and $ba=e$, that is, $b=a^{-1}$.
 \end{proof}
 
-For the consideration of categorical probability, we recall the simplest version of a commutative monad of measures.
+\Cref{assoc_group} holds generally for a monoid object in a cartesian monoidal category, where the elementwise proof still applies thanks to the following standard observation.
+
+\begin{myremark}
+	Given an object $M$ in a cartesian monoidal category $\mD$, there is a bijection between internal monoid structures on $M$ and monoid structures on every hom-set $\mD(X, M)$ such that precomposition with any $f : X \to Y$ defines a monoid homomorphism
+	\[
+		\mD(Y, M) \longrightarrow \mD(X, M).
+	\]
+	The proof is straightforward by the Yoneda lemma.
+	It follows that \Cref{assoc_group} holds for internal monoids in cartesian monoidal categories in general.
+\end{myremark}
+
+For the consideration of categorical probability, we now recall the simplest version of a commutative monad of measures.
 This works with measures taking values in any semiring instead of $[0,\infty)$ (see e.g.~\cite[Section~5.1]{coumans2013scalars}), but we restrict to the concrete case of $[0,\infty)$ for simplicity.
 
 \begin{definition}\label{monadM}
@@ -427,6 +437,7 @@ This choice of terminology is motivated by the following proposition, which can 
 \end{proof}
 
 This result can also be thought of in terms of the Yoneda embedding, see the details in \Cref{yoneda}.
+\tob{rewrite what we are trying to say here}
 
 
 \subsection{Examples of weakly affine monads} 
@@ -477,9 +488,14 @@ Some of those ideas can be translated and generalized to the setting of weakly M
  \ctikzfig{cond-ind-sep}
 \end{mydefinition}
 
-Note that this is slightly different from \cite[Definition~6.6]{cho_jacobs_2019} since we do not start with a state.
+Note that this formulation is a bit different from the earlier definitions given in \cite[Definition~6.6]{cho_jacobs_2019} and~\cite[Definition~12.12]{Fritz_2020}, which were formulated for morphisms in Markov categories and state that $f$ exhibits conditional independence if the above holds with the $g_i$ being the \emph{marginals} of $f$, which are
+\ctikzfig{marginal}
+Indeed in a Markov category, conditional independence in our sense holds if and only if it holds with $g_i = f_i$~\cite[Lemma~12.11]{Fritz_2020}.
+We also say that $f$ is the \emph{product of its marginals}.
 
-\todo[inline]{T: fixed this, correct?}
+\begin{myexample}
+ In the Kleisli category of the distribution monad $D$, which is Markov, a morphism $f:A\to X\otimes Y$ exhibits conditional independence if and only if its value at every $a \in A$ is the product of its marginals~\cite[Section~12]{Fritz_2020}.
+\end{myexample}
 
 Here is what conditional independence looks like in the Kleisli case.
 
@@ -505,20 +521,13 @@ Here is what conditional independence looks like in the Kleisli case.
  Therefore $f^\sharp:A\to T(X_1\times\dots\times X_n)$ exhibits the conditional independence if and only if it is of the form above.
 \end{proof}
 
-Recall that, given a morphism $f:A\to X \otimes Y$, composing with $\mathrm{del}_X \otimes \id_Y$ provides the \emph{marginalization} over $X$ or equivalently the \emph{marginal} on $Y$, and similarly if the codomain is a tensor product of more than two factors.
-
-\begin{myexample}
- In the Kleisli category of the distribution monad $D$, which is Markov, a morphism $f:A\to X\otimes Y$ exhibits conditional independence if and only if its value at every $a \in A$ is the product of its marginals~\cite[Section~12]{Fritz_2020}.
-\end{myexample}
-
 \begin{myexample}
 	In the Kleisli category of the measure monad $M$, and for any objects, the morphism $A \to X_1 \otimes \cdots \otimes X_n$ given by the zero measure on every $a \in A$ exhibits conditional independence of its outputs given its input. For example, for $A=1$, the zero measure on $X\times Y$ is the product of the zero measure on $X$ and the zero (or any other) measure on $Y$.
  Notice that both marginals of the zero measure are zero measures---therefore, the factors appearing in the product are not necessarily related to the marginals.
 \end{myexample}
 
-In a weakly Markov category, the situation is similar to the Markov case,
-\todo[inline]{T: do we want to say what the situation in the Markov case is? (In general.)}
-but up to equivalence, i.e.~an arrow exhibits conditional independence if and only if it is \emph{equivalent to} the product of all its marginals.
+In a weakly Markov category, the situation is similar to the Markov case discussed above,
+but up to equivalence: an arrow exhibits conditional independence if and only if it is \emph{equivalent to} the product of all its marginals.
 
 \begin{myproposition}\label{eqcondind}
  Let $f:A\to X_1\otimes\dots\otimes X_n$ be a morphism in a weakly Markov category $\mC$. Then $f$ exhibits conditional independence of the $X_i$ given $A$ if and only if it is equivalent to the product of all its marginals.
@@ -658,7 +667,7 @@ We are now ready to prove the theorem.
 			M(X \times Y) \times MZ \ar{r}{c_{X\times Y,Z}}						& M(X \times Y \times Z)
 		\end{tikzcd}
 	\]
-	In the top-right corner $MX\times M(Y\times Z)$, take the pair $(0,p)$ where $p$ is a nonzero measure on $Y\times Z$, and similarly, in the bottom-left corner take the pair $(q,0)$ where $q$ is a nonzero measure on $X\times Y$. Following the diagram, both pairs are mapped to the zero measure in the bottom-right corner. If the diagram was a pullback, we would be able to express the top-right and bottom-left corners as coming from the same triple in $MX\times MY\times MZ$, that is, there would exist a measure $m$ on $Y$ such that $m\cdot 0=p$ and $0\cdot m=q$. Since $p$ and $q$ are nonzero, this is not possible.
+	In the top-right corner $MX\times M(Y\times Z)$, take the pair $(0,p)$ where $p$ is any nonzero measure on $Y\times Z$, and similarly, in the bottom-left corner take the pair $(q,0)$ where $q$ is any nonzero measure on $X\times Y$. Following the diagram, both pairs are mapped to the zero measure in the bottom-right corner. If the diagram was a pullback, we would be able to express the top-right and bottom-left corners as coming from the same triple in $MX\times MY\times MZ$, that is, there would exist a measure $m$ on $Y$ such that $m\cdot 0=p$ and $0\cdot m=q$. Since $p$ and $q$ are nonzero, this is not possible.
 \end{myexample}
 
 
@@ -723,56 +732,6 @@ One can then call the monad $T$ \emph{positive} if this second diagram is a pull
 
 \bibliography{biblio_davide}
 
-
-\appendix
-
-\section{Yoneda embedding interpretation of \Cref{weaklyboth}}\label{yoneda}
-
-We can interpret \Cref{weaklyboth} more abstractly in terms of presheaves.
-Let $\mD$ be a cartesian monoidal category.
-Consider the presheaf category $[\mD^\mathrm{op},\Set]$, equipped with the Day convolution product,
-\[
- F\boxtimes G \cong \int^{A,B\in\mD} \mD(-, A\times B) \times F(A) \times G(B) .
-\]
-The Yoneda embedding $\mD\to [\mD^\mathrm{op},\Set]$ is strong monoidal: indeed, for each $X$,
-\[
- 1 \cong \mD(X,1) ,
-\]
-since $1$ is terminal, and for each $X$ and $Y$, by Yoneda reduction,
-\begin{align*}
- \mD(-,X) \boxtimes \mD(-,Y) &\cong \int^{A,B\in\mD} \mD(-, A\times B) \times \mD(-,X) \times \mD(-,Y) \\
-  &\cong \mD(-, X\times Y) .
-\end{align*}
-Therefore, and by the universal property of products, at the level of individual hom-sets the Day convolution product of representable presheaves just takes the cartesian products of sets: 
-\[
- \big(\mD(-,X) \boxtimes \mD(-,Y)\big)(A) \cong  \mD(A, X\times Y) \cong \mD(A,X) \times \mD(A,Y) .
-\]
-Take now an object $M$ of $\mD$. Since the Yoneda embedding is fully faithful and strong monoidal, a monoid structure $(M,m,e)$ on $M$ is equivalently a monoid structure on the representable presheaf $\mD(-,M)$. 
-This makes the individual hom-sets monoids, with unit and multiplication as follows for each object $X$:
-\[
- \begin{tikzcd}[row sep=tiny]
-  1 \ar{r}{\cong} & \mD(X,1) \ar{r}{e_*} & \mD(X,M) \\
-  \mD(X,M) \times \mD(X,M) \ar{r}{\cong} & \mD(X,M\times M) \ar{r}{m_*} & \mD(X,M) 
- \end{tikzcd}
-\]
-\todo[inline]{T: Using this doesn't require Day convolution though, so perhaps we can get rid of that to simplify?}
-This is precisely the monoid structure that we have defined in \Cref{monoids} for $M=T1$. 
-
-\begin{myproposition}
- $M$ is an internal group if and only if all the monoids $\mD(X,M)$ are groups.
-\end{myproposition}
-\begin{proof}
- By \Cref{assoc_group}, $M$ is a group object if and only if its associativity square \eqref{assoc} is a pullback. Since the hom-functor preserves and reflects all limits in its second argument, we have that \eqref{assoc} is a pullback if and only if for each object $X$, the following diagram (or equivalently, its bottom right square) is a pullback,
- \[
-  \begin{tikzcd}[column sep=small]
-  \mD(X,M) \times \mD(X,M) \times \mD(X,M) \ar{dr}[swap]{\cong} \ar{dd} \ar{rr} && \mD(X,M) \times \mD(X,M) \ar{d}{\cong} \\
-  & \mD(X,M\times M\times M) \ar{r}[swap]{(m\times\id)_*} \ar{d}{(\id\times m)_*} & \mD(X,M\times M) \ar{d}{m_*} \\
-  \mD(X,M) \times \mD(X,M) \ar{r}[swap]{\cong} & \mD(X,M\times M) \ar{r}[swap]{m_*} & \mD(X,M)
-  \end{tikzcd}
- \]
- where the unlabelled arrows are the unique ones that make the diagram commute.
- Again by \Cref{assoc_group}, the diagram above is a pullback if and only if $\mD(X,M)$ is a group.
-\end{proof}
 
 
 \end{document}

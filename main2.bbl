@@ -41,7 +41,7 @@ A.~Corradini and F.~Gadducci.
 Dion Coumans and Bart Jacobs.
 \newblock Scalars, monads, and categories.
 \newblock In {\em Quantum Physics and Linguistics: A Compositional,
-  Diagrammatic Discourse}, pages 184--216. 2013.
+  Diagrammatic Discourse}, pages 184--216. Oxford University Press, 2013.
 \newblock \href{https://arxiv.org/abs/1003.0585}{arXiv:1003.0585}.
 
 \bibitem{Fox:CACC}
@@ -56,7 +56,8 @@ T.~Fritz.
 \newblock {\em Advances in Mathematics}, 370:107239, 2020.
 
 \bibitem{fritz2022dilations}
-Tobias Fritz, Tom{\'a}{\v{s}} Gonda, Paolo Perrone, and Dario Stein.
+Tobias Fritz, Tom{\'a}{\v{s}} Gonda, Nicholas~Gauguin Houghton-Larsen, Paolo
+  Perrone, and Dario Stein.
 \newblock Dilations and information flow axioms in categorical probability.
 \newblock \href{https://arxiv.org/abs/2211.02507}{arXiv:2211.02507}.
 
