@@ -148,33 +148,34 @@
 %\todo[inline]{T: I think that ``weakly-affine'' should be ``weakly affine'' throughout, yes?}
 
 \begin{abstract}
-   Introduced in the 1990s in the studies of the algebraic approach to graph rewriting, 
-   gs-monoidal categories (shortly, GS categories) are symmetric monoidal categories 
-   where each object has the structure of a commutative comonoid. They arise as the 
-   underlying structure of Klesli categories for commutative monads on cartesian categories, 
-   and as such provide an handy tool for approaching effectfull computations. 
+   Introduced in the 1990s in works on the algebraic approach to graph rewriting, 
+   gs-monoidal categories are symmetric monoidal categories 
+   where each object has the structure of a commutative comonoid. They arise for example as 
+   Kleisli categories of commutative monads on cartesian categories, 
+   and as such provide a useful framework for effectful computation. 
    Recently proposed in the context of categorical probability, Markov categories are
-   GS categories where the monoidal unit is also terminal, and they characterises 
-   those Kleisli categories where the monad is required to preserve such an object.
+   gs-monoidal categories where the monoidal unit is also terminal, and they arise for example as
+   Kleisli categories of commutative \emph{affine} monads, where affine means that the monad is required to preserve the terminal object.
 
-   The aim of this paper is to study the different strengthenings on the monoidal structure 
-   leading from GS categories up to Markov and cartesian ones. More precisely, we 
-   focus on the introduction of weakly Markov categories, where morphisms to the monoidal 
-   unit are not necessarily unique, but form a group. As we show, these categories exhibit a 
-   rich theory of conditional 
-   independence, generalising the case of Markov categories. We also introduce the corresponding 
+   The aim of this paper is to study a new condition on the gs-monoidal structure, resulting in the concept of \emph{weakly Markov categories}, which are intermediate between general 
+   gs-monoidal categories and Markov categories. 
+   In a weakly Markov category, the morphisms to the monoidal unit are not necessarily unique, but form a group.
+   As we show, these categories exhibit a 
+   rich theory of conditional independence for morphisms, generalising the known theory for Markov categories. We also introduce the corresponding 
    notion for commutative monads, which we call weakly affine, and for which we give two equivalent
    characterisations.
 
    The paper argues that such monads are relevant to the study of categorical probability.
-   A case at hand is the monad of non-negative, non-zero measures, which is not affine, 
-   yet weakly so. With these structures, one can investigate probability 
-   ``up to normalisation'' in a precise categorical way.
+   A case at hand is the monad of non-negative, non-zero measures, which is weakly affine but not affine. 
+   With these structures, one can investigate probability without normalisation within a fruitful categorical framework.
 \end{abstract}
 
 \section{Introduction}
 
-For context:
+\section{Background}
+
+In this section, we develop some relevant background material for later reference.
+To begin, the following categorical characterization of groups will be useful to keep in mind.
 \begin{myproposition}\label{assoc_group}
  A monoid $(M,m,e)$ is a group if and only if the associativity square
  \begin{equation}\label{assoc}
@@ -187,7 +188,7 @@ For context:
 \end{myproposition}
 This statement holds generally for a monoid object in a cartesian monoidal category, where the following elementwise proof still applies by the Yoneda lemma.
 \begin{proof}
- The square~\eqref{assoc} is a pullback, both of sets and of groups, if and only if given $a,g,h,c\in M$ such that $ag=hc$, there exists a unique $b\in M$ such that $g=bc$ and $h=ab$.
+ The square~\eqref{assoc} is a pullback of sets if and only if given $a,g,h,c\in M$ such that $ag=hc$, there exists a unique $b\in M$ such that $g=bc$ and $h=ab$.
  First, suppose that $G$ is a group. Then the only possible choice of $b$ is 
  \[
   b = a^{-1}h = gc^{-1},
@@ -197,13 +198,17 @@ This statement holds generally for a monoid object in a cartesian monoidal categ
  Conversely, suppose that \eqref{assoc} is a pullback. We can set $g,h=e$ and $c=a$ so that $ae=ea=a$. 
  Instantiating the pullback property on these elements gives $b$ such that $ab=e$ and $ba=e$, that is, $b=a^{-1}$.
 \end{proof}
+
+For the consideration of categorical probability, we recall the simplest version of a commutative monad of measures.
+This works with measures taking values in any semiring instead of $[0,\infty)$ (see e.g.~\cite[Section~5.1]{coumans2013scalars}), but we restrict to the concrete case of $[0,\infty)$ for simplicity.
+
 \begin{definition}\label{monadM}
  Let $X$ be a set. Denote by $MX$ the set of \emph{finitely supported measures on $X$}, i.e.~functions $m:X\to[0,\infty)$ which are zero for all but a finite number of $x\in X$. 
  Given a function $f:X\to Y$, denote by $Mf:MX\to MY$ the function sending $m\in MX$ to the assignment
  \[
-	 (Mf)(m) : y \mapsto \sum_{x\in f^{-1(y)}} p(x) .
+	 (Mf)(m) \: : \: y \longmapsto \sum_{x\in f^{-1(y)}} p(x) .
  \]
- This makes $M$ into a functor, and even a monad with the following unit and multiplication maps.
+ This makes $M$ into a functor, and even a monad with the unit and multiplication maps
  \[
   \begin{tikzcd}[row sep=0]
    X \ar{r}{\delta} & MX \\
@@ -224,15 +229,22 @@ This statement holds generally for a monoid object in a cartesian monoidal categ
  \qquad\qquad
  (E\xi)(x) = \sum_{m\in MX} \xi(m)\,m(x) .
  \]
- Call $M$ the \emph{measure monad} on $\Set.$
+ Call $M$ the \emph{measure monad} on $\Set$.
 
- Denote also by $DX\subseteq MX$ the subset of \emph{probability measures}, i.e. those finitely supported $p:X\to[0,\infty)$ such that
+ Denote also by $DX\subseteq MX$ the subset of \emph{probability measures}, i.e.~those finitely supported $p:X\to[0,\infty)$ such that
  \[
   \sum_{x\in X} p(x) = 1 .
  \]
  $D$ forms a submonad of $M$ called the \emph{distribution monad}.
 \end{definition}
 
+It is well-known that $M$ is even a commutative monad~\cite{coumans2013scalars}.
+The corresponding lax monoidal structure
+\[
+	MX \times MY \longrightarrow M(X \times Y)
+\]
+is exactly the formation of product measures given by $(m \otimes m')(x,y) = m(x) m'(y)$.
+Also $D$ is a commutative monad with the same lax monoidal structure, since the product of probability measures is again a probability measure.
 
 \subsection{GS-monoidal and Markov categories}
 
@@ -246,7 +258,6 @@ We recall here the basic definitions adopting the graphical formalism of string 
 %in terms of string diagrams.
 referring to \cite{Selinger2011} for background on various notions of monoidal categories and their associated diagrammatic calculus.
 
-%\todo[inline]{T: The text has contained both terms ``gs-monoidal category'' and ``GS-category'', and it would probably be better to stick with one of these two. I've opted for the former now since that's what it's in the literature, but ``GS category'' with or without dash seems fine too (and perhaps the people who prefer to say ``CD category'' could be convinced to say ``GS category'' instead)}
 
 \begin{definition}
 A \textbf{gs-monoidal category} is a symmetric monoidal category $(\mC, \otimes, I)$
@@ -689,7 +700,6 @@ Note that for a generic commutative monad, the diagram above may even fail to co
   \end{tikzcd}
 \]
 and which always commutes by naturality of the strength.
-\todo[inline]{T: Oh yes! Now Bart's diagram makes a lot more sense}
 One can then call the monad $T$ \emph{positive} if this second diagram is a pullback (and possibly define \emph{positive gs-monoidal categories} analogously to positive Markov categories). 
 \end{myremark}
 

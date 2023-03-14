@@ -37,6 +37,13 @@ A.~Corradini and F.~Gadducci.
   applications to syntax.
 \newblock {\em Theoretical Computer Science}, 286:293--322, 2002.
 
+\bibitem{coumans2013scalars}
+Dion Coumans and Bart Jacobs.
+\newblock Scalars, monads, and categories.
+\newblock In {\em Quantum Physics and Linguistics: A Compositional,
+  Diagrammatic Discourse}, pages 184--216. 2013.
+\newblock \href{https://arxiv.org/abs/1003.0585}{arXiv:1003.0585}.
+
 \bibitem{Fox:CACC}
 T.~Fox.
 \newblock Coalgebras and cartesian categories.
@@ -47,12 +54,6 @@ T.~Fritz.
 \newblock A synthetic approach to {M}arkov kernels, conditional independence
   and theorems on sufficient statistics.
 \newblock {\em Advances in Mathematics}, 370:107239, 2020.
-
-\bibitem{fritz_2019_B}
-T.~Fritz, P.~Perrone, and S.~Rezagholi.
-\newblock Probability, valuations, hyperspace: Three monads on {T}op and the
-  support as a morphism.
-\newblock {\em CoRR}, abs/1910.03752, 2019.
 
 \bibitem{fritz2022dilations}
 Tobias Fritz, Tom{\'a}{\v{s}} Gonda, Paolo Perrone, and Dario Stein.
