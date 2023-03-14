@@ -241,9 +241,9 @@ This works with measures taking values in any semiring instead of $[0,\infty)$ (
 It is well-known that $M$ is even a commutative monad~\cite{coumans2013scalars}.
 The corresponding lax monoidal structure
 \[
-	MX \times MY \longrightarrow M(X \times Y)
+	MX \times MY \stackrel{c}{\longrightarrow} M(X \times Y)
 \]
-is exactly the formation of product measures given by $(m \otimes m')(x,y) = m(x) m'(y)$.
+is exactly the formation of product measures given by $c(m, m')(x, y) = m(x) m'(y)$.
 Also $D$ is a commutative monad with the same lax monoidal structure, since the product of probability measures is again a probability measure.
 
 \subsection{GS-monoidal and Markov categories}
@@ -261,7 +261,7 @@ referring to \cite{Selinger2011} for background on various notions of monoidal c
 
 \begin{definition}
 A \textbf{gs-monoidal category} is a symmetric monoidal category $(\mC, \otimes, I)$
-with a commutative comonoid structure on each object X, consisting of a comultiplication
+with a commutative comonoid structure on each object $X$ consisting of a comultiplication
 and a counit,
 \ctikzfig{copy_del}
 which satisfy the commutative comonoid equations:
@@ -283,31 +283,33 @@ These comonoid structures must be multiplicative with respect to the monoidal st
 \end{definition}
 
 \begin{example}
-The category $\Rel$ of sets and relations with the monoidal operation $\otimes : \Rel \times \Rel\to \Rel$ the given by the direct product of sets is a gs-monoidal category \cite{CorradiniGadducci02}. In this gs-monoidal category, the copyable arrows are precisely the partial functions, and the discardable arrows are the total relations.
+The category $\Rel$ of sets and relations with the monoidal operation $\otimes : \Rel \times \Rel\to \Rel$ given by the direct product of sets is a gs-monoidal category \cite{CorradiniGadducci02}. In this gs-monoidal category, the copyable arrows are precisely the partial functions, and the discardable arrows are the total relations.
 \end{example}
 \begin{remark}
-It is well-known that if duplicators and dischargers of a given gs-monoidal category $\mC$ satisfy naturality, then the monoidal product is the categorical product, and thus the category is cartesian monoidal \cite{Fox:CACC},~i.e. the following conditions are equivalent for a gs-monoidal category $\mC$:
+It is well-known that if every morphism is copyable and discardable, or equivalently if the copy and discard maps are natural, then the monoidal product is the categorical product, and thus the category is cartesian monoidal \cite{Fox:CACC}.
+More concisely, the following conditions are equivalent for a gs-monoidal category $\mC$:
  \begin{itemize}
   \item $\mC$ is cartesian monoidal;
   \item every morphism is copyable and discardable;
   \item the copy and discard maps are natural.
  \end{itemize}
 \end{remark}
-In recent works \cite{tba} it has been proved that gs-monoidal structure naturally arises in several situations, such as Kleisli categories of commutative monads or span categories. In the following proposition, we recall the result regarding Kleisli categories:
+
+In recent works \cite{tba}
+\todo{add ref}
+it has been shown that gs-monoidal categories naturally arise in several ways, such as Kleisli categories of commutative monads or span categories. In the following proposition, we recall the result regarding Kleisli categories:
 \begin{proposition}\label{monoidalgs}
- Let $T$ be a symmetric monoidal (equivalently, commutative) monad on a cartesian monoidal category $\mD$. 
- Then $\mathrm{Kl}_T$ is canonically a gs-monoidal category with copy and discard structure induced by that of $\mD$.
+ Let $T$ be a commutative monad on a cartesian monoidal category $\mD$. 
+ Then its Kleisli category $\mathrm{Kl}_T$ is canonically a gs-monoidal category with copy and discard structure induced by that of $\mD$.
 \end{proposition}
 Nowadays, \emph{Markov categories}~\cite{Fritz_2020} represent one of the more interesting specializations of the notion of gs-monoidal category. Based on the interpretation of their arrows
  as generalised Markov kernels, Markov categories are considered the foundation for a categorical approach to probability theory.
 
-
-In the following, we recall some (equivalent) definition of such categories:
 \begin{definition}
  A gs-monoidal category is said to be a \textbf{Markov category} if any (hence all) of the following equivalent conditions are satisfied:
  \begin{itemize}
   \item the monoidal unit is terminal;
-  \item the discard map is natural;
+  \item the discard maps are natural;
   \item every morphism is discardable.
  \end{itemize}
 \end{definition}
@@ -317,7 +319,8 @@ We recall from \cite{Kock71,Jacobs1994} the notion of \emph{affine monad}:
 \begin{definition}
  A monad $T$ on a cartesian monoidal category is called \textbf{affine} if $T1\cong 1$.
 \end{definition}
-It was observed in~\cite[Corollary~3.2]{Fritz_2020} that if the monad preserves the terminal object, then every arrow of the Kleisli category is discardable, and this makes the Kleisli category into a Markov category. Therefore, we have the following specialization of \Cref{monoidalgs}:
+It was observed in~\cite[Corollary~3.2]{Fritz_2020} that if the monad preserves the terminal object, then every arrow of the Kleisli category is discardable, and this makes the Kleisli category into a Markov category.
+In other words, we have the following specialization of \Cref{monoidalgs}:
 \begin{proposition}\label{affinemarkov}
 Let $T$ be a symmetric monoidal (equivalently, commutative) monad on a cartesian monoidal category $\mD$. Then $\mathrm{Kl}_T$ is Markov if and only if $T$ is affine.
 \end{proposition}
@@ -328,15 +331,17 @@ Let $T$ be a symmetric monoidal (equivalently, commutative) monad on a cartesian
 In this section, we introduce an intermediate level between gs-monoidal and Markov called \emph{weakly Markov}, and its corresponding notion for monads, which we call \emph{weakly affine}.
 \subsection{The monoid of effects}\label{monoids}
 
-In a gs-monoidal category $\mC$ we call a \emph{state} a morphism from the monoidal unit $p:I\to X$, and \emph{effect} or \emph{co-state} a morphism to the monoidal unit $a:X\to I$. We represent them as triangles as follows.
+In a gs-monoidal category $\mC$ we call a \emph{state} a morphism from the monoidal unit $p:I\to X$, and \emph{effect} a morphism to the monoidal unit $a:X\to I$.
+As is standard convention, we represent such morphisms as triangles as follows.
  \ctikzfig{state-costate}
 
- Effects, i.e.~elements of the set $\mC(X,I)$, form canonically a commutative monoid as follows: the monoidal unit is the discard map $X\to I$, and given $a,b:X\to I$, their product $ab$ is given by copying:\footnote{See e.g.~also the $\odot$ product in~\cite[Proposition~3.10]{coecke2011phasegroups}.}
+ Effects, i.e.~elements of the set $\mC(X,I)$, form canonically a commutative monoid as follows: the monoidal unit is the discard map $X\to I$, and given $a,b:X\to I$, their product $ab$ is given by copying:\footnote{See also e.g.~the $\odot$ product in~\cite[Proposition~3.10]{coecke2011phasegroups}.}
 \ctikzfig{ptwise-product}
 If a morphism $f:X\to Y$ is copyable and discardable, precomposition with $f$ induces a morphism of monoids $\mC(Y,I)\to\mC(X,I)$. 
 
 Let's now consider the case where the gs-monoidal structure comes from a commutative monad on a cartesian monoidal category $\mD$. 
-In this case, the monoid structure of Kleisli morphisms $X\to 1$ comes from the following canonical internal monoid structure of $T1$ in $\mD$, given by~\cite[Section~10]{kock2012distributions}
+For this case, we now describe how the monoid structure on Kleisli morphisms $X\to 1$ comes from a canonical internal monoid structure on $T1$ in $\mD$.
+This monoid structure on $T1$ is given by the following unit and multiplication~\cite[Section~10]{kock2012distributions},
  \[
  \begin{tikzcd}
   1 \ar{r}{\eta} & T1 ,
@@ -347,26 +352,32 @@ In this case, the monoid structure of Kleisli morphisms $X\to 1$ comes from the 
  \end{tikzcd}
  \]
  For example, for the monad of measures $M$, we obtain $M1=[0,\infty)$ with its usual multiplication.
- 
- The monoid structure of Kleisli morphisms $X\to 1$ is now given as follows. The unit is given by
+ The resulting monoid structure on Kleisli morphisms $X\to 1$ is now given as follows. The unit is given by
  \[
  \begin{tikzcd}
   X \ar{r}{!} & 1 \ar{r}{\eta} & T1 ,
  \end{tikzcd}
  \]
- and the multiplication of the morphisms $f^\sharp,g^\sharp:X\to T1$ is
+ and the multiplication of Kleisli morphisms $f, g : X \to 1$ represented by $f^\sharp,g^\sharp:X\to T1$ is the Kleisli morphism represented by
  \[
  \begin{tikzcd}
   X \ar{r}{\mathrm{copy}_X} & X\times X \ar{r}{f^\sharp\times g^\sharp} &
   T1 \times T1 \ar{r}{c} & T(1\times 1) \ar{r}{\cong} & T1 .
  \end{tikzcd}
  \]
- For the monad of measures $M$, Kleisli morphisms $X\to 1$ are functions $X\to [0,\infty)$, and their monoidal structure is their pointwise product. 
+ For the monad of measures $M$, Kleisli morphisms $X\to 1$ are functions $X\to [0,\infty)$, and this description shows that their product is the pointwise product.
 
-Note that the commutative monoid $\mC(X,I)$ acts on the set $\mC(X,Y)$: given $a:X\to I$ and $f:X\to Y$, the resulting $a\cdot f$ is given as follows,
+For general $\mC$, note that the commutative monoid $\mC(X,I)$ acts on the set $\mC(X,Y)$: given $a:X\to I$ and $f:X\to Y$, the resulting $a\cdot f$ is given as follows,
 \ctikzfig{action}
-and the product $(f,g)\mapsto f\cdot g \coloneqq (f\otimes g)\circ\mathrm{copy}_X$ is equivariant for this action in both variables (separately). 
-For the monad of measures $M$, this action amounts to a pointwise rescaling.
+It is straightforward to see that this indeed amounts to an action of the monoid $\mC(X,I)$ on the set $\mC(X,Y)$.
+For the monad of measures $M$, this action is given by pointwise rescaling.
+
+Moreover, for general $\mC$ the operation
+\begin{align*}
+	\mC(X,Y) \times \mC(X,Z) & \longrightarrow \mC(X,Y \otimes Z)		\\
+	(f,g) & \longmapsto f\cdot g \coloneqq (f\otimes g)\circ\mathrm{copy}_X
+\end{align*}
+commutes with this action in each variable (separately). 
 
 \subsection{Main definitions}
 
