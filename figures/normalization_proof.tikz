@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (3, -2) {$X$};
+		\node [style=none] (1) at (3, -1.5) {};
+		\node [style=bn] (2) at (3, -0.5) {};
+		\node [style=none] (3) at (2, 0.5) {};
+		\node [style=none] (4) at (4, 0.5) {};
+		\node [style=costate] (5) at (2, 0.5) {$a$};
+		\node [style=none] (6) at (4, 1.75) {};
+		\node [style=box] (8) at (4, 0.75) {$f$};
+		\node [style=none] (9) at (-4, 0) {$=$};
+		\node [style=none] (10) at (-2, -1.5) {};
+		\node [style=none] (11) at (-2, -2) {$X$};
+		\node [style=none] (12) at (-2, 1.75) {};
+		\node [style=box] (14) at (-2, 0) {$d$};
+		\node [style=bn] (15) at (-6, 0.75) {};
+		\node [style=none] (16) at (-6, -1.5) {};
+		\node [style=none] (17) at (-6, -2) {$X$};
+		\node [style=bn] (18) at (-2, 1.75) {};
+		\node [style=none] (19) at (0, 0) {$=$};
+		\node [style=bn] (20) at (4, 1.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (2) to (1.center);
+		\draw [in=165, out=-90] (3.center) to (2);
+		\draw [in=270, out=15] (2) to (4.center);
+		\draw (6.center) to (4.center);
+		\draw (12.center) to (10.center);
+		\draw (15) to (16.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
