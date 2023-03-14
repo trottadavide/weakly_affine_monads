@@ -201,6 +201,7 @@ To begin, the following categorical characterization of groups will be useful to
 \Cref{assoc_group} holds generally for a monoid object in a cartesian monoidal category, where the elementwise proof still applies thanks to the following standard observation.
 
 \begin{myremark}
+\label{yonedaremark}
 	Given an object $M$ in a cartesian monoidal category $\mD$, there is a bijection between internal monoid structures on $M$ and monoid structures on every hom-set $\mD(X, M)$ such that precomposition with any $f : X \to Y$ defines a monoid homomorphism
 	\[
 		\mD(Y, M) \longrightarrow \mD(X, M).
@@ -339,6 +340,7 @@ Let $T$ be a symmetric monoidal (equivalently, commutative) monad on a cartesian
 \section{Weakly Markov categories and weakly affine monads}
 
 In this section, we introduce an intermediate level between gs-monoidal and Markov called \emph{weakly Markov}, and its corresponding notion for monads, which we call \emph{weakly affine}.
+
 \subsection{The monoid of effects}\label{monoids}
 
 In a gs-monoidal category $\mC$ we call a \emph{state} a morphism from the monoidal unit $p:I\to X$, and \emph{effect} a morphism to the monoidal unit $a:X\to I$.
@@ -349,9 +351,15 @@ As is standard convention, we represent such morphisms as triangles as follows.
 \ctikzfig{ptwise-product}
 If a morphism $f:X\to Y$ is copyable and discardable, precomposition with $f$ induces a morphism of monoids $\mC(Y,I)\to\mC(X,I)$. 
 
+\begin{myremark}
+ The monoidal unit $I$ of a monoidal category is canonically a monoid object via the coherence isomorphisms $I\otimes I\cong I$ and $I\cong I$. 
+ However, in a generic (non-cartesian) gs-monoidal category $\mC$, the monoid structure on $\mC(X,I)$ is not the one given as in \Cref{yonedaremark} by considering the presheaf represented by the monoid object $I$. In order for \Cref{yonedaremark} to hold, we would need that every precomposition is a morphism of monoids. As remarked above, this fails in general if not all morphisms are copyable and discardable (i.e.~if $\mC$ is not cartesian monoidal).
+\end{myremark}
+
+
 Let's now consider the case where the gs-monoidal structure comes from a commutative monad on a cartesian monoidal category $\mD$. 
-For this case, we now describe how the monoid structure on Kleisli morphisms $X\to 1$ comes from a canonical internal monoid structure on $T1$ in $\mD$.
-This monoid structure on $T1$ is given by the following unit and multiplication~\cite[Section~10]{kock2012distributions},
+In this case, the monoid structure on Kleisli morphisms $X\to 1$ does come from the canonical internal monoid structure on $T1$ (and from the one on $1$) in $\mD$.
+Indeed, $T1$ is a monoid object with the following unit and multiplication~\cite[Section~10]{kock2012distributions},
  \[
  \begin{tikzcd}
   1 \ar{r}{\eta} & T1 ,
@@ -427,7 +435,7 @@ This choice of terminology is motivated by the following proposition, which can 
  \[
   \begin{tikzcd}
   X \ar[bend right=5pc]{dd}[swap]{!} \ar{d}[swap]{a^\sharp} \ar{r}{\mathrm{copy}_X} & X\times X \ar{d}[swap]{a^\sharp\times a^\sharp} \ar{dr}{a^\sharp\times(\iota\circ a^\sharp)} \\
-  T1 \ar{d}[swap]{!} \ar{r}[swap]{\mathrm{copy}_X} & T1\times T1 \ar{r}[swap]{\id\times\iota} & T1\times T1 \ar{r}{c} & T(1\times 1) \ar{d}{\cong} \\
+  T1 \ar{d}[swap]{!} \ar{r}[swap]{\mathrm{copy}_{T1}} & T1\times T1 \ar{r}[swap]{\id\times\iota} & T1\times T1 \ar{r}{c} & T(1\times 1) \ar{d}{\cong} \\
   1 \ar{rrr}{\eta} &&& T1
   \end{tikzcd}
  \]
@@ -436,8 +444,8 @@ This choice of terminology is motivated by the following proposition, which can 
  Conversely, suppose that for every $X$, the monoid structure on $\mathrm{Kl}_T(X,1)$ has inverses. Then in particular we can take $X=T1$, and the inverse of the Kleisli morphism $\id:T1\to T1$ is an inversion map for $T1$. 
 \end{proof}
 
-This result can also be thought of in terms of the Yoneda embedding, see the details in \Cref{yoneda}.
-\todo[inline]{rewrite what we are trying to say here}
+This result can also be thought of in terms of the Yoneda embedding, via \Cref{yonedaremark}: since the Yoneda embedding preserves and reflects pullbacks (and all limits), the associativity square for $T1$ is a pullback in $\mD$ if and only if the associativity squares of all the monoids $\mD(X,T1)$ are pullbacks.
+Note that \Cref{yonedaremark} holds since we are assuming that $\mD$ is \emph{cartesian} monoidal. In the proof of \Cref{weaklyboth}, this is reflected by the fact in the main diagram, the morphism $a^\sharp$ commutes with the copy maps. 
 
 
 \subsection{Examples of weakly affine monads} 
