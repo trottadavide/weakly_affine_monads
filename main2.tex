@@ -751,17 +751,14 @@ For now it is an open question whether the localized independence property for a
 
 \section{Conclusions and future work}
 
-\textbf{About possible generalizations:} in \Cref{mainthm} we characterize weakly affine monads on cartesian monoidal categories. Inspired by the case of affine monads on Markov categories, it seems quite natural to ask if our main result can be extended to monads on \emph{weakly Markov categories}.
+\textbf{Regarding possible generalizations:} in \Cref{mainthm}, we provide a characterization of weakly affine monads on cartesian monoidal categories. Taking inspiration from the case of affine monads on Markov categories, it seems natural to consider whether our main result can be extended to monads on \emph{weakly Markov categories}.
 
-However, this is a non-trivial problem, and its solution seems to require some cleaver changing of the main definitions. The crucial point is that, in general, the structure of the internal group of $T1$ and the structure of the group $\mD(X,T1)$ are not required to be related in the actual definitions. One could think to require a form of \emph{compatibility} for $T1$ and $\mD(X,T1)$ by defining weakly affine monad on a weakly Markov category as a monad such that $T1$ is an internal group and $\mD(X,T1)$ is a group with the composition and inverses induced by those of $T1$. With this change, for example, \Cref{weaklyboth} would work for an arbitrary weakly Markov category, but \Cref{mainthm} seems to fail because its actual proof involve the universal properties of products.
+However, solving this problem is non-trivial and requires clever adjustments to the main definitions. The crucial point is that, in general, the structure of the internal group of $T1$ and the structure of the group $\mD(X,T1)$ are not necessarily related in the current definitions. One approach could be to introduce a form of \emph{compatibility} for $T1$ and $\mD(X,T1)$ by defining weakly affine monad on a weakly Markov category as a monad such that $T1$ is an internal group and $\mD(X,T1)$ is a group with the composition and inverses induced by those of $T1$. With this change, for example, \Cref{weaklyboth} would work for any weakly Markov category, but \Cref{mainthm}  would likely fail as its proof involves the universal property of products. 
 
-\textbf{More on algebraic structures:}
-in this work we have investigated properties of monads that can be described in purely algebraic terms regarding the structure of $T1$, introducing a generalization of the notion of affine monad. 
-Such an algebraic perspective suggests that there could be some other interesting families of monads laying between the weakly affine monads, where $T1$ is a group, the affine, where $T1$ is the trivial group $1$. 
-
-
-\begin{myproposition}
-Let $T$ be a weakly affine monad. If the diagram
+\textbf{Further on algebraic structures:}
+this work delves into properties of monads that can be described purely in algebraic terms concerning the (internal) structure of $T1$, introducing a generalization of the notion of affine monad. 
+We introduced a generalization of the concept of affine monad, providing insight into potential interesting families of monads lying between weakly affine monads (where $T1$ is a group), and affine monads (where $T1$ is the trivial group $1$).
+For example, we can consider weakly affine monads such that the diagram
 % https://q.uiver.app/?q=WzAsNCxbMCwwLCJUKDEpIl0sWzAsMSwiVCgxKSJdLFsxLDEsIlReMigxKSJdLFsxLDAsIlQoMSkiXSxbMCwxLCJcXGlvdGEiLDJdLFsxLDIsIlQoXFxldGFfMSkiLDJdLFswLDNdLFszLDIsIlxcZXRhX3tUMX0iXV0=
 \[\begin{tikzcd}
 	{T(1)} & {T(1)} \\
@@ -771,25 +768,25 @@ Let $T$ be a weakly affine monad. If the diagram
 	\arrow["\id",from=1-1, to=1-2]
 	\arrow["{\eta_{T1}}", from=1-2, to=2-2]
 \end{tikzcd}\]
-commutes, then:
+commutes. It is straightforward to check that when the previous diagram commutes then:
 \begin{enumerate}
 	\item $T^2(1)\cong T(1)$ in $\mD$. 
 	\item the internal group $T(1)$ has exponent $2$, namely $\iota=\id_{T1}$;
 	\item the group $\mathrm{Kl}_T(X,1)$ has exponent $2$.
 \end{enumerate}
-\end{myproposition}
+We believe that continuing this approach, defining studying new monads based on the algebraic properties of $T1$ could lead to the development of new and interesting tools for applications in categorical probability.
 
-\todo[inline]{T: Having a nontrivial example of this statement would help to motivate and illustrate it. Like this, its meaning and significance remains quite unclear}
- 
-\begin{proof}
-	To prove the first claim, it is enough to show that $T(1)\cong 1$ in the Kleisli category $\mathrm{Kl}_T$.
-	By weak affinity, $T(1)$ is a group in $\mD$, where the arrow $\freccia{1}{\eta_1}{T(1)}$ is the unit of the group and $\freccia{T(1)}{\iota}{T(1)}$ is the inversion map. Therefore, we have that the composition $\freccia{1}{\iota\eta_1}{T(1)}$ has to be equal to $\eta_1$.
-	Hence we can consider the arrows $1\to T(1)$ and $T(1)\to 1$ in the Kleisli category $\mathrm{Kl}_T$ represented by $T(\eta_1)\eta_1$ and $\iota$, respectively. The composition $T(\eta_1)\eta_1$ with $\iota$ in $\mathrm{Kl}_T$ is given by $\mu_{1,1}T(\iota)T(\eta_1)\eta_1$. Employing the naturality of $\eta_1$ and the fact that $\iota\eta_1=\eta_1$, it is direct to check that $\mu T(\iota)T(\eta_1)\eta_1=\eta_1$, that is the identity $1\to 1$ in $\mathrm{Kl}_T$. Now to show that the other composition gives the identity on $T(1)$ in $\mathrm{Kl}_T$, it is enough to show that $T(\eta_1)\iota=\eta_{T(1)}$, but this follows by hypothesis.
-
-	For the second claim, we can compose the diagram with the monad multiplication, obtaining $\iota=\id_{T1}$.
-	
-	The last claim follows by combining the second one with the explicit construction of inverses in $\mathrm{Kl}_T(X,1)$ (see the proof of \Cref{weaklyboth}).
-\end{proof}
+%\todo[inline]{T: Having a nontrivial example of this statement would help to motivate and illustrate it. Like this, its meaning and significance remains quite unclear}
+% 
+%\begin{proof}
+%	To prove the first claim, it is enough to show that $T(1)\cong 1$ in the Kleisli category $\mathrm{Kl}_T$.
+%	By weak affinity, $T(1)$ is a group in $\mD$, where the arrow $\freccia{1}{\eta_1}{T(1)}$ is the unit of the group and $\freccia{T(1)}{\iota}{T(1)}$ is the inversion map. Therefore, we have that the composition $\freccia{1}{\iota\eta_1}{T(1)}$ has to be equal to $\eta_1$.
+%	Hence we can consider the arrows $1\to T(1)$ and $T(1)\to 1$ in the Kleisli category $\mathrm{Kl}_T$ represented by $T(\eta_1)\eta_1$ and $\iota$, respectively. The composition $T(\eta_1)\eta_1$ with $\iota$ in $\mathrm{Kl}_T$ is given by $\mu_{1,1}T(\iota)T(\eta_1)\eta_1$. Employing the naturality of $\eta_1$ and the fact that $\iota\eta_1=\eta_1$, it is direct to check that $\mu T(\iota)T(\eta_1)\eta_1=\eta_1$, that is the identity $1\to 1$ in $\mathrm{Kl}_T$. Now to show that the other composition gives the identity on $T(1)$ in $\mathrm{Kl}_T$, it is enough to show that $T(\eta_1)\iota=\eta_{T(1)}$, but this follows by hypothesis.
+%
+%	For the second claim, we can compose the diagram with the monad multiplication, obtaining $\iota=\id_{T1}$.
+%	
+%	The last claim follows by combining the second one with the explicit construction of inverses in $\mathrm{Kl}_T(X,1)$ (see the proof of \Cref{weaklyboth}).
+%\end{proof}
 
 
 \begin{myremark}
