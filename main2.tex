@@ -788,9 +788,10 @@ We believe that continuing this approach, defining studying new monads based on 
 %	The last claim follows by combining the second one with the explicit construction of inverses in $\mathrm{Kl}_T(X,1)$ (see the proof of \Cref{weaklyboth}).
 %\end{proof}
 
+\textbf{More on pullbacks conditions:}
+in \Cref{mainthm} we  demonstrate that the algebraic properties of $T1$ can be (equivalently) recovered by studying suitable pullbacks involving structural morphism. Hence, \Cref{mainthm}  presents a second possible approach to investigate the properties of monads  studying when certain commutative squares involving structural morphisms are pullbacks.
 
-\begin{myremark}
- Bart Jacobs calls a strong monad $T$ on a cartesian monoidal category \emph{strongly affine}~\cite{Jacobs16} if for every pair of objects $X$ and $Y$, the following diagram is a pullback,
+Recall that Bart Jacobs calls a strong monad $T$ on a cartesian monoidal category \emph{strongly affine}~\cite{Jacobs16} if for every pair of objects $X$ and $Y$, the following diagram is a pullback,
  \[
   \begin{tikzcd}
    X \times TY \ar{d}{\pi_1} \ar{r}{s} & T(X\times Y) \ar{d}{T\pi_1} \\
@@ -809,7 +810,7 @@ Note that for a generic commutative monad, the diagram above may even fail to co
 \]
 and which always commutes by naturality of the strength.
 One can then call the monad $T$ \emph{positive} if this second diagram is a pullback (and possibly define \emph{positive gs-monoidal categories} analogously to positive Markov categories). 
-\end{myremark}
+
 
 
 \bibliography{biblio_davide}
