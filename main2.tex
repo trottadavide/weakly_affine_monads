@@ -714,7 +714,15 @@ Therefore, for zero measures, the localized independence property is always triv
 For now it is an open question whether the localized independence property for a Kleisli category is reflected by an equivalent condition on the monad.
 
 
-\section{Further results}
+\section{Conclusions and future work}
+
+\textbf{About possible generalizations:} in \Cref{mainthm} we characterize weakly affine monads on cartesian monoidal categories. Inspired by the case of affine monads on Markov categories, it seems quite natural to ask if our main result can be extended to monads on \emph{weakly Markov categories}.
+
+However, this is a non-trivial problem, and its solution seems to require some cleaver changing of the main definitions. The crucial point is that, in general, the structure of the internal group of $T1$ and the structure of the group $\mD(X,T1)$ are not required to be related in the actual definitions. One could think to require a form of \emph{compatibility} for $T1$ and $\mD(X,T1)$ by defining weakly affine monad on a weakly Markov category as a monad such that $T1$ is an internal group and $\mD(X,T1)$ is a group with the composition and inverses induced by those of $T1$. With this change, for example, \Cref{weaklyboth} would work for an arbitrary weakly Markov category, but \Cref{mainthm} seems to fail because its actual proof involve the universal properties of products.
+
+\textbf{More on algebraic structures:}
+in this work we have investigated properties of monads that can be described in purely algebraic terms regarding the structure of $T1$, introducing a generalization of the notion of affine monad. 
+Such an algebraic perspective suggests that there could be some other interesting families of monads laying between the weakly affine monads, where $T1$ is a group, the affine, where $T1$ is the trivial group $1$. 
 
 
 \begin{myproposition}
