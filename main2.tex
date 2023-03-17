@@ -149,14 +149,14 @@ ias.fritz@uibk.ac.at}{}{}
 \begin{abstract}
    Introduced in the 1990s in works on the algebraic approach to graph rewriting, 
    gs-monoidal categories are symmetric monoidal categories 
-   where each object has the structure of a commutative comonoid. They arise for example as 
+   where each object is equipped with the structure of a commutative comonoid. They arise for example as 
    Kleisli categories of commutative monads on cartesian categories, 
    and as such provide a useful framework for effectful computation. 
    Recently proposed in the context of categorical probability, Markov categories are
    gs-monoidal categories where the monoidal unit is also terminal, and they arise for example as
-   Kleisli categories of commutative \emph{affine} monads, where affine means that the monad is required to preserve the terminal object.
+   Kleisli categories of commutative \emph{affine} monads, where affine means that the monad preserves the terminal object.
 
-   The aim of this paper is to study a new condition on the gs-monoidal structure, resulting in the concept of \emph{weakly Markov categories}, which are intermediate between general 
+   The aim of this paper is to study a new condition on the gs-monoidal structure, resulting in the concept of \emph{weakly Markov categories} intermediate between general 
    gs-monoidal categories and Markov categories. 
    In a weakly Markov category, the morphisms to the monoidal unit are not necessarily unique, but form a group.
    As we show, these categories exhibit a 
@@ -166,7 +166,7 @@ ias.fritz@uibk.ac.at}{}{}
 
    The paper argues that such monads are relevant to the study of categorical probability.
    A case at hand is the monad of non-negative, non-zero measures, which is weakly affine but not affine. 
-   With these structures, one can investigate probability without normalisation within a fruitful categorical framework.
+   With these structures, one can investigate probability without normalisation within an elegant categorical framework.
 \end{abstract}
 
 \section{Introduction}
@@ -182,27 +182,27 @@ In particular, when the monad is affine (i.e.~it preserves the monoidal unit \ci
 
 In this work we introduce and study an intermediate notion between gs-monoidal and Markov categories, which we call \emph{weakly Markov categories}. 
 These are defined as gs-monoidal categories where morphisms to the monoidal unit form a group (\Cref{defweaklymarkov}). 
-Weakly Markov categories can be interpreted intuitively as gs-monoidal categories where each morphism is discardable up to a suitable notion of normalization (see \Cref{weaklydiscardable} for the precise mathematical statement). In particular, every Markov category is weakly Markov.
+Weakly Markov categories can be interpreted intuitively as gs-monoidal categories where each morphism is discardable up to an invertible normalization (see \Cref{weaklydiscardable} for the precise mathematical statement). Trivially, every Markov category is weakly Markov.
 
-In parallel to weakly Markov categories we also introduce \emph{weakly affine monads}, monad which map the monoidal unit to a group object (\Cref{defweaklyaffine}).
-As a particular concrete example, of relevance in probability and measure theory, we give the monad of finite nonzero measures on $\Set$ (\Cref{ex:nonzero_measures}), which we use as running example in the rest of the work.
+In parallel to weakly Markov categories we also introduce \emph{weakly affine monads}, which are monads on cartesian monoidal categories which map the terminal object to a group object (\Cref{defweaklyaffine}).
+As a particular concrete example of relevance to probability and measure theory, we consider the monad of finite nonzero measures on $\Set$ (\Cref{ex:nonzero_measures}), and we use it as a running example in the rest of the work.
 As we show, a commutative monad on a cartesian monoidal category is weakly affine if and only if its Kleisli category is weakly Markov, analogously to what happens with affine monads and Markov categories. 
 
 Markov categories come equipped with a notion of \emph{conditional independence}, which has been one of the main motivations for their use in categorical probability and statistics \cite{cho_jacobs_2019,Fritz_2020,fritz2022dseparation}.
 A notion of conditional independence can be given for generic gs-monoidal categories. As we show, in the case of weakly Markov categories it has convenient properties which can be considered ``up-to-normalization'' versions of their corresponding Markov-categorical counterpart.
-Using these concepts, we give an equivalent condition for weak affinity of a monad, a pullback condition on the associativity diagram (\Cref{mainthm}), widely generalizing the well-known statement that a monoid is a group if and only if its associativity diagram is a pullback (\Cref{assoc_group}). 
+Using these concepts, we give an equivalent condition for weak affinity of a monad, a pullback condition on the associativity diagram (\Cref{mainthm}), widely generalizing the elementary statement that a monoid is a group if and only if its associativity diagram is a pullback (\Cref{assoc_group}). 
 
 
 \paragraph*{Outline.}
 In \Cref{secbackground} we review the main structures used in this work, in particular group and monoid objects, gs-monoidal and Markov categories, and their interaction with commutative monads.
 
-In \Cref{secweakly} we define the main original concepts, namely weakly Markov categories and weakly affine monads. We study their relationship, and prove that a commutative monad on a cartesian category is weakly affine if and only if its Kleisli category is weakly Markov (\Cref{weaklyboth}).
+In \Cref{secweakly} we define the main original concepts, namely weakly Markov categories and weakly affine monads. We study their relationship and prove that a commutative monad on a cartesian monoidal category is weakly affine if and only if its Kleisli category is weakly Markov (\Cref{weaklyboth}).
 We then turn to concrete examples using measures and group actions (\Cref{secexamples}).
 
-In \Cref{secindep} we extend the concept of conditional independence from Markov categories to general gs-monoidal categories, and specialize to the weakly Markov case, showing that in the latter case, the situation is similar to what happens in Markov categories, but only up to normalization, in a way that we make mathematically precise.
-We use this formalism to equivalently reformulate affinity in terms of a pullback condition (\Cref{mainthm}). This can be considered the main result of this work.
+In \Cref{secindep} we extend the concept of conditional independence from Markov categories to general gs-monoidal categories. We specialize to the weakly Markov case and show that the situation is then similar to what happens in Markov categories, but in a certain precise sense only up to normalization.
+We use this formalism to equivalently reformulate weak affinity in terms of a pullback condition (\Cref{mainthm}). This can be considered the main result of this work.
 
-Finally, in the concluding \Cref{secfurther}, we pose further questions, such as when we can iterate the construction of weakly Markov categories by means of weakly affine monads, and the relationship with strongly affine monads in the sense of Jacobs~\cite{Jacobs16}.
+Finally, in the concluding \Cref{secfurther}, we pose further questions, such as when we can iterate the construction of weakly Markov categories by means of weakly affine monads, and the relation to strongly affine monads in the sense of Jacobs~\cite{Jacobs16}.
 
 
 \section{Background}
@@ -289,7 +289,7 @@ The corresponding lax monoidal structure
 	MX \times MY \stackrel{c}{\longrightarrow} M(X \times Y)
 \]
 is exactly the formation of product measures given by $c(m, m')(x, y) = m(x) m'(y)$.
-Also $D$ is a commutative monad with the same lax monoidal structure, since the product of probability measures is again a probability measure.
+Also $D$ is a commutative monad with the induced lax monoidal structure, since the product of probability measures is again a probability measure.
 
 \subsection{GS-monoidal and Markov categories}
 
@@ -324,7 +324,7 @@ The category $\Rel$ of sets and relations with the monoidal operation $\otimes :
 
 \begin{myremark}
 It is well-known that if every morphism is copyable and discardable, or equivalently if the copy and discard maps are natural, then the monoidal product is the categorical product, and thus the category is cartesian monoidal \cite{Fox:CACC}.
-More concisely, the following conditions are equivalent for a gs-monoidal category $\mC$:
+In other words, the following conditions are equivalent for a gs-monoidal category $\mC$:
  \begin{itemize}
   \item $\mC$ is cartesian monoidal;
   \item every morphism is copyable and discardable;
@@ -332,9 +332,7 @@ More concisely, the following conditions are equivalent for a gs-monoidal catego
  \end{itemize}
 \end{myremark}
 
-In recent works \cite{tba}
-\todo{add ref}
-it has been shown that gs-monoidal categories naturally arise in several ways, such as Kleisli categories of commutative monads or span categories. In the following proposition, we recall the result regarding Kleisli categories:
+In recent work~\cite{fgtc2022lax} it has been shown that gs-monoidal categories naturally arise in several ways, such as Kleisli categories of commutative monads or span categories. In the following proposition, we recall the result regarding Kleisli categories:
 
 \begin{myproposition}\label{monoidalgs}
  Let $T$ be a commutative monad on a cartesian monoidal category $\mD$. 
@@ -344,14 +342,14 @@ it has been shown that gs-monoidal categories naturally arise in several ways, s
 \begin{myexample}\label{kleisliM}
  The Kleisli categories of the monads $M$ and $D$ of \Cref{monadM} are gs-monoidal. We can write their Kleisli categories concretely as follows:
  \begin{itemize}
-  \item A morphism $k:X\to Y$ of $\mathrm{Kl}(M)$ is a \emph{matrix} with rows indexed by $Y$ and columns indexed by $X$, and non-negative entries $k(y|x)$ such that for each $x\in X$, the number $k(y|x)$ is nonzero only for finitely many $x$;
-  \item A morphism $k:X\to Y$ of $\mathrm{Kl}(D)$ is a morphism of $\mathrm{Kl}(M)$ such that moreover, for all $x\in X$, the sum of each column
+  \item A morphism $k:X\to Y$ of $\mathrm{Kl}_M$ is a \emph{matrix} with rows indexed by $Y$ and columns indexed by $X$, and non-negative entries $k(y|x)$ such that for each $x\in X$, the number $k(y|x)$ is nonzero only for finitely many $x$;
+  \item A morphism $k:X\to Y$ of $\mathrm{Kl}_D$ is a morphism of $\mathrm{Kl}_M$ such that moreover, for all $x\in X$, the sum of each column
   \[
    \sum_{y\in Y} k(y|x) = \sum_{y\in Y|k(y|x)\ne 0} k(y|x)
   \]
   is equal to $1$. If $X$ and $Y$ are finite, such a matrix is called a \emph{stochastic matrix}.
  \end{itemize}
- In both categories, identities are identity matrices, and composition is matrix composition. 
+ In both categories, identities are identity matrices, composition is matrix composition, monoidal structure is the cartesian product on objects and the Kronecker product on matrices, and the copy and discard maps are the images of the standard copy and discard maps on $\Set$ under the Kleisli inclusion functor.
 \end{myexample}
 
 Nowadays, \emph{Markov categories}~\cite{Fritz_2020} represent one of the more interesting specializations of the notion of gs-monoidal category. Based on the interpretation of their arrows
@@ -373,10 +371,10 @@ We recall from \cite{Kock71,Jacobs1994} the notion of \emph{affine monad}:
 \end{mydefinition}
 
 It was observed in~\cite[Corollary~3.2]{Fritz_2020} that if the monad preserves the terminal object, then every arrow of the Kleisli category is discardable, and this makes the Kleisli category into a Markov category.
-In other words, we have the following specialization of \Cref{monoidalgs}:
+Since the converse is easy to see, we have the following addendum to \Cref{monoidalgs}:
 
 \begin{myproposition}\label{affinemarkov}
-Let $T$ be a symmetric monoidal (equivalently, commutative) monad on a cartesian monoidal category $\mD$. Then $\mathrm{Kl}_T$ is Markov if and only if $T$ is affine.
+Let $T$ be a commutative monad on a cartesian monoidal category $\mD$. Then $\mathrm{Kl}_T$ is Markov if and only if $T$ is affine.
 \end{myproposition}
  
  
@@ -404,7 +402,7 @@ If a morphism $f:X\to Y$ is copyable and discardable, precomposition with $f$ in
 
 \begin{myremark}
  The monoidal unit $I$ of a monoidal category is canonically a monoid object via the coherence isomorphisms $I\otimes I\cong I$ and $I\cong I$. 
- However, in a generic (non-cartesian) gs-monoidal category $\mC$, the monoid structure on $\mC(X,I)$ is not the one given as in \Cref{yonedaremark} by considering the presheaf represented by the monoid object $I$. In order for \Cref{yonedaremark} to hold, we would need that every precomposition is a morphism of monoids. As remarked above, this fails in general if not all morphisms are copyable and discardable (i.e.~if $\mC$ is not cartesian monoidal).
+ However, in a generic (non-cartesian) gs-monoidal category $\mC$, the monoid structure on $\mC(X,I)$ is not the one obtained from \Cref{yonedaremark} by considering the presheaf represented by the monoid object $I$. In order for \Cref{yonedaremark} to hold, we would need that every precomposition is a morphism of monoids. As remarked above, this fails in general if not all morphisms are copyable and discardable (i.e.~if $\mC$ is not cartesian monoidal).
 \end{myremark}
 
 
@@ -434,9 +432,9 @@ Indeed, $T1$ is a monoid object with the following unit and multiplication~\cite
   T1 \times T1 \ar{r}{c} & T(1\times 1) \ar{r}{\cong} & T1 .
  \end{tikzcd}
  \]
- For the monad of measures $M$, Kleisli morphisms $X\to 1$ are functions $X\to [0,\infty)$, and this description shows that their product is the pointwise product.
+ For the monad of measures $M$, Kleisli morphisms $X\to 1$ are represented by functions $X\to [0,\infty)$, and this description shows that their product is the pointwise product.
 
-For general $\mC$, note that the commutative monoid $\mC(X,I)$ acts on the set $\mC(X,Y)$: given $a:X\to I$ and $f:X\to Y$, the resulting $a\cdot f$ is given as follows,
+For general $\mC$, the commutative monoid $\mC(X,I)$ acts on the set $\mC(X,Y)$: given $a:X\to I$ and $f:X\to Y$, the resulting $a\cdot f$ is given as follows,
 \ctikzfig{action}
 It is straightforward to see that this indeed amounts to an action of the monoid $\mC(X,I)$ on the set $\mC(X,Y)$.
 For the monad of measures $M$, this action is given by pointwise rescaling.
@@ -461,7 +459,7 @@ Every Markov category is weakly Markov: for each $X$, the monoid $\mC(X,I)$ is t
  Given two parallel morphisms $f,g:X\to Y$ in a weakly Markov category $\mC$, we say that $f$ and $g$ are called \textbf{equivalent}, denoted $f\sim g$, if they lie in the same orbit for the action of $\mC(X,I)$, i.e.~if there is $a\in \mC(X,I)$ such that $a\cdot f=g$.
 \end{mydefinition}
 
-Note that if $a\cdot f=g$ for some $a$, then $a$ is unique. This can be seen by marginalizing over $Y$ the following diagram.
+Note that if $a\cdot f=g$ for some $a$, then $a$ is unique. This can be seen by discarding $Y$ in the following diagram.
 \ctikzfig{free-action}
 In other words, the action of $\mC(X,I)$ on $\mC(X,Y)$ is free, i.e.~it has trivial stabilizers.
 
@@ -490,7 +488,7 @@ Let's now look at the Kleisli case.
 This choice of terminology is motivated by the following proposition, which can be seen as a ``weakly'' version of \Cref{affinemarkov}.
 
 \begin{myproposition}\label{weaklyboth}
- Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$. Then the Kleisli category of $T$ is weakly Markov if and only if $T$ is weakly affine.
+ Let $\mD$ be a cartesian monoidal category and $T$ a commutative monad on $\mD$. Then the Kleisli category of $T$ is weakly Markov if and only if $T$ is weakly affine.
 \end{myproposition}
 \begin{proof}
  First, suppose that $T1$ is an internal group, and denote by $\iota:T1\to T1$ its inversion map. 
@@ -508,7 +506,7 @@ This choice of terminology is motivated by the following proposition, which can 
 \end{proof}
 
 This result can also be thought of in terms of the Yoneda embedding, via \Cref{yonedaremark}: since the Yoneda embedding preserves and reflects pullbacks (and all limits), the associativity square for $T1$ is a pullback in $\mD$ if and only if the associativity squares of all the monoids $\mD(X,T1)$ are pullbacks.
-Note that \Cref{yonedaremark} holds since we are assuming that $\mD$ is \emph{cartesian} monoidal. In the proof of \Cref{weaklyboth}, this is reflected by the fact in the main diagram, the morphism $a^\sharp$ commutes with the copy maps. 
+Note that \Cref{yonedaremark} applies since we are assuming that $\mD$ is \emph{cartesian} monoidal. In the proof of \Cref{weaklyboth}, this is reflected by the fact in the main diagram, the morphism $a^\sharp$ commutes with the copy maps. 
 
 
 \subsection{Examples of weakly affine monads} 
@@ -521,12 +519,14 @@ Every affine monad is a weakly affine monad. Here are less trivial examples.
 	Let $M^* : \Set \to \Set$ be the monad assigning to every set the set of finitely supported discrete \emph{nonzero}
 	measures on $M^*$, or equivalently let $M^*(X)$ for any set $X$ be the set of nonzero finitely supported functions $X \to [0,\infty)$.
 	It is a submonad $M^* \subseteq M$, meaning that the monad structure is defined in terms of the same formulas as for the monad of measures $M$ (\Cref{monadM}).
-	Similarly, the lax structure components $c_{X,Y}$ are also given by the formation of product measures, or equivalently pointwise products of functions 
+	Similarly, the lax structure components
+	\[
+		c_{X,Y} \: : \: M^* X \times M^* Y \longrightarrow M^*(X \times Y)
+	\]
+	are also given by the formation of product measures, or equivalently pointwise products of functions 
 	$X \to [0,\infty)$.
 
 	Since $M^* 1 \cong (0,\infty)\ncong 1$, this monad is not affine. However the monoid structure of $(0,\infty)$ induced by $M^*$ is the usual multiplication of positive real numbers, which form a group. Therefore $M^*$ is weakly affine, and its Kleisli category is weakly Markov.
-
-	\todo[inline]{T: More generally, we could consider nonzero measures with values in any positive semifield, see the corresponding monads considered in \href{https://arxiv.org/abs/2108.10718}{arXiv:2108.10718}. Not sure though if it's interesting enough to mention?}
 
 	On the other hand, if the zero measure is included, we have $M1 \cong [0,\infty)$ which is not a group under multiplication, so $M$ is not weakly affine.
 \end{myexample}
@@ -538,7 +538,7 @@ Every affine monad is a weakly affine monad. Here are less trivial examples.
 	where the lax structure components $c_{X,Y}$ are given by multiplying elements in $A$ while carrying the elements 
 	of $X$ and $Y$ along.
 
-	Since $T_A(1) \cong A$, the monad $T_A$ is weakly affine if and only if $A$ is a group, and affine if and only if $A\cong 1$.
+	Since $T_A 1 \cong A$, the monad $T_A$ is weakly affine if and only if $A$ is a group, and affine if and only if $A\cong 1$.
 \end{myexample}
 
 \begin{myexample}
@@ -573,12 +573,12 @@ We also say that $f$ is the \emph{product of its marginals}.
 Here is what conditional independence looks like in the Kleisli case.
 
 \begin{myproposition}\label{indepkleisli}
- Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$.
- A Kleisli morphism represented by $f^\sharp:A\to T(X_1\times\dots\times X_n)$ exhibits conditional independence of the $X_i$ given $A$ if and only if it factors as follows
+ Let $\mD$ be a cartesian monoidal category and $T$ a commutative monad on $\mD$.
+ Then a Kleisli morphism represented by $f^\sharp:A\to T(X_1\times\dots\times X_n)$ exhibits conditional independence of the $X_i$ given $A$ if and only if it factors as
  \[
  \begin{tikzcd}
   A \ar{d}[swap]{(g_1^\sharp,\dots,g_n^\sharp)} \ar{dr}{f^\sharp} \\
-  TX_1\times\dots\times TX_n \ar{r}[swap]{c} & T(X_1\times\dots\times X_n) ,
+  TX_1\times\dots\times TX_n \ar{r}[swap]{c} & T(X_1\times\dots\times X_n) 
  \end{tikzcd}
  \]
  for some Kleisli maps $g_i^\sharp:A\to TX_i$,
@@ -600,7 +600,7 @@ Here is what conditional independence looks like in the Kleisli case.
 \end{myexample}
 
 In a weakly Markov category, the situation is similar to the Markov case discussed above,
-but up to equivalence: an arrow exhibits conditional independence if and only if it is \emph{equivalent to} the product of all its marginals.
+but up to equivalence: an arrow exhibits conditional independence if and only if it is \emph{equivalent to} the product of its marginals.
 
 \begin{myproposition}\label{eqcondind}
  Let $f:A\to X_1\otimes\dots\otimes X_n$ be a morphism in a weakly Markov category $\mC$. Then $f$ exhibits conditional independence of the $X_i$ given $A$ if and only if it is equivalent to the product of all its marginals.
@@ -608,7 +608,7 @@ but up to equivalence: an arrow exhibits conditional independence if and only if
 
 \begin{proof}
  Denote the marginals of $f$ by $f_1,\dots,f_n$.
- Suppose that $f$ is a product as in \Cref{defcondind}. For each $i=1,\dots,n$, by marginalizing, we get that $f_i$ is equal to the following.
+ Suppose that $f$ is a product as in \Cref{defcondind}. For each $i=1,\dots,n$, by marginalizing, we get
   \ctikzfig{cond-ind-proof} 
  Therefore for each $i$ we have that $f_i\sim g_i$. 
  
@@ -627,7 +627,7 @@ but up to equivalence: an arrow exhibits conditional independence if and only if
 \subsection{Main result}
 
 The concept of conditional independence for general weakly Markov categories allows us to give an equivalent characterization of weakly affine monads.
-The condition is in terms of a pullback condition on the associativity diagram, and can be seen as a generalization of \Cref{assoc_group}.
+The condition is a pullback condition on the associativity diagram, and it recovers \Cref{assoc_group} when applied to the monads of the form $A \times -$ for $A$ a commutative monoid.
 
 \begin{mytheorem}\label{mainthm}
  Let $\mD$ be a cartesian monoidal category, and let $T$ be a commutative monad on $\mD$.
@@ -718,7 +718,7 @@ We are now ready to prove the theorem.
  Therefore there is a unique map $A\to TX\times TY\times TZ$ making the whole diagram commute, which means that \eqref{assoc_pullback} is a pullback.
  
  $\ref{condpullback}\Rightarrow\ref{condgroup}$:
- If $T$ is weakly affine, then taking $X = Y = Z = 1$ in~\eqref{assoc_pullback} shows that this monoid must be an abelian group: we obtain a unique arrow $\freccia{T(1)}{\iota}{T(1)}$ making the following diagram commute,
+ If $T$ is weakly affine, then taking $X = Y = Z = 1$ in~\eqref{assoc_pullback} shows that this monoid must be an abelian group: we obtain a unique arrow $\freccia{T1}{\iota}{T1}$ making the following diagram commute,
 	\[
 		\begin{tikzcd}
 			T1 \ar{dr}[description]{(\id,\iota,\id)} \ar[bend left=15]{drr}{(\id,\eta_1 !)} \ar[bend right,swap]{ddr}{(\eta_1 !,\id)} \\
@@ -743,8 +743,9 @@ We are now ready to prove the theorem.
 	In the top-right corner $MX\times M(Y\times Z)$, take the pair $(0,p)$ where $p$ is any nonzero measure on $Y\times Z$, and similarly, in the bottom-left corner take the pair $(q,0)$ where $q$ is any nonzero measure on $X\times Y$. Following the diagram, both pairs are mapped to the zero measure in the bottom-right corner. If the diagram was a pullback, we would be able to express the top-right and bottom-left corners as coming from the same triple in $MX\times MY\times MZ$, that is, there would exist a measure $m$ on $Y$ such that $m\cdot 0=p$ and $0\cdot m=q$. Since $p$ and $q$ are nonzero, this is not possible.
 \end{myexample}
 
-It is worth noticing that the pullback condition on associativity is not equivalent to the localized independence property: recall that a zero measure always displays conditional independence of all its outputs (\Cref{zeromeasure}).
-Therefore, for zero measures, the localized independence property is always trivially valid, even for the cases (like the example above) where the pullback property fails.
+It is worth noting that the pullback condition on the associativity square is not equivalent to the localized independence property of \Cref{local}: recall that a zero measure always exhibits conditional independence of all its outputs (\Cref{zeromeasure}).
+Therefore, for zero measures, the localized independence property is always trivially valid, and hence the Kleisli category of the measures monad $M$ satisfies it in general.
+However, the example above shows explicitly that the pullback property fails.
 
 For now it is an open question whether the localized independence property for a Kleisli category is reflected by an equivalent condition on the monad.
 
@@ -753,37 +754,38 @@ For now it is an open question whether the localized independence property for a
 \label{secfurther}
 
 
-Our main result (\Cref{mainthm}) establishes a tight correspondence between algebraic properties of $T1$ and the universal properties of certain commutative squares given by the structural arrows of $T$, for a given monad on a cartesian category.
-
-Therefore, we believe that our main theorem suggests at least three potential directions for future research:
+Our main result (\Cref{mainthm}) establishes a tight correspondence between algebraic properties of $T1$ and the universal properties of certain commutative squares given by the structural arrows of $T$ for a commutative monad $T$ on a cartesian category.
+We believe that this main theorem suggests at least three potential directions for future research:
 \begin{itemize}
 \item generalizing the statement to weakly affine monads on weakly Markov categories;
-\item enhancing the study of monads through a purely algebraic approach, i.e., studying the properties of $T1$;
-\item generalizing other Markov-categorical notions, such as positivity, to weakly Markov or even general gs-monoidal categories.
+\item enhancing the study of monads through a purely algebraic approach, i.e., studying group-theoretic properties of $T1$;
+\item generalizing other Markov-categorical notions, such as the positivity axiom, to weakly Markov or even general gs-monoidal categories.
 \end{itemize} 
-We will provide further details on these potential directions in the following:
+We will provide further details on these potential directions in the following.
+\\
 
-\textbf{Regarding possible generalizations:} in \Cref{mainthm}, we provide a characterization of weakly affine monads on cartesian monoidal categories. Taking inspiration from the case of affine monads on Markov categories, it seems natural to consider whether our main result can be extended to monads on \emph{weakly Markov categories}.
+\textbf{Regarding possible generalizations:} In \Cref{mainthm}, we provide a characterization of weakly affine monads on cartesian monoidal categories. Taking inspiration from the case of affine monads on Markov categories~\cite[Corollary~3.2]{Fritz_2020}, it seems natural to consider whether our main result can be extended to commutative monads on \emph{weakly Markov categories}.
 
-However, solving this problem is non-trivial and requires clever adjustments to the main definitions. The crucial point is that, in general, the structure of the internal group of $T1$ and the structure of the group $\mD(X,T1)$ are not necessarily related in the current definitions. One approach could be to introduce a form of \emph{compatibility} for $T1$ and $\mD(X,T1)$ by defining weakly affine monad on a weakly Markov category as a monad such that $T1$ is an internal group and $\mD(X,T1)$ is a group with the composition and units induced by those of $T1$. With this change, for example, \Cref{weaklyboth} would work for any weakly Markov category, but \Cref{mainthm} would likely fail as its proof involves the universal property of products. 
+However, solving this problem is non-trivial and requires clever adjustments to the main definitions. The crucial point is that, in general, the structure of the internal group of $T1$ and the structure of the group $\mD(X,T1)$ are not necessarily related in the current definitions. One approach could be to introduce a form of \emph{compatibility} for $T1$ and $\mD(X,T1)$ by defining a weakly affine monad on a weakly Markov category as a commutative monad such that $T1$ is an internal group and $\mD(X,T1)$ is a group with the composition and units induced by those of $T1$. With this change, for example, \Cref{weaklyboth} would work for any weakly Markov category, but \Cref{mainthm} would likely fail as its proof involves the universal property of products. 
+\\
 
-\textbf{Further on algebraic structures:}
-this work delves into properties of monads that can be described purely in algebraic terms concerning the (internal) structure of $T1$, introducing a generalization of the notion of affine monad. 
-We introduced a generalization of the concept of affine monad, providing insight into potential interesting families of monads lying between weakly affine monads (where $T1$ is a group), and affine monads (where $T1$ is the trivial group $1$).
-One fact to notice to avoid possible misconceptions, though, is that while a weakly affine commutative monad maps the group object $1$ to a group object, preserving its monoid structure, it does not quite preserve the inverses in general. 
+\textbf{More on algebraic structure of $T1$:}
+This direction delves into properties of commutative monads that can be described purely in algebraic terms concerning the (internal) group structure of $T1$.
+We introduced weakly affine monads (where $T1$ is a group) as a generalization of affine monads (where $T1$ is the trivial group $1$).
+One fact to notice to avoid possible misconceptions, though, is that while a weakly affine monad maps the trivial group object $1$ to a group object, it does not map group objects to group objects in general.
 To elucidate this further, let's give the following definition.
 
 \begin{mydefinition}
- Let $\mD,\mE$ be a monoidal categories and let $F:\mD\to\mE$ be a lax monoidal functor, so that it maps monoid objects to monoid objects.
+ Let $\mD,\mE$ be gs-monoidal categories and let $F:\mD\to\mE$ be a lax monoidal functor, so that it maps monoid objects to monoid objects.
 Given a group object $G$ in $\mD$, we say that $F$ \emph{strongly preserves the group structure of $G$} if the monoid object $F(G)$ in $\mE$ is a group object, and moreover the inversion map of $F(G)$ is given by $F(\iota)$, where $\iota$ is the inversion map of $G$.
 \end{mydefinition}
 
-For example, if $F$ is \emph{strong} monoidal, it strongly preserves every existing group object structure, since the following diagram commutes,
+For example, if $F$ is \emph{strong} monoidal, then it strongly preserves the group structure of every group object in $\mD$ since the following diagram commutes,
 \[
  \begin{tikzcd}[row sep=small]
   & & 1 \ar{ddrr}{e_{FG}} \ar{d}{\cong}\\
   & & F1 \ar{drr}[swap]{Fe_G} \\
-  FG \ar{uurr}{!} \ar{urr}[swap]{F!} \ar{dr}{F(\mathrm{copy})} \ar{ddr}[swap]{\mathrm{copy}} & && & FG \\
+  FG \ar{uurr}{\mathrm{del}} \ar{urr}[swap]{F(\mathrm{del})} \ar{dr}{F(\mathrm{copy})} \ar{ddr}[swap]{\mathrm{copy}} & && & FG \\
   & F(G\times G) \ar{d}{\cong} \ar{rr}{F(\id\times\iota)} && F(G\times G) \ar{d}[swap]{\cong} \ar{ur}{Fm_G} \\
   & FG\times FG \ar{rr}[swap]{\id\times F(\iota)} && FG\times FG \ar{uur}[swap]{m_{FG}}
  \end{tikzcd}
@@ -793,7 +795,7 @@ as well as the analogous diagram with $\id$ and $\iota$ switched.
 Now, as the following proposition shows, weakly affine monads in general do not strongly preserve the group structure of the monoidal unit.
 
 \begin{myproposition}
- Let $T$ be a weakly affine commutative monad on a cartesian monoidal category $\mD$. The following conditions are equivalent.
+ Let $T$ be a weakly affine monad on a cartesian monoidal category $\mD$. Then the following conditions are equivalent.
  \begin{enumerate}
   \item\label{condstrong} $T$ strongly preserves the group structure of the terminal object $1$;
   \item\label{condinv} The inversion map $\iota:T1\to T1$ is the identity;
@@ -801,16 +803,15 @@ Now, as the following proposition shows, weakly affine monads in general do not 
  \end{enumerate}
 \end{myproposition}
 \begin{proof}
- For $\ref{condstrong}\Leftrightarrow\ref{condinv}$, it suffices to notice that the inversion map $1\to 1$ is the identity. 
+ For $\ref{condstrong}\Leftrightarrow\ref{condinv}$, it suffices to note that the inversion map $1\to 1$ is the identity. 
  
- For $\ref{condinv}\Leftrightarrow\ref{condorder}$, notice that the inverse of an element $a\in\mD(X,T1)$ is given by postcomposing with the inversion map $\iota:T1\to T1$. If $\iota$ is the identity, $a\in\mD(X,T1)$ is its own inverse, i.e.~it has order $2$. Conversely, suppose that for every $X$, every element $a\in\mD(X,T1)$ is its own inverse. Using again a Yoneda argument, we can set $X=T1$ and $a=\id_{T1}$, so that $\iota$ is the identity.  
+ For $\ref{condinv}\Leftrightarrow\ref{condorder}$, note that the inverse of an element $a\in\mD(X,T1)$ is given by postcomposing with the inversion map $\iota:T1\to T1$. If $\iota$ is the identity, $a\in\mD(X,T1)$ is its own inverse, i.e.~it has order $2$. Conversely, suppose that for every $X$, every element $a\in\mD(X,T1)$ is its own inverse. Using again a Yoneda argument, we can set $X=T1$ and $a=\id_{T1}$, so that $\iota$ is the identity.  
 \end{proof}
 
 For example, for the nonzero measure monad $M^*$ (\Cref{ex:nonzero_measures}), the inversion map of $T1=(0,\infty)$ is the map $x\mapsto 1/x$, which is not the identity. 
+\\
 
-\textbf{On extending positivity:}
-in \Cref{mainthm} we  demonstrate that the algebraic properties of $T1$ can be (equivalently) recovered by studying suitable pullbacks involving structural morphism. Hence, \Cref{mainthm}  presents a second possible approach to investigate the properties of monads  studying when certain commutative squares involving structural morphisms are pullbacks.
-
+\textbf{On the positivity axiom:}
 Recall that Bart Jacobs calls a strong monad $T$ on a cartesian monoidal category \emph{strongly affine}~\cite{Jacobs16} if for every pair of objects $X$ and $Y$, the following diagram is a pullback,
  \[
   \begin{tikzcd}
@@ -819,9 +820,9 @@ Recall that Bart Jacobs calls a strong monad $T$ on a cartesian monoidal categor
   \end{tikzcd}
  \]
 where $s$ denotes the strength and $\eta$ denotes the unit of the monad. Every strongly affine monad is affine. 
-The corresponding condition on the (Markov) category $\mathrm{Kl}_T$ is called \emph{positivity}~\cite[Section~2]{fritz2022dilations}.
+The corresponding condition on the Markov category $\mathrm{Kl}_T$ has recently been characterized as an information flow axiom called \emph{positivity}~\cite[Section~2]{fritz2022dilations}.
 
-Note that for a generic commutative monad, the diagram above may even fail to commute (take for example the measure monad $M$, and start with $(x,0)$ in the top left corner). One can however consider the following diagram, which reduces to the one above (up to isomorphism) in the affine case,
+For a generic commutative monad, the diagram above may even fail to commute (take for example the measure monad $M$, and start with $(x,0)$ in the top left corner). One can however consider the following diagram, which reduces to the one above (up to isomorphism) in the affine case,
 \[
  \begin{tikzcd}
    X \times TY \ar{d}{\id\times T!} \ar{r}{s} & T(X\times Y) \ar{d}{T(\id\times!)} \\
@@ -829,7 +830,8 @@ Note that for a generic commutative monad, the diagram above may even fail to co
   \end{tikzcd}
 \]
 and which always commutes by naturality of the strength.
-One can then call the monad $T$ \emph{positive} if this second diagram is a pullback (and possibly define \emph{positive gs-monoidal categories} analogously to positive Markov categories). 
+One can then call the monad $T$ \emph{positive} if this second diagram is a pullback. Upon defining \emph{positive gs-monoidal categories} analogously to positive Markov categories, one may conjecture that $T$ is positive if and only if $\mathrm{Kl}_T$ is positive.
+This would generalize the existing result for Markov categories.
 
 
 

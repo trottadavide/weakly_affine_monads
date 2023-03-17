@@ -60,6 +60,11 @@ T.~Fritz and W.~Liang.
 \newblock Free gs-monoidal categories and free {M}arkov categories.
 \newblock {\em CoRR}, abs/2204.02284, 2022.
 
+\bibitem{fgtc2022lax}
+Tobias Fritz, Fabio Gadducci, Davide Trotta, and Andrea Corradini.
+\newblock Lax completeness for gs-monoidal categories.
+\newblock \href{https://arxiv.org/abs/2205.06892}{arXiv:2205.06892}.
+
 \bibitem{fritz2022dilations}
 Tobias Fritz, Tom{\'a}{\v{s}} Gonda, Nicholas~Gauguin Houghton-Larsen, Paolo
   Perrone, and Dario Stein.

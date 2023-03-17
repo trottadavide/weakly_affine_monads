@@ -3,47 +3,46 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main2.aux
 The style file: plain.bst
 Database file #1: biblio_davide.bib
-Warning--I didn't find a database entry for "tba"
 Warning--can't use both volume and number fields in coecke2011phasegroups
-You've used 17 entries,
+You've used 18 entries,
             2118 wiz_defined-function locations,
-            627 strings with 6867 characters,
-and the built_in function-call counts, 5806 in all, are:
-= -- 589
-> -- 215
+            630 strings with 7049 characters,
+and the built_in function-call counts, 6106 in all, are:
+= -- 614
+> -- 238
 < -- 8
-+ -- 89
-- -- 66
-* -- 394
-:= -- 946
-add.period$ -- 59
-call.type$ -- 17
-change.case$ -- 82
++ -- 98
+- -- 74
+* -- 412
+:= -- 997
+add.period$ -- 62
+call.type$ -- 18
+change.case$ -- 89
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 234
-empty$ -- 487
-format.name$ -- 66
-if$ -- 1237
+cite$ -- 19
+duplicate$ -- 241
+empty$ -- 509
+format.name$ -- 74
+if$ -- 1298
 int.to.chr$ -- 0
-int.to.str$ -- 17
+int.to.str$ -- 18
 missing$ -- 16
-newline$ -- 92
-num.names$ -- 40
-pop$ -- 72
+newline$ -- 97
+num.names$ -- 42
+pop$ -- 86
 preamble$ -- 1
-purify$ -- 65
+purify$ -- 71
 quote$ -- 0
-skip$ -- 168
+skip$ -- 174
 stack$ -- 0
-substring$ -- 406
-swap$ -- 61
+substring$ -- 411
+swap$ -- 62
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 68
+type$ -- 72
 warning$ -- 1
-while$ -- 63
-width$ -- 19
-write$ -- 202
-(There were 2 warnings)
+while$ -- 65
+width$ -- 20
+write$ -- 211
+(There was 1 warning)
