@@ -750,54 +750,64 @@ For now it is an open question whether the localized independence property for a
 
 
 \section{Conclusions and future work}
+
+
 Our main result (\Cref{mainthm}) establishes a tight correspondence between algebraic properties of $T1$ and the universal properties of certain commutative squares given by the structural arrows of $T$, for a given monad on a cartesian category.
 
 Therefore, we believe that our main theorem suggests at least three potential directions for future research:
 \begin{itemize}
 \item generalizing the statement to weakly affine monads on weakly Markov categories;
 \item enhancing the study of monads through a purely algebraic approach, i.e., studying the properties of $T1$;
-\item studying the properties of monads in terms of suitable pullbacks.
+\item generalizing other Markov-categorical notions, such as positivity, to weakly Markov or even general gs-monoidal categories.
 \end{itemize} 
 We will provide further details on these potential directions in the following:
 
 \textbf{Regarding possible generalizations:} in \Cref{mainthm}, we provide a characterization of weakly affine monads on cartesian monoidal categories. Taking inspiration from the case of affine monads on Markov categories, it seems natural to consider whether our main result can be extended to monads on \emph{weakly Markov categories}.
 
-However, solving this problem is non-trivial and requires clever adjustments to the main definitions. The crucial point is that, in general, the structure of the internal group of $T1$ and the structure of the group $\mD(X,T1)$ are not necessarily related in the current definitions. One approach could be to introduce a form of \emph{compatibility} for $T1$ and $\mD(X,T1)$ by defining weakly affine monad on a weakly Markov category as a monad such that $T1$ is an internal group and $\mD(X,T1)$ is a group with the composition and inverses induced by those of $T1$. With this change, for example, \Cref{weaklyboth} would work for any weakly Markov category, but \Cref{mainthm}  would likely fail as its proof involves the universal property of products. 
+However, solving this problem is non-trivial and requires clever adjustments to the main definitions. The crucial point is that, in general, the structure of the internal group of $T1$ and the structure of the group $\mD(X,T1)$ are not necessarily related in the current definitions. One approach could be to introduce a form of \emph{compatibility} for $T1$ and $\mD(X,T1)$ by defining weakly affine monad on a weakly Markov category as a monad such that $T1$ is an internal group and $\mD(X,T1)$ is a group with the composition and units induced by those of $T1$. With this change, for example, \Cref{weaklyboth} would work for any weakly Markov category, but \Cref{mainthm} would likely fail as its proof involves the universal property of products. 
 
 \textbf{Further on algebraic structures:}
 this work delves into properties of monads that can be described purely in algebraic terms concerning the (internal) structure of $T1$, introducing a generalization of the notion of affine monad. 
 We introduced a generalization of the concept of affine monad, providing insight into potential interesting families of monads lying between weakly affine monads (where $T1$ is a group), and affine monads (where $T1$ is the trivial group $1$).
-For example, we can consider weakly affine monads such that the diagram
-% https://q.uiver.app/?q=WzAsNCxbMCwwLCJUKDEpIl0sWzAsMSwiVCgxKSJdLFsxLDEsIlReMigxKSJdLFsxLDAsIlQoMSkiXSxbMCwxLCJcXGlvdGEiLDJdLFsxLDIsIlQoXFxldGFfMSkiLDJdLFswLDNdLFszLDIsIlxcZXRhX3tUMX0iXV0=
-\[\begin{tikzcd}
-	{T(1)} & {T(1)} \\
-	{T(1)} & {T^2(1)}
-	\arrow["\iota"', from=1-1, to=2-1]
-	\arrow["{T(\eta_1)}"', from=2-1, to=2-2]
-	\arrow["\id",from=1-1, to=1-2]
-	\arrow["{\eta_{T1}}", from=1-2, to=2-2]
-\end{tikzcd}\]
-commutes. It is straightforward to check that when the previous diagram commutes then:
-\begin{enumerate}
-	\item $T^2(1)\cong T(1)$ in $\mD$. 
-	\item the internal group $T(1)$ has exponent $2$, namely $\iota=\id_{T1}$;
-	\item the group $\mathrm{Kl}_T(X,1)$ has exponent $2$.
-\end{enumerate}
-We believe that continuing this approach, defining studying new monads based on the algebraic properties of $T1$ could lead to the development of new and interesting tools for applications in categorical probability.
+One fact to notice to avoid possible misconceptions, though, is that while a weakly affine commutative monad maps the group object $1$ to a group object, preserving its monoid structure, it does not quite preserve the inverses in general. 
+To elucidate this further, let's give the following definition.
 
-%\todo[inline]{T: Having a nontrivial example of this statement would help to motivate and illustrate it. Like this, its meaning and significance remains quite unclear}
-% 
-%\begin{proof}
-%	To prove the first claim, it is enough to show that $T(1)\cong 1$ in the Kleisli category $\mathrm{Kl}_T$.
-%	By weak affinity, $T(1)$ is a group in $\mD$, where the arrow $\freccia{1}{\eta_1}{T(1)}$ is the unit of the group and $\freccia{T(1)}{\iota}{T(1)}$ is the inversion map. Therefore, we have that the composition $\freccia{1}{\iota\eta_1}{T(1)}$ has to be equal to $\eta_1$.
-%	Hence we can consider the arrows $1\to T(1)$ and $T(1)\to 1$ in the Kleisli category $\mathrm{Kl}_T$ represented by $T(\eta_1)\eta_1$ and $\iota$, respectively. The composition $T(\eta_1)\eta_1$ with $\iota$ in $\mathrm{Kl}_T$ is given by $\mu_{1,1}T(\iota)T(\eta_1)\eta_1$. Employing the naturality of $\eta_1$ and the fact that $\iota\eta_1=\eta_1$, it is direct to check that $\mu T(\iota)T(\eta_1)\eta_1=\eta_1$, that is the identity $1\to 1$ in $\mathrm{Kl}_T$. Now to show that the other composition gives the identity on $T(1)$ in $\mathrm{Kl}_T$, it is enough to show that $T(\eta_1)\iota=\eta_{T(1)}$, but this follows by hypothesis.
-%
-%	For the second claim, we can compose the diagram with the monad multiplication, obtaining $\iota=\id_{T1}$.
-%	
-%	The last claim follows by combining the second one with the explicit construction of inverses in $\mathrm{Kl}_T(X,1)$ (see the proof of \Cref{weaklyboth}).
-%\end{proof}
+\begin{mydefinition}
+ Let $\mD,\mE$ be a monoidal categories and let $F:\mD\to\mE$ be a lax monoidal functor, so that it maps monoid objects to monoid objects.
+Given a group object $G$ in $\mD$, we say that $F$ \emph{strongly preserves the group structure of $G$} if the monoid object $F(G)$ in $\mE$ is a group object, and moreover the inversion map of $F(G)$ is given by $F(\iota)$, where $\iota$ is the inversion map of $G$.
+\end{mydefinition}
 
-\textbf{More on pullbacks conditions:}
+For example, if $F$ is \emph{strong} monoidal, it strongly preserves every existing group object structure, since the following diagram commutes,
+\[
+ \begin{tikzcd}[row sep=small]
+  & & 1 \ar{ddrr}{e_{FG}} \ar{d}{\cong}\\
+  & & F1 \ar{drr}[swap]{Fe_G} \\
+  FG \ar{uurr}{!} \ar{urr}[swap]{F!} \ar{dr}{F(\mathrm{copy})} \ar{ddr}[swap]{\mathrm{copy}} & && & FG \\
+  & F(G\times G) \ar{d}{\cong} \ar{rr}{F(\id\times\iota)} && F(G\times G) \ar{d}[swap]{\cong} \ar{ur}{Fm_G} \\
+  & FG\times FG \ar{rr}[swap]{\id\times F(\iota)} && FG\times FG \ar{uur}[swap]{m_{FG}}
+ \end{tikzcd}
+\]
+as well as the analogous diagram with $\id$ and $\iota$ switched.
+
+Now, as the following proposition shows, weakly affine monads in general do not strongly preserve the group structure of the monoidal unit.
+
+\begin{myproposition}
+ Let $T$ be a weakly affine commutative monad on a cartesian monoidal category $\mD$. The following conditions are equivalent.
+ \begin{enumerate}
+  \item\label{condstrong} $T$ strongly preserves the group structure of the terminal object $1$;
+  \item\label{condinv} The inversion map $\iota:T1\to T1$ is the identity;
+  \item\label{condorder} For every object $X$ of $\mD$, every element of the group $\mD(X,T1)$ has order 2. 
+ \end{enumerate}
+\end{myproposition}
+\begin{proof}
+ For $\ref{condstrong}\Leftrightarrow\ref{condinv}$, it suffices to notice that the inversion map $1\to 1$ is the identity. 
+ 
+ For $\ref{condinv}\Leftrightarrow\ref{condorder}$, notice that the inverse of an element $a\in\mD(X,T1)$ is given by postcomposing with the inversion map $\iota:T1\to T1$. If $\iota$ is the identity, $a\in\mD(X,T1)$ is its own inverse, i.e.~it has order $2$. Conversely, suppose that for every $X$, every element $a\in\mD(X,T1)$ is its own inverse. Using again a Yoneda argument, we can set $X=T1$ and $a=\id_{T1}$, so that $\iota$ is the identity.  
+\end{proof}
+
+For example, for the nonzero measure monad $M^*$ (\Cref{ex:nonzero_measures}), the inversion map of $T1=(0,\infty)$ is the map $x\mapsto 1/x$, which is not the identity. 
+
+\textbf{On extending positivity:}
 in \Cref{mainthm} we  demonstrate that the algebraic properties of $T1$ can be (equivalently) recovered by studying suitable pullbacks involving structural morphism. Hence, \Cref{mainthm}  presents a second possible approach to investigate the properties of monads  studying when certain commutative squares involving structural morphisms are pullbacks.
 
 Recall that Bart Jacobs calls a strong monad $T$ on a cartesian monoidal category \emph{strongly affine}~\cite{Jacobs16} if for every pair of objects $X$ and $Y$, the following diagram is a pullback,
