@@ -322,7 +322,7 @@ These comonoid structures must be multiplicative with respect to the monoidal st
 The category $\Rel$ of sets and relations with the monoidal operation $\otimes : \Rel \times \Rel\to \Rel$ given by the direct product of sets is a gs-monoidal category \cite{CorradiniGadducci02}. In this gs-monoidal category, the copyable arrows are precisely the partial functions, and the discardable arrows are the total relations.
 \end{myexample}
 
-\begin{myremark}
+\begin{myremark}\label{cartesiancase}
 It is well-known that if every morphism is copyable and discardable, or equivalently if the copy and discard maps are natural, then the monoidal product is the categorical product, and thus the category is cartesian monoidal \cite{Fox:CACC}.
 In other words, the following conditions are equivalent for a gs-monoidal category $\mC$:
  \begin{itemize}
@@ -402,7 +402,7 @@ If a morphism $f:X\to Y$ is copyable and discardable, precomposition with $f$ in
 
 \begin{myremark}
  The monoidal unit $I$ of a monoidal category is canonically a monoid object via the coherence isomorphisms $I\otimes I\cong I$ and $I\cong I$. 
- However, in a generic (non-cartesian) gs-monoidal category $\mC$, the monoid structure on $\mC(X,I)$ is not the one obtained from \Cref{yonedaremark} by considering the presheaf represented by the monoid object $I$. In order for \Cref{yonedaremark} to hold, we would need that every precomposition is a morphism of monoids. As remarked above, this fails in general if not all morphisms are copyable and discardable (i.e.~if $\mC$ is not cartesian monoidal).
+ However, in a generic (non-cartesian) gs-monoidal category $\mC$, the monoid structure on $\mC(X,I)$ is not, as in \Cref{yonedaremark}, coming from considering the presheaf represented by $I$. Indeed, in order for \Cref{yonedaremark} to hold, we would need that every precomposition is a morphism of monoids. As remarked above, this fails in general if not all morphisms are copyable and discardable (i.e.~if $\mC$ is not cartesian monoidal).
 \end{myremark}
 
 
@@ -776,7 +776,7 @@ One fact to notice to avoid possible misconceptions, though, is that while a wea
 To elucidate this further, let's give the following definition.
 
 \begin{mydefinition}
- Let $\mD,\mE$ be gs-monoidal categories and let $F:\mD\to\mE$ be a lax monoidal functor, so that it maps monoid objects to monoid objects.
+ Let $\mD,\mE$ be cartesian categories and let $F:\mD\to\mE$ be a lax monoidal functor, so that it maps monoid objects to monoid objects.
 Given a group object $G$ in $\mD$, we say that $F$ \emph{strongly preserves the group structure of $G$} if the monoid object $F(G)$ in $\mE$ is a group object, and moreover the inversion map of $F(G)$ is given by $F(\iota)$, where $\iota$ is the inversion map of $G$.
 \end{mydefinition}
 
@@ -790,7 +790,7 @@ For example, if $F$ is \emph{strong} monoidal, then it strongly preserves the gr
   & FG\times FG \ar{rr}[swap]{\id\times F(\iota)} && FG\times FG \ar{uur}[swap]{m_{FG}}
  \end{tikzcd}
 \]
-as well as the analogous diagram with $\id$ and $\iota$ switched.
+as well as the analogous diagram with $\id$ and $\iota$ switched. (The copy and delete maps are the one given by the canonical gs-monoidal structure of cartesian categories, see~\Cref{cartesiancase}.)
 
 Now, as the following proposition shows, weakly affine monads in general do not strongly preserve the group structure of the monoidal unit.
 
@@ -807,7 +807,6 @@ Now, as the following proposition shows, weakly affine monads in general do not 
  
  For $\ref{condinv}\Leftrightarrow\ref{condorder}$, note that the inverse of an element $a\in\mD(X,T1)$ is given by postcomposing with the inversion map $\iota:T1\to T1$. If $\iota$ is the identity, $a\in\mD(X,T1)$ is its own inverse, i.e.~it has order $2$. Conversely, suppose that for every $X$, every element $a\in\mD(X,T1)$ is its own inverse. Using again a Yoneda argument, we can set $X=T1$ and $a=\id_{T1}$, so that $\iota$ is the identity.  
 \end{proof}
-
 For example, for the nonzero measure monad $M^*$ (\Cref{ex:nonzero_measures}), the inversion map of $T1=(0,\infty)$ is the map $x\mapsto 1/x$, which is not the identity. 
 \\
 
