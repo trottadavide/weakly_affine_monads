@@ -1,48 +1,50 @@
-This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main2.aux
-The style file: plain.bst
+The style file: plainurl.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: biblio_davide.bib
-Warning--can't use both volume and number fields in coecke2011phasegroups
 You've used 18 entries,
-            2118 wiz_defined-function locations,
-            630 strings with 7049 characters,
-and the built_in function-call counts, 6106 in all, are:
-= -- 614
-> -- 238
-< -- 8
-+ -- 98
-- -- 74
-* -- 412
-:= -- 997
-add.period$ -- 62
+            2849 wiz_defined-function locations,
+            748 strings with 7971 characters,
+and the built_in function-call counts, 8285 in all, are:
+= -- 858
+> -- 289
+< -- 9
++ -- 104
+- -- 80
+* -- 444
+:= -- 1202
+add.period$ -- 59
 call.type$ -- 18
 change.case$ -- 89
 chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 241
-empty$ -- 509
-format.name$ -- 74
-if$ -- 1298
+cite$ -- 18
+duplicate$ -- 248
+empty$ -- 781
+format.name$ -- 80
+if$ -- 2128
 int.to.chr$ -- 0
 int.to.str$ -- 18
 missing$ -- 16
-newline$ -- 97
-num.names$ -- 42
-pop$ -- 86
+newline$ -- 93
+num.names$ -- 46
+pop$ -- 161
 preamble$ -- 1
 purify$ -- 71
 quote$ -- 0
-skip$ -- 174
+skip$ -- 593
 stack$ -- 0
-substring$ -- 411
-swap$ -- 62
-text.length$ -- 8
+substring$ -- 435
+swap$ -- 68
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 72
-warning$ -- 1
-while$ -- 65
+warning$ -- 0
+while$ -- 70
 width$ -- 20
-write$ -- 211
-(There was 1 warning)
+write$ -- 205

@@ -1,7 +1,7 @@
 \begin{thebibliography}{10}
 
 \bibitem{cho_jacobs_2019}
-K.~Cho and B.~Jacobs.
+Kenta Cho and Bart Jacobs.
 \newblock Disintegration and {B}ayesian inversion via string diagrams.
 \newblock {\em Mathematical Structures in Computer Science}, 29(7):938–971,
   2019.
@@ -9,56 +9,50 @@ K.~Cho and B.~Jacobs.
 \bibitem{coecke2011phasegroups}
 Bob Coecke, Bill Edwards, and Robert~W. Spekkens.
 \newblock Phase groups and the origin of non-locality for qubits.
-\newblock In {\em Proceedings of the 6th International Workshop on Quantum
-  Physics and Logic (QPL 2009)}, volume 270 of {\em ENTCS}, 2011.
-\newblock \href{https://arxiv.org/abs/1003.5005}{arXiv:1003.5005}.
+\newblock In Bob Coecke, Prakash Panangaden, and Peter Selinger, editors, {\em
+  QPL@MFPS 2009}, volume 270 of {\em ENTCS}, pages 15--36. Elsevier, 2009.
 
 \bibitem{CorradiniGadducci97}
-A.~Corradini and F.~Gadducci.
+Andrea Corradini and Fabio Gadducci.
 \newblock A 2-categorical presentation of term graph rewriting.
 \newblock In E.~Moggi and G.~Rosolini, editors, {\em CTCS 1997}, volume 1290 of
   {\em LNCS}, pages 87--105. Springer, 1997.
 
 \bibitem{CorradiniGadducci99}
-A.~Corradini and F.~Gadducci.
+Andrea Corradini and Fabio Gadducci.
 \newblock An algebraic presentation of term graphs, via gs-monoidal categories.
-\newblock {\em Applied Categorical Structures}, 7:299--331, 1999.
+\newblock {\em Applied Categorical Structures}, 7(4):299--331, 1999.
 
 \bibitem{CorradiniGadducci99b}
-A.~Corradini and F.~Gadducci.
+Andrea Corradini and Fabio Gadducci.
 \newblock Rewriting on cyclic structures: equivalence between the operational
   and the categorical description.
 \newblock {\em RAIRO - Theoretical Informatics and Applications - Informatique
   Th\'eorique et Applications}, 33(4-5):467--493, 1999.
 
 \bibitem{CorradiniGadducci02}
-A.~Corradini and F.~Gadducci.
+Andrea Corradini and Fabio Gadducci.
 \newblock A functorial semantics for multi-algebras and partial algebras, with
   applications to syntax.
-\newblock {\em Theoretical Computer Science}, 286:293--322, 2002.
+\newblock {\em Theoretical Computer Science}, 286(2):293--322, 2002.
 
 \bibitem{coumans2013scalars}
 Dion Coumans and Bart Jacobs.
 \newblock Scalars, monads, and categories.
-\newblock In {\em Quantum Physics and Linguistics: A Compositional,
+\newblock In Chris Heunen, Mehrnoosh Sadrzadeh, and Edward Grefenstette,
+  editors, {\em Quantum Physics and Linguistics - {A} Compositional,
   Diagrammatic Discourse}, pages 184--216. Oxford University Press, 2013.
-\newblock \href{https://arxiv.org/abs/1003.0585}{arXiv:1003.0585}.
 
 \bibitem{Fox:CACC}
-T.~Fox.
+Thomas Fox.
 \newblock Coalgebras and cartesian categories.
-\newblock {\em Communications in Algebra}, 4:665--667, 1976.
+\newblock {\em Communications in Algebra}, 4(7):665--667, 1976.
 
 \bibitem{Fritz_2020}
-T.~Fritz.
+Tobias Fritz.
 \newblock A synthetic approach to {M}arkov kernels, conditional independence
   and theorems on sufficient statistics.
 \newblock {\em Advances in Mathematics}, 370:107239, 2020.
-
-\bibitem{fritz2022}
-T.~Fritz and W.~Liang.
-\newblock Free gs-monoidal categories and free {M}arkov categories.
-\newblock {\em CoRR}, abs/2204.02284, 2022.
 
 \bibitem{fgtc2022lax}
 Tobias Fritz, Fabio Gadducci, Davide Trotta, and Andrea Corradini.
@@ -74,35 +68,38 @@ Tobias Fritz, Tom{\'a}{\v{s}} Gonda, Nicholas~Gauguin Houghton-Larsen, Paolo
 \bibitem{fritz2022dseparation}
 Tobias Fritz and Andreas Klingler.
 \newblock The $d$-separation criterion in categorical probability.
-\newblock {\em J. Mach. Learn. Res.}, 24(46):1--49, 2023.
-\newblock \href{https://arxiv.org/abs/2207.05740}{arXiv:2207.05740}.
+\newblock {\em Journal of Machine Learning Research}, 24(46):1--49, 2023.
+
+\bibitem{fritz2022}
+Tobias Fritz and Wendong Liang.
+\newblock Free gs-monoidal categories and free {M}arkov categories.
+\newblock {\em CoRR}, abs/2204.02284, 2022.
 
 \bibitem{Jacobs1994}
-B.~Jacobs.
+Bart Jacobs.
 \newblock Semantics of weakening and contraction.
 \newblock {\em Annals of Pure and Applied Logic}, 69(1):73--106, 1994.
 
 \bibitem{Jacobs16}
-B.~Jacobs.
+Bart Jacobs.
 \newblock Affine monads and side-effect-freeness.
-\newblock In I.~Hasuo, editor, {\em CMCS 2016}, volume 9608 of {\em LNCS},
+\newblock In Ichiro Hasuo, editor, {\em CMCS 2016}, volume 9608 of {\em LNCS},
   pages 53--72. Springer, 2016.
 
 \bibitem{Kock71}
-A.~Kock.
+Anders Kock.
 \newblock Bilinearity and cartesian closed monads.
 \newblock {\em Mathematica Scandinavica}, 29(2):161--174, 1971.
 
 \bibitem{kock2012distributions}
 Anders Kock.
 \newblock Commutative monads as a theory of distributions.
-\newblock {\em Theory Appl. Categ.}, 26, 2012.
-\newblock \href{https://arxiv.org/abs/1108.5952}{arXiv:1108.5952}.
+\newblock {\em Theory and Applications of Categories}, 26, 2012.
 
 \bibitem{Selinger2011}
-P.~Selinger.
+Peter Selinger.
 \newblock A survey of graphical languages for monoidal categories.
-\newblock In B.~Coecke, editor, {\em New Structures for Physics}, volume 813 of
-  {\em Lecture Notes in Physics}, pages 289--355. Springer, 2011.
+\newblock In Bob Coecke, editor, {\em New Structures for Physics}, volume 813
+  of {\em Lecture Notes in Physics}, pages 289--355. Springer, 2011.
 
 \end{thebibliography}
