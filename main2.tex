@@ -173,7 +173,7 @@
 The idea of \emph{gs-monoidal categories}, monoidal categories equipped with copy and discard morphisms for each object,\footnote{See the next section for the full definition.} was first introduced in the context of algebraic approaches to term graph rewriting~\cite{CorradiniGadducci97}, and then
 developed in a series of papers \cite{CorradiniGadducci99, CorradiniGadducci02, CorradiniGadducci99b}.
 Two decades later, similar structures have been rediscovered independently in the context of categorical probability theory, in particular in \cite{cho_jacobs_2019} and \cite{Fritz_2020}, under the names of \emph{copy-discard (CD) categories} and \emph{Markov categories}.
-While ``CD categories'' and ``gs-monoidal categories'' are synonyms, Markov categories have the additional condition that every morphism commutes with the discard maps, a condition corresponding to normalisation of probability. See~\cite[Remark~2.2]{fritz2022} for a more detailed history of these ideas. 
+While ``CD-categories'' and ``gs-monoidal categories'' are synonyms, Markov categories have the additional condition that every morphism commutes with the discard maps, a condition corresponding to normalisation of probability. See~\cite[Remark~2.2]{fritz2022} for a more detailed history of these ideas. 
 
 A canonical way of obtaining a gs-monoidal category is as the Kleisli category of a commutative monad on a cartesian monoidal category. 
 As argued in \cite{kock2012distributions}, commutative monads can be seen as generalising theories of \emph{distributions} of some kind, and the fact that their Kleisli categories are gs-monoidal can be seen as the correspondence between distributions and (possibly unnormalised) probability theory.
@@ -181,15 +181,16 @@ In particular, when the monad is affine (i.e.~it preserves the monoidal unit \ci
 
 In this work we introduce and study an intermediate notion between gs-monoidal and Markov categories, which we call \emph{weakly Markov categories}. 
 These are defined as gs-monoidal categories where morphisms to the monoidal unit form a group (\Cref{defweaklymarkov}). 
-Weakly Markov categories can be interpreted intuitively as gs-monoidal categories where each morphism is discardable up to an invertible normalisation (see \Cref{weaklydiscardable} for the precise mathematical statement). Trivially, every Markov category is weakly Markov.
+Weakly Markov categories can be interpreted intuitively as gs-monoidal categories where each morphism is discardable up to an invertible normalisation (see \Cref{weaklydiscardable} for the precise mathematical statement). The choice of the name is due to the fact that every Markov category is (trivially) weakly Markov.
 
-In parallel to weakly Markov categories we also introduce \emph{weakly affine monads}, which are monads on cartesian monoidal categories which map the terminal object to a group object (\Cref{defweaklyaffine}).
-As a particular concrete example of relevance to probability and measure theory, we consider the monad of finite nonzero measures on $\Set$ (\Cref{ex:nonzero_measures}), and we use it as a running example in the rest of the work.
-As we show, a commutative monad on a cartesian monoidal category is weakly affine if and only if its Kleisli category is weakly Markov, analogously to what happens with affine monads and Markov categories. 
+In parallel to weakly Markov categories we also introduce \emph{weakly affine monads}, which are commutative monads on cartesian monoidal categories preserving the (internal) group structure of the terminal object (\Cref{defweaklyaffine}).
+As a particular concrete example of relevance to probability and measure theory, we consider the monad of finite nonzero measures on $\Set$ (\Cref{ex:nonzero_measures}), and we will use it as a running example in the rest of the work.
+As we show (see \Cref{weaklyboth}), a commutative monad on a cartesian monoidal category is weakly affine if and only if its Kleisli category is weakly Markov, analogously to what happens with affine monads and Markov categories. 
 
 Markov categories come equipped with a notion of \emph{conditional independence}, which has been one of the main motivations for their use in categorical probability and statistics \cite{cho_jacobs_2019,Fritz_2020,fritz2022dseparation}.
 A notion of conditional independence can be given for generic gs-monoidal categories. As we show, in the case of weakly Markov categories it has convenient properties which can be considered ``up-to-normalisation'' versions of their corresponding Markov-categorical counterpart.
-Using these concepts, we give an equivalent condition for weak affinity of a monad, a pullback condition on the associativity diagram (\Cref{mainthm}), widely generalising the elementary statement that a monoid is a group if and only if its associativity diagram is a pullback (\Cref{assoc_group}). 
+
+These concepts allow us to provide an equivalent condition for weak affinity of a monad, namely a pullback condition on the associativity diagram (\Cref{mainthm}), widely generalising the elementary statement that a monoid is a group if and only if its associativity diagram is a pullback (\Cref{assoc_group}). 
 
 
 \paragraph*{Outline.}
@@ -835,7 +836,7 @@ and which always commutes by naturality of the strength.
 One can then call the monad $T$ \emph{positive} if this second diagram is a pullback. Upon defining \emph{positive gs-monoidal categories} analogously to positive Markov categories, one may conjecture that $T$ is positive if and only if $\mathrm{Kl}_T$ is positive.
 This would generalise the existing result for Markov categories.
 
-\bibliographystyle{plainurl}% the mandatory bibstyle
+\bibliographystyle{plain}% the mandatory bibstyle
 
 \bibliography{biblio_davide}
 

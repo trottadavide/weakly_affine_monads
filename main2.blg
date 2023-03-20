@@ -1,42 +1,38 @@
-This is BibTeX, Version 0.99d (TeX Live 2019)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main2.aux
-The style file: plainurl.bst
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=20001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
+The style file: plain.bst
 Database file #1: biblio_davide.bib
 You've used 18 entries,
-            2849 wiz_defined-function locations,
-            748 strings with 7971 characters,
-and the built_in function-call counts, 8285 in all, are:
-= -- 858
-> -- 289
+            2118 wiz_defined-function locations,
+            630 strings with 6944 characters,
+and the built_in function-call counts, 6345 in all, are:
+= -- 632
+> -- 260
 < -- 9
 + -- 104
 - -- 80
 * -- 444
-:= -- 1202
+:= -- 1031
 add.period$ -- 59
 call.type$ -- 18
 change.case$ -- 89
 chr.to.int$ -- 0
 cite$ -- 18
 duplicate$ -- 248
-empty$ -- 781
+empty$ -- 524
 format.name$ -- 80
-if$ -- 2128
+if$ -- 1353
 int.to.chr$ -- 0
 int.to.str$ -- 18
 missing$ -- 16
 newline$ -- 93
 num.names$ -- 46
-pop$ -- 161
+pop$ -- 89
 preamble$ -- 1
 purify$ -- 71
 quote$ -- 0
-skip$ -- 593
+skip$ -- 183
 stack$ -- 0
 substring$ -- 435
 swap$ -- 68
