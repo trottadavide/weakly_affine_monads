@@ -153,10 +153,10 @@
    and as such they provide a general framework for effectful computation. 
    Recently proposed in the context of categorical probability, Markov categories are
    gs-monoidal categories where the monoidal unit is also terminal, and they arise for example as
-   Kleisli categories of commutative \emph{affine} monads, where affine means that the monad preserves the terminal object.
+   Kleisli categories of commutative \emph{affine} monads, where affine means that the monad preserves the monoidal unit.
 
    The aim of this paper is to study a new condition on the gs-monoidal structure, resulting in the concept of \emph{weakly Markov categories},
-   which is intermediate between general gs-monoidal categories and Markov categories. 
+   which is intermediate between gs-monoidal categories and Markov ones. 
    In a weakly Markov category, the morphisms to the monoidal unit are not necessarily unique, but form a group.
    As we show, these categories exhibit a rich theory of conditional independence for morphisms, generalising the known theory for Markov categories. 
    We also introduce the corresponding notion for commutative monads, which we call weakly affine, and for which we give two equivalent
@@ -192,7 +192,7 @@ As a particular concrete example of relevance to probability and measure theory,
 As we show (see \Cref{weaklyboth}), a commutative monad on a cartesian monoidal category is weakly affine if and only if its Kleisli category is weakly Markov, analogously to what happens with affine monads and Markov categories. 
 
 Markov categories come equipped with a notion of \emph{conditional independence}, which has been one of the main motivations for their use in categorical probability and statistics \cite{cho_jacobs_2019,Fritz_2020,fritz2022dseparation}.
-It is noteworthy that a notion of conditional independence can also be given for generic gs-monoidal categories. As we show, for weakly Markov categories it has convenient properties which can be considered ``up-to-normalisation'' versions of their corresponding Markov-categorical counterpart.
+It is noteworthy that a notion of conditional independence can also be given for any gs-monoidal category. As we show, for weakly Markov categories it has convenient properties which can be considered ``up-to-normalisation'' versions of their corresponding Markov-categorical counterpart.
 %
 These concepts allow us to provide an equivalent condition for weak affinity of a monad, namely a pullback condition on the associativity diagram (\Cref{mainthm}), widely generalising the elementary statement that a monoid is a group if and only if its associativity diagram is a pullback (\Cref{assoc_group}). 
 %
@@ -824,7 +824,7 @@ However, solving this problem is non-trivial and requires clever adjustments to 
 % \\
 
 \textbf{On the positivity axiom.}
-Recall that Bart Jacobs calls a strong monad $T$ on a cartesian monoidal category \emph{strongly affine}~\cite{Jacobs16} if for every pair of objects $X$ and $Y$ the following diagram is a pullback
+Recall that a strong monad $T$ on a cartesian monoidal category is \emph{strongly affine}~\cite{Jacobs16} if for every pair of objects $X$ and $Y$ the following diagram is a pullback
  \[
   \begin{tikzcd}
    X \times TY \ar{d}{\pi_1} \ar{r}{s} & T(X\times Y) \ar{d}{T\pi_1} \\
