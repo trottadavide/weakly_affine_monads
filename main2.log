@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.26)  20 MAR 2023 16:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.26)  20 MAR 2023 17:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1769,28 +1769,28 @@ Package pdftex.def Info: example-image-plain.pdf  used on input line 185.
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </usr/lo
 cal/texlive/2019/texmf-dist/tex/latex/mwe/example-image-plain.pdf>] [2.2]
 Package hyperref Info: bookmark level for unknown myproposition defaults to 0 o
-n input line 222.
+n input line 220.
 Package hyperref Info: bookmark level for unknown myremark defaults to 0 on inp
-ut line 247.
+ut line 245.
 Package hyperref Info: bookmark level for unknown mydefinition defaults to 0 on
- input line 260.
+ input line 258.
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10.5> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 287.
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 285.
 
  [3.3]
 (./figures/copy_del.tikz) (./figures/comonoid_equation.tikz)
 (./figures/comon-struct-mult.tikz) [4.4] (./figures/functional.tikz)
 (./figures/full.tikz)
 Package hyperref Info: bookmark level for unknown myexample defaults to 0 on in
-put line 333.
+put line 331.
  [5.5] (./figures/state-costate.tikz)
-LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 411.
+LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 409.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8.5> on input line 411.
+(Font)              <8.5> on input line 409.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.94997> on input line 411.
+(Font)              <5.94997> on input line 409.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <4.25> on input line 411.
+(Font)              <4.25> on input line 409.
  [6.6]
 (./figures/ptwise-product.tikz) (./figures/action.tikz) [7.7]
 (./figures/free-action.tikz) (./figures/normalization_proof.tikz) [8.8]
@@ -1801,14 +1801,14 @@ Missing character: There is no 0 in font nullfont!
 (./figures/cond-ind-proof.tikz) (./figures/cond-ind-proof2.tikz) [11.11]
 (./figures/cond-ind2.tikz)
 Package hyperref Info: bookmark level for unknown mytheorem defaults to 0 on in
-put line 645.
+put line 643.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 649.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 647.
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 649.
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 647.
 
 Package hyperref Info: bookmark level for unknown mylemma defaults to 0 on inpu
-t line 665.
+t line 663.
  [12.12]
 Underfull \vbox (badness 4366) has occurred while \output is active []
 
@@ -1823,12 +1823,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 782--825
 
  []
 
-[15.15] (./main2.bbl
+
+Underfull \vbox (badness 1117) has occurred while \output is active []
+
+ [15.15]
+(./main2.bbl
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 70.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 70.
-) [16.16]
+ [16.16]) [17.17]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 854.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 854.
  (./main2.aux)
@@ -1839,11 +1843,11 @@ Package rerunfilecheck Info: File `main2.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 854.
  ) 
 Here is how much of TeX's memory you used:
- 51806 strings out of 492616
- 995874 string characters out of 6129481
- 1103770 words of memory out of 5000000
+ 51805 strings out of 492616
+ 995853 string characters out of 6129481
+ 1104770 words of memory out of 5000000
  54551 multiletter control sequences out of 15000+600000
- 687456 words of font info for 234 fonts, out of 8000000 for 9000
+ 687426 words of font info for 233 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,22n,84p,3231b,1239s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
@@ -1875,10 +1879,10 @@ exmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2019/texmf-dist/f
 onts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main2.pdf (16 pages, 507693 bytes).
+Output written on main2.pdf (17 pages, 508606 bytes).
 PDF statistics:
- 509 PDF objects out of 1000 (max. 8388607)
- 415 compressed objects within 5 object streams
- 114 named destinations out of 1000 (max. 500000)
+ 514 PDF objects out of 1000 (max. 8388607)
+ 419 compressed objects within 5 object streams
+ 115 named destinations out of 1000 (max. 500000)
  43202 words of extra memory for PDF output out of 51595 (max. 10000000)
 

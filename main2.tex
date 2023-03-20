@@ -180,7 +180,7 @@ While ``CD-categories'' and ``gs-monoidal categories'' are synonyms, Markov cate
 for a more detailed history of these ideas. 
 
 A canonical way of obtaining a gs-monoidal category is as the Kleisli category of a commutative monad on a cartesian monoidal category. 
-As argued in \cite{kock2012distributions}, commutative monads can be seen as generalising theories of \emph{distributions} of some kind, and the fact that their Kleisli categories are gs-monoidal can be seen as the correspondence between distributions and (possibly unnormalised) probability theory.
+As argued in \cite{kock2012distributions}, commutative monads can be seen as generalising theories of distributions of some kind, and the fact that their Kleisli categories are gs-monoidal can be seen as the correspondence between distributions and (possibly unnormalised) probability theory.
 In particular, when the monad is affine (i.e.~it preserves the monoidal unit \cite{Kock71,Jacobs1994}), the Kleisli category is Markov -- this can be seen as the correspondence between normalised distributions and probability theory.
 
 In this work we introduce and study an intermediate notion between gs-monoidal and Markov categories, which we call \emph{weakly Markov categories}. 
@@ -196,10 +196,8 @@ It is noteworthy that a notion of conditional independence can also be given for
 %
 These concepts allow us to provide an equivalent condition for weak affinity of a monad, namely a pullback condition on the associativity diagram (\Cref{mainthm}), widely generalising the elementary statement that a monoid is a group if and only if its associativity diagram is a pullback (\Cref{assoc_group}). 
 %
-As such, we believe that weak affine monads that are relevant to the study of categorical probability, 
+As such, we believe that weak affine monads are relevant to the study of categorical probability, 
 as they allow to investigate probability without normalisation within an elegant categorical framework.
-
-
 
 \paragraph*{Outline.}
 In \Cref{secbackground} we review the main structures used in this work, in particular group and monoid objects, gs-monoidal and Markov categories, and their interaction with commutative monads.
@@ -766,9 +764,11 @@ For now it is an open question whether the localised independence property for a
 \section{Conclusions and future work}
 \label{secfurther}
 
-
-Our main result (\Cref{mainthm}) establishes a tight correspondence between algebraic properties of $T1$ and the universal properties of certain commutative squares given by the structural arrows of $T$ for a commutative monad $T$ on a cartesian category.
-We believe that this main theorem suggests at least two potential directions for future research, namely
+Our paper introduces weak Markov categories and weakly affine monads and explore their relationship.
+More explicitly, our main result (\Cref{mainthm}) establishes a tight correspondence between the algebraic properties 
+of $T1$ and the universal properties of certain commutative squares given by the structural arrows of $T$
+for a commutative monad $T$ on a cartesian category.
+We believe that this theorem suggests at least two potential directions for future research, namely
 \begin{itemize}
 \item generalising the statement to weakly affine monads on weakly Markov categories;
 % \item enhancing the study of monads through a purely algebraic approach, i.e., studying group-theoretic properties of $T1$;
