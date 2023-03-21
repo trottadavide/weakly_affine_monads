@@ -194,7 +194,7 @@ As we show (see \Cref{weaklyboth}), a commutative monad on a cartesian monoidal 
 Markov categories come equipped with a notion of \emph{conditional independence}, which has been one of the main motivations for their use in categorical probability and statistics \cite{cho_jacobs_2019,Fritz_2020,fritz2022dseparation}.
 It is noteworthy that a notion of conditional independence can also be given for any gs-monoidal category. As we show, for weakly Markov categories it has convenient properties which can be considered ``up-to-normalisation'' versions of their corresponding Markov-categorical counterpart.
 %
-These concepts allow us to provide an equivalent condition for weak affinity of a monad, namely a pullback condition on the associativity diagram (\Cref{mainthm}), widely generalising the elementary statement that a monoid is a group if and only if its associativity diagram is a pullback (\Cref{assoc_group}). 
+These concepts allow us to provide an equivalent condition for weak affinity of a monad, namely a pullback condition on the associativity diagram of the structural morphisms $c_{X,Y}:TX\times TY\to T(X\times Y)$ (\Cref{mainthm}), widely generalising the elementary statement that a monoid is a group if and only if its associativity diagram is a pullback (\Cref{assoc_group}). 
 %
 As such, we believe that weak affine monads are relevant to the study of categorical probability, 
 as they allow to investigate probability without normalisation within an elegant categorical framework.
@@ -238,7 +238,7 @@ To begin, the following categorical characterisation of groups will be useful to
  Conversely, suppose that \eqref{assoc} is a pullback. We can set $g,h=e$ and $c=a$ so that $ae=ea=a$. 
  Instantiating the pullback property on these elements gives $b$ such that $ab=e$ and $ba=e$, that is, $b=a^{-1}$.
 \end{proof}
-
+%
 \Cref{assoc_group} holds generally for a monoid object in a cartesian monoidal category, where the element-wise proof still applies thanks to the following standard observation.
 
 \begin{myremark}
@@ -250,7 +250,7 @@ To begin, the following categorical characterisation of groups will be useful to
 	The proof is straightforward by the Yoneda lemma.
 	It follows that \Cref{assoc_group} holds for internal monoids in cartesian monoidal categories in general.
 \end{myremark}
-
+%
 For the consideration of categorical probability, we now recall the simplest version of a commutative monad of measures.
 It works with measures taking values in any semiring instead of $[0,\infty)$ (see e.g.~\cite[Section~5.1]{coumans2013scalars}), 
 but we restrict to the case of $[0,\infty)$ for simplicity.
@@ -340,7 +340,7 @@ In other words, the following conditions are equivalent for a gs-monoidal catego
   \item the copy and discard maps are natural.
  \end{itemize}
 \end{myremark}
-
+%
 In recent work~\cite{fgtc2022lax} it has been shown that gs-monoidal categories naturally arise in several ways, such as Kleisli categories of commutative monads or span categories. In the following proposition, we recall the result regarding Kleisli categories:
 
 \begin{myproposition}\label{monoidalgs}
@@ -372,14 +372,15 @@ Nowadays, \emph{Markov categories}~\cite{Fritz_2020} represent one of the more i
   \item the discard maps are natural;
   \item every morphism is discardable.
  \end{itemize}
+ 
 \end{mydefinition}
-
+%
 We recall from \cite{Kock71,Jacobs1994} the notion of \emph{affine monad}.
 
 \begin{mydefinition}
  A monad $T$ on a cartesian monoidal category is called \textbf{affine} if $T1\cong 1$.
 \end{mydefinition}
-
+%
 It was observed in~\cite[Corollary~3.2]{Fritz_2020} that if the monad preserves the terminal object, then every arrow of the Kleisli category is discardable, and this makes the Kleisli category into a Markov category.
 Since the converse is easy to see, we have the following addendum to \Cref{monoidalgs}.
 
@@ -391,7 +392,7 @@ Let $T$ be a commutative monad on a cartesian monoidal category $\mD$. Then $\ma
 \begin{myexample}
  The distribution monad $D$ of \Cref{monadM} is affine, and so its Kleisli category (\Cref{kleisliM}) is a Markov category. It is one of the simplest examples of categories of relevance for categorical probability.
  
- The measure monad $M$ is not affine, as it is easy to see that $M1\cong[0,\infty)$, and so its Kleisli category is not Markov.
+The measure monad $M$ is not affine, as it is easy to see that $M1\cong[0,\infty)$, and so its Kleisli category is not Markov.
 \end{myexample}
 
 
@@ -408,14 +409,14 @@ As is standard convention, we represent such morphisms as triangles as follows
 
  Effects, i.e.~elements of the set $\mC(X,I)$, form canonically a commutative monoid as follows: the monoidal unit is the discard map $X\to I$, and given $a,b:X\to I$, their product $ab$ is given by copying\footnote{See also e.g.~the $\odot$ product in~\cite[Proposition~3.10]{coecke2011phasegroups}.}
 \ctikzfig{ptwise-product}
-If a morphism $f:X\to Y$ is copyable and discardable, pre-composition with $f$ induces a morphism of monoids $\mC(Y,I)\to\mC(X,I)$. 
+If a morphism $f:X\to Y$ is copyable and discardable, the pre-composition with $f$ induces a morphism of monoids $\mC(Y,I)\to\mC(X,I)$. 
 
 \begin{myremark}
  The monoidal unit $I$ of a monoidal category is canonically a monoid object via the coherence isomorphisms $I\otimes I\cong I$ and $I\cong I$. 
  However, in a generic (i.e. not necessarily cartesian) gs-monoidal category $\mC$, the monoid structure on $\mC(X,I)$ is not, as in \Cref{yonedaremark}, coming from considering the presheaf represented by $I$. Indeed, in order for \Cref{yonedaremark} to hold, we would need that every pre-composition is a morphism of monoids. As remarked above, this fails in general unless all morphisms are copyable and discardable (i.e.~if $\mC$ is not cartesian monoidal).
 \end{myremark}
-
-
+%
+%
 Let us now consider the case where the gs-monoidal structure comes from a commutative monad on a cartesian monoidal category $\mD$. 
 In this case, the monoid structure on Kleisli morphisms $X\to 1$ does come from the canonical internal monoid structure on $T1$ (and from the one on $1$) in $\mD$.
 Indeed, $T1$ is a monoid object with the following unit and multiplication~\cite[Section~10]{kock2012distributions}
@@ -425,7 +426,7 @@ Indeed, $T1$ is a monoid object with the following unit and multiplication~\cite
  \end{tikzcd}
  \qquad
  \begin{tikzcd}
-  T1 \times T1 \ar{r}{c} & T(1\times 1) \ar{r}{\cong} & T1 .
+  T1 \times T1 \ar{r}{c_{1,1}} & T(1\times 1) \ar{r}{\cong} & T1 .
  \end{tikzcd}
  \]
  For example, for the monad of measures $M$, we obtain $M1=[0,\infty)$ with its usual multiplication.
@@ -439,7 +440,7 @@ Indeed, $T1$ is a monoid object with the following unit and multiplication~\cite
  \[
  \begin{tikzcd}
   X \ar{r}{\mathrm{copy}_X} & X\times X \ar{r}{f^\sharp\times g^\sharp} &
-  T1 \times T1 \ar{r}{c} & T(1\times 1) \ar{r}{\cong} & T1 .
+  T1 \times T1 \ar{r}{c_{1,1}} & T(1\times 1) \ar{r}{\cong} & T1 .
  \end{tikzcd}
  \]
  For the monad of measures $M$, Kleisli morphisms $X\to 1$ are represented by functions $X\to [0,\infty)$, and this description shows that their product is the point-wise product.
@@ -462,19 +463,19 @@ commutes with this action in each variable (separately).
 \begin{mydefinition}\label{defweaklymarkov}
  A gs-monoidal category $\mC$ is called \textbf{weakly Markov} if for every object $X$, the monoid $\mC(X,I)$ is a group. 
 \end{mydefinition}
-
+%
 Every Markov category is weakly Markov: for every object $X$, the monoid $\mC(X,I)$ is the trivial group.
 
 \begin{mydefinition}
  Given two parallel morphisms $f,g:X\to Y$ in a weakly Markov category $\mC$, we say that $f$ and $g$ are called \textbf{equivalent}, denoted $f\sim g$, if they lie in the same orbit for the action of $\mC(X,I)$, i.e.~if there is $a\in \mC(X,I)$ such that $a\cdot f=g$.
 \end{mydefinition}
-
+%
 Note that if $a\cdot f=g$ for some $a$, then $a$ is unique. This can be seen by discarding $Y$ in the following diagram
 \ctikzfig{free-action}
 In other words, the action of $\mC(X,I)$ on $\mC(X,Y)$ is free, i.e.~it has trivial stabilisers.
 
-For the next statement, let us first call the \emph{mass} of a morphism $f:X\to Y$ in a gs-monoidal category $\mC$ the morphism $m_f\coloneqq \mathrm{del}\circ f:X\to I$.
-Note that $f$ is discardable if and only if $m_f=\mathrm{del}$, i.e.~if its mass is the unit of the monoid $\mC(X,I)$.
+For the next statement, let us first call the \emph{mass} of a morphism $f:X\to Y$ in a gs-monoidal category $\mC$ the morphism $m_f\coloneqq \mathrm{del}_Y\circ f:X\to I$.
+Note that $f$ is discardable if and only if $m_f=\mathrm{del}_X$, i.e.~if its mass is the unit of the monoid $\mC(X,I)$.
 
 \begin{myproposition}\label{weaklydiscardable}
  Every morphism $f:X\to Y$ in a weakly Markov category is equivalent to a unique discardable morphism.
@@ -494,7 +495,7 @@ Let us now look at the Kleisli case.
 \begin{mydefinition}\label{defweaklyaffine}
  A commutative monad $T$ on a cartesian monoidal category is called \textbf{weakly affine} if $T1$ with its canonical internal commutative monoid structure is a group.
 \end{mydefinition}
-
+%
 This choice of terminology is motivated by the following proposition, which can be seen as a ``weakly'' version of \Cref{affinemarkov}.
 
 \begin{myproposition}\label{weaklyboth}
@@ -506,7 +507,7 @@ This choice of terminology is motivated by the following proposition, which can 
  \[
   \begin{tikzcd}
   X \ar[bend right=5pc]{dd}[swap]{!} \ar{d}[swap]{a^\sharp} \ar{r}{\mathrm{copy}_X} & X\times X \ar{d}[swap]{a^\sharp\times a^\sharp} \ar{dr}{a^\sharp\times(\iota\circ a^\sharp)} \\
-  T1 \ar{d}[swap]{!} \ar{r}[swap]{\mathrm{copy}_{T1}} & T1\times T1 \ar{r}[swap]{\id\times\iota} & T1\times T1 \ar{r}{c} & T(1\times 1) \ar{d}{\cong} \\
+  T1 \ar{d}[swap]{!} \ar{r}[swap]{\mathrm{copy}_{T1}} & T1\times T1 \ar{r}[swap]{\id\times\iota} & T1\times T1 \ar{r}{c_{1,1}} & T(1\times 1) \ar{d}{\cong} \\
   1 \ar{rrr}{\eta} &&& T1
   \end{tikzcd}
  \]
@@ -571,7 +572,7 @@ It is noteworthy that some of those ideas can be translated and generalised to t
  A morphism $f:A\to X_1\otimes\dots\otimes X_n$ in a gs-monoidal category $\mC$ is said to exhibit \textbf{conditional independence of the $X_i$ given $A$} if and only if it can be expressed as a product of the following form
  \ctikzfig{cond-ind-sep}
 \end{mydefinition}
-
+%
 Note that this formulation is a bit different from the earlier definitions given in \cite[Definition~6.6]{cho_jacobs_2019} and~\cite[Definition~12.12]{Fritz_2020}, which were formulated for morphisms in Markov categories and state that $f$ exhibits conditional independence if the above holds with the $g_i$ being the \emph{marginals} of $f$, which are
 \ctikzfig{marginal}
 Indeed, in a Markov category, conditional independence in our sense holds if and only if it holds with $g_i = f_i$~\cite[Lemma~12.11]{Fritz_2020}.
@@ -580,7 +581,7 @@ We also say that $f$ is the \emph{product of its marginals}.
 \begin{myexample}
  In the Kleisli category of the distribution monad $D$, which is Markov, a morphism $f:A\to X\otimes Y$ exhibits conditional independence if and only if its value at every $a \in A$ is the product of its marginals~\cite[Section~12]{Fritz_2020}.
 \end{myexample}
-
+%
 Here is what conditional independence looks like in the Kleisli case.
 
 \begin{myproposition}\label{indepkleisli}
@@ -609,7 +610,7 @@ Here is what conditional independence looks like in the Kleisli case.
 	In the Kleisli category of the measure monad $M$, and for any objects, the morphism $A \to X_1 \otimes \cdots \otimes X_n$ given by the zero measure on every $a \in A$ exhibits conditional independence of its outputs given its input. For example, for $A=1$, the zero measure on $X\times Y$ is the product of the zero measure on $X$ and the zero (or any other) measure on $Y$.
  Notice that both marginals of the zero measure are zero measures -- therefore, the factors appearing in the product are not necessarily related to the marginals.
 \end{myexample}
-
+%
 In a weakly Markov category, the situation is similar to the Markov case discussed above,
 but up to equivalence: an arrow exhibits conditional independence if and only if it is \emph{equivalent to} the product of its marginals.
 
@@ -668,7 +669,7 @@ We prove the theorem by means of the following property of weakly Markov categor
  By marginalising out $X$, we have that $f_{YZ}$ exhibits conditional independence of $Y$ and $Z$ given $A$. 
  Since by hypothesis $f$ exhibits conditional independence of $X$ and $Y\otimes Z$ given $A$, by \Cref{eqcondind} we have that $f$ is equivalent to the product  of $f_X$ and $f_{YZ}$. But, again by \Cref{eqcondind}, $f_{YZ}$ is equivalent to the product of $f_Y$ and $f_Z$, so we have that $f$ is equivalent to the product of all its marginals. Using \Cref{eqcondind} in the other direction, this means that $f$ exhibits conditional independence of $X$, $Y$ and $Z$ given $A$. 
 \end{proof}
- 
+%
 We are now ready to prove the theorem.
 
 \begin{proof}[Proof of \Cref{mainthm}]
@@ -684,17 +685,17 @@ We are now ready to prove the theorem.
    & T(X \times Y) \times T(Z) \ar{r}[swap]{c_{X\times Y,Z}}						& T(X \times Y \times Z)
   \end{tikzcd}
  \]
- By \Cref{indepkleisli}, this amounts to a Kleisli map $f^\sharp:A\to T(X\times Y\times Z)$ exhibiting conditional independence of $X$ and $Y\otimes Z$ given $A$, as well as of $X\otimes Y$ and $Z$ given $A$. By the localised independence property (\Cref{local}), we then have that $f$ exhibits conditional independence of all $X$, $Y$ and $Z$ given $A$, and so, again by \Cref{indepkleisli}, $f^\sharp$ factors through the product $TX\times TY\times TZ$. 
+ By \Cref{indepkleisli}, this amounts to a Kleisli morphism $f^\sharp:A\to T(X\times Y\times Z)$ exhibiting conditional independence of $X$ and $Y\otimes Z$ given $A$, as well as of $X\otimes Y$ and $Z$ given $A$. By the localised independence property (\Cref{local}), we then have that $f$ exhibits conditional independence of all $X$, $Y$ and $Z$ given $A$, and so, again by \Cref{indepkleisli}, $f^\sharp$ factors through the product $TX\times TY\times TZ$. 
  More specifically, by marginalising over $Z$, we have that $g_{12}^\sharp$ factors through $TX\times TY$, i.e.~the following diagram on the left commutes for some $h_1^\sharp:A\to TX$ and $h_2^\sharp:A\to TY$, and similarly, by marginalising over $X$, the diagram on the right commutes for some $\ell_2^\sharp:A\to TY$ and $\ell_3^\sharp:A\to TZ$
  \[
   \begin{tikzcd}
    A \ar{d}[swap]{(h_1^\sharp,h_2^\sharp)} \ar{dr}{g_{12}^\sharp} \\
-   TX\times TY \ar{r}[swap]{c} & T(X\times Y) 
+   TX\times TY \ar{r}[swap]{c_{X,Y}} & T(X\times Y) 
   \end{tikzcd}
   \qquad
   \begin{tikzcd}
    A \ar{d}[swap]{(\ell_2^\sharp,\ell_3^\sharp)} \ar{dr}{g_{23}^\sharp} \\
-   TY\times TZ \ar{r}[swap]{c} & T(Y\times Z) 
+   TY\times TZ \ar{r}[swap]{c_{Y,Z}} & T(Y\times Z) 
   \end{tikzcd}
  \]
  In other words, the upper and the left curved triangles in the following diagram commute
@@ -753,13 +754,13 @@ We are now ready to prove the theorem.
 	\]
 	In the top-right corner $MX\times M(Y\times Z)$, take the pair $(0,p)$ where $p$ is any non-zero measure on $Y\times Z$, and similarly, in the bottom-left corner take the pair $(q,0)$ where $q$ is any non-zero measure on $X\times Y$. Following the diagram, both pairs are mapped to the zero measure in the bottom-right corner. If the diagram was a pullback, we would be able to express the top-right and bottom-left corners as coming from the same triple in $MX\times MY\times MZ$, that is, there would exist a measure $m$ on $Y$ such that $m\cdot 0=p$ and $0\cdot m=q$. Since $p$ and $q$ are non-zero, this is not possible.
 \end{myexample}
-
+\begin{myremark}
 It is worth noting that the pullback condition on the associativity square is not equivalent to the localised independence property of \Cref{local}: recall that a zero measure always exhibits conditional independence of all its outputs (\Cref{zeromeasure}).
 Therefore, for zero measures, the localised independence property is always trivially valid, and hence the Kleisli category of the measures monad $M$ satisfies it in general.
 However, the example above shows explicitly that the pullback property fails.
 
 For now it is an open question whether the localised independence property for a Kleisli category is reflected by an equivalent condition on the monad.
-
+\end{myremark}
 
 \section{Conclusions and future work}
 \label{secfurther}
