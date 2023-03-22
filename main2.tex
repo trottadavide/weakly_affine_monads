@@ -188,7 +188,7 @@ These are defined as gs-monoidal categories where for every object its morphisms
 Weakly Markov categories can be interpreted intuitively as gs-monoidal categories where each morphism is discardable up to an invertible normalisation (see \Cref{weaklydiscardable} for the precise mathematical statement). The choice of the name is due to the fact that every Markov category is (trivially) weakly Markov.
 
 In parallel to weakly Markov categories we also introduce \emph{weakly affine monads}, which are commutative monads on cartesian monoidal categories preserving the (internal) group structure of the terminal object (\Cref{defweaklyaffine}).
-[vale per le gs?]
+%[vale per le gs?]
 As a particular concrete example of relevance to probability and measure theory, we consider the monad of finite non-zero measures on $\Set$ (\Cref{ex:nonzero_measures}), and we use it as a running example in the rest of the work.
 As we show (see \Cref{weaklyboth}), a commutative monad on a cartesian monoidal category is weakly affine if and only if its Kleisli category is weakly Markov, analogously to what happens with affine monads and Markov categories. 
 
@@ -434,7 +434,7 @@ Indeed, $T1$ is a monoid object with the following unit and multiplication~\cite
  The resulting monoid structure on Kleisli morphisms $X\to 1$ is now given as follows. The unit is given by
  \[
  \begin{tikzcd}
-  X \ar{r}{!} & 1 \ar{r}{\eta} & T1 ,
+  X \ar{r}{\mathrm{del}_X} & 1 \ar{r}{\eta} & T1 ,
  \end{tikzcd}
  \]
  and the multiplication of Kleisli morphisms $f, g : X \to 1$ represented by $f^\sharp,g^\sharp:X\to T1$ is the Kleisli morphism represented by
@@ -508,8 +508,8 @@ This choice of terminology is motivated by the following proposition, which can 
  The inverse of a Kleisli morphism $a : X \to 1$ in $\mathrm{Kl}_T(X,1)$ represented by $a^\sharp:X\to T1$ is represented by $\iota\circ a^\sharp$: indeed, the following diagram in $\mD$ commutes
  \[
   \begin{tikzcd}
-  X \ar[bend right=5pc]{dd}[swap]{!} \ar{d}[swap]{a^\sharp} \ar{r}{\mathrm{copy}_X} & X\times X \ar{d}[swap]{a^\sharp\times a^\sharp} \ar{dr}{a^\sharp\times(\iota\circ a^\sharp)} \\
-  T1 \ar{d}[swap]{!} \ar{r}[swap]{\mathrm{copy}_{T1}} & T1\times T1 \ar{r}[swap]{\id\times\iota} & T1\times T1 \ar{r}{c_{1,1}} & T(1\times 1) \ar{d}{\cong} \\
+  X \ar[bend right=8pc]{dd}[swap]{\mathrm{del}_X} \ar{d}[swap]{a^\sharp} \ar{r}{\mathrm{copy}_X} & X\times X \ar{d}[swap]{a^\sharp\times a^\sharp} \ar{dr}{a^\sharp\times(\iota\circ a^\sharp)} \\
+  T1 \ar{d}[swap]{\mathrm{del}_{T1}} \ar{r}[swap]{\mathrm{copy}_{T1}} & T1\times T1 \ar{r}[swap]{\id\times\iota} & T1\times T1 \ar{r}{c_{1,1}} & T(1\times 1) \ar{d}{\cong} \\
   1 \ar{rrr}{\eta} &&& T1
   \end{tikzcd}
  \]
@@ -518,7 +518,7 @@ This choice of terminology is motivated by the following proposition, which can 
  
  Conversely, suppose that for every $X$, the monoid structure on $\mathrm{Kl}_T(X,1)$ has inverses. Then in particular we can take $X=T1$, and the inverse of the Kleisli morphism $\id:T1\to T1$ is an inversion map for $T1$. 
 \end{proof}
-
+%
 This result can also be thought of in terms of the Yoneda embedding, via \Cref{yonedaremark}: since the Yoneda embedding preserves and reflects pullbacks (and all limits), the associativity square for $T1$ is a pullback in $\mD$ if and only if the associativity squares of all the monoids $\mD(X,T1)$ are pullbacks.
 Note that \Cref{yonedaremark} applies since we are assuming that $\mD$ is \emph{cartesian} monoidal. In the proof of \Cref{weaklyboth}, this is reflected by the fact in the main diagram, the morphism $a^\sharp$ commutes with the copy maps. 
 
@@ -735,7 +735,7 @@ We are now ready to prove the theorem.
  If $T$ is weakly affine, then taking $X = Y = Z = 1$ in~\eqref{assoc_pullback} shows that this monoid must be an abelian group: we obtain a unique arrow $\freccia{T1}{\iota}{T1}$ making the following diagram commute
 	\[
 		\begin{tikzcd}
-			T1 \ar{dr}[description]{(\id,\iota,\id)} \ar[bend left=15]{drr}{(\id,\eta_1 !)} \ar[bend right,swap]{ddr}{(\eta_1 !,\id)} \\
+			T1 \ar{dr}[description]{(\id,\iota,\id)} \ar[bend left=15]{drr}{(\id,\eta_1 \mathrm{del}_{T1})} \ar[bend right,swap]{ddr}{(\eta_1 \mathrm{del}_{T1},\id)} \\
 			&	T1 \times T1 \times T1 \ar{r}{\id \times c_{1,1}} \ar[swap]{d}{c_{1,1} \times \id}	& T1 \times T(1\times 1) \ar{d}{c_{1,1\times 1}} \ar{r}{\cong} & T1\times T1 \ar{d}{c_{1,1}}	\\
 			&	T(1\times 1) \times T1 \ar{r}{c_{1\times 1,1}} \ar{d}[swap]{\cong}	& T(1\times 1\times 1) \ar{d}{\cong} \ar{r}{\cong} & T(1\times 1) \ar{d}{\cong} \\
 			& T1\times T1 \ar{r}[swap]{c_{1,1}} & T(1\times 1) \ar{r}[swap]{\cong} & T1
@@ -840,7 +840,7 @@ The corresponding condition on the Markov category $\mathrm{Kl}_T$ has recently 
 For a generic commutative monad, the diagram above may even fail to commute (take for example the measure monad $M$, and start with $(x,0)$ in the top left corner). One can however consider the following diagram, which reduces to the one above (up to isomorphism) in the affine case
 \[
  \begin{tikzcd}
-   X \times TY \ar{d}{\id\times T!} \ar{r}{s} & T(X\times Y) \ar{d}{T(\id\times!)} \\
+   X \times TY \ar{d}{\id\times T(\mathrm{del}_{Y})} \ar{r}{s} & T(X\times Y) \ar{d}{T(\id\times \mathrm{del}_Y)} \\
    X \times T1 \ar{r}{s} & T(X\times 1) \cong TX
   \end{tikzcd}
 \]
