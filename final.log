@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.26)  11 MAY 2023 16:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.26)  11 MAY 2023 16:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1664,12 +1664,16 @@ LaTeX Info: Redefining \nameref on input line 144.
 \@outlinefile=\write7
 \openout7 = `final.out'.
 
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 144.
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 144.
-
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1838,10 +1842,10 @@ Package rerunfilecheck Info: File `final.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 857.
  ) 
 Here is how much of TeX's memory you used:
- 51815 strings out of 492616
- 996063 string characters out of 6129481
- 1104882 words of memory out of 5000000
- 54562 multiletter control sequences out of 15000+600000
+ 51816 strings out of 492616
+ 996068 string characters out of 6129481
+ 1105284 words of memory out of 5000000
+ 54563 multiletter control sequences out of 15000+600000
  687384 words of font info for 232 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,22n,84p,3231b,1239s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1874,7 +1878,7 @@ exmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2019/texmf-dist/f
 onts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm10.pfb>
-Output written on final.pdf (17 pages, 673763 bytes).
+Output written on final.pdf (17 pages, 674106 bytes).
 PDF statistics:
  540 PDF objects out of 1000 (max. 8388607)
  435 compressed objects within 5 object streams
