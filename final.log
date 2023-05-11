@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.26)  9 MAY 2023 22:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.26)  11 MAY 2023 16:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**main2.tex
-(./main2.tex
+**final.tex
+(./final.tex
 LaTeX2e <2018-12-01>
 (./lipics-v2021.cls
 Document Class: lipics-v2021 2021/02/25 v3.1.1 LIPIcs articles
@@ -1566,8 +1566,8 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )
 \c@mytheorem=\count338
 
-(./main2.aux)
-\openout1 = `main2.aux'.
+(./final.aux)
+\openout1 = `final.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 144.
 LaTeX Font Info:    ... okay on input line 144.
@@ -1660,9 +1660,9 @@ LaTeX Info: Redefining \ref on input line 144.
 LaTeX Info: Redefining \pageref on input line 144.
 LaTeX Info: Redefining \nameref on input line 144.
 
-(./main2.out) (./main2.out)
+(./final.out) (./final.out)
 \@outlinefile=\write7
-\openout7 = `main2.out'.
+\openout7 = `final.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
@@ -1743,7 +1743,7 @@ File: orcid.pdf Graphic file (type pdf)
 <use orcid.pdf>
 Package pdftex.def Info: orcid.pdf  used on input line 147.
 (pdftex.def)             Requested size: 8.99843pt x 9.0pt.
-\openout3 = `main2.vtc'.
+\openout3 = `final.vtc'.
 
 <cc-by.pdf, id=87, 88.33pt x 31.11626pt>
 File: cc-by.pdf Graphic file (type pdf)
@@ -1822,7 +1822,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 785--828
 Underfull \vbox (badness 1117) has occurred while \output is active []
 
  [15.15]
-(./main2.bbl
+(./final.bbl
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 70.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1830,10 +1830,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [16.16]) [17.17]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 857.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 857.
- (./main2.aux)
+ (./final.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 857.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 857.
-Package rerunfilecheck Info: File `main2.out' has not changed.
+Package rerunfilecheck Info: File `final.out' has not changed.
 (rerunfilecheck)             Checksum: C4ED73149E87A2B46856AC7F8EFC7B8B;2074.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 857.
  ) 
@@ -1874,7 +1874,7 @@ exmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2019/texmf-dist/f
 onts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main2.pdf (17 pages, 673763 bytes).
+Output written on final.pdf (17 pages, 673763 bytes).
 PDF statistics:
  540 PDF objects out of 1000 (max. 8388607)
  435 compressed objects within 5 object streams
