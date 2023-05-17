@@ -200,6 +200,29 @@ These concepts allow us to provide an equivalent condition for weak affinity of 
 As such, we believe that weak affine monads are relevant to the study of categorical probability, 
 as they allow to investigate probability without normalisation within an elegant categorical framework.
 
+\paragraph*{Categorical probability}
+In the past few years we have seen a rapid increase in the interest for categorical methods in probability and information theory.
+
+The first works on categories of stochastic maps, almost as old as category theory and information theory themselves, have been proposed by Lawvere~\cite{lawvere_unpublished}, and independently by Chentsov~\cite{chentsov_first}.
+Subsequently, similar intuitions have been expressed in terms of monads by Giry~\cite{Giry82}, as well as by Świrszcz in the context of convex analysis~\cite{swirszcz}, and by Jones and Plotkin in computer science~\cite{jones-plotkin}.
+These monads are collectively and informally known as \emph{probability monads}.
+
+Today, Markov categories \cite{cho_jacobs_2019,Fritz_2020}, which generalize categories of stochastic maps and Kleisli categories of probability monads, have been used to express probabilistic concepts \emph{synthetically}, i.e.~in terms of basic axioms that the categories satisfy, and of which the usual measure-theoretic proofs are a concrete instance.
+
+The advantages of a categorical approach to probability theory are multiple. First of all, it allows an almost-verbatim translation of probabilistic ideas into programming languages, in particular probabilistic programming languages, even in the case of highly complex models.
+Also, categorical probability comes with a graphical formalism similar to the one of Bayesian networks (see~\cite{fritz2022dseparation} for more details), allowing to represent the structure of stochastic interactions in terms of a graph, for easier interpretation by a human. It is a high-order language, in the sense that it expresses visually some ideas of measure-theoretic significance, without actually working with the measure theory itself, similarly to how programming languages such as Python or C spare the programmer from working directly with machine code.
+Finally, the categorical formalism \emph{complements} the traditional measure-theoretic one in the sense that several concepts which are hard to express or prove with one method are easier to approach using the other method, once the main structures are in place. In this sense, categorical probability is a novel, additional box of tools which provides shortcuts to proofs that would otherwise be lengthy and counterintuitive.
+
+Among concepts that have been expressed and proven this way, we have
+de Finetti's theorem~\cite{fritz2021definetti},
+the Kolmogorov extension theorem and the Kolmogorov and Hewitt-Savage zero-one laws~\cite{fritzrischel2019zeroone},
+a categorical d-separation criterion~\cite{fritz2022dseparation},
+theorems on multinomial and hypergeometric distributions~\cite{jacobs2021multinomial},
+theorems on sufficient statistics~\cite{Fritz_2020} and on comparison of statistical experiments~\cite{fritz_2020_B},
+data processing inequalities in information theory~\cite{ours_entropy},
+the ergodic decomposition theorem in dynamical systems~\cite{moss2022ergodic},
+and results on fresh name generation in theoretical computer science~\cite{fritz2022dilations}.
+
 \paragraph*{Outline.}
 In \Cref{secbackground} we review the main structures used in this work, in particular group and monoid objects, gs-monoidal and Markov categories, and their interaction with commutative monads.
 
