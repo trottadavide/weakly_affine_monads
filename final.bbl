@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{chentsov_first}
+N.~N. Chentsov.
+\newblock The categories of mathematical statistics.
+\newblock {\em Doklady Akademii Nauk SSSR}, 164:511--514, 1965.
+
 \bibitem{cho_jacobs_2019}
 Kenta Cho and Bart Jacobs.
 \newblock Disintegration and {B}ayesian inversion via string diagrams.
@@ -48,6 +53,12 @@ Thomas Fox.
 \newblock Coalgebras and cartesian categories.
 \newblock {\em Communications in Algebra}, 4(7):665--667, 1976.
 
+\bibitem{fritz_2020_B}
+T.~Fritz, T.~Gonda, P.~Perrone, and E.F. Rischel.
+\newblock Representable {M}arkov categories and comparison of statistical
+  experiments in categorical probability.
+\newblock {\em CoRR}, abs/2010.07416, 2020.
+
 \bibitem{Fritz_2020}
 Tobias Fritz.
 \newblock A synthetic approach to {M}arkov kernels, conditional independence
@@ -65,6 +76,12 @@ Tobias Fritz, Tom{\'a}{\v{s}} Gonda, Nicholas~Gauguin Houghton-Larsen, Paolo
 \newblock Dilations and information flow axioms in categorical probability.
 \newblock \href{https://arxiv.org/abs/2211.02507}{arXiv:2211.02507}.
 
+\bibitem{fritz2021definetti}
+Tobias Fritz, Tom\'{a}\v{s} Gonda, and Paolo Perrone.
+\newblock de {F}inetti's theorem in categorical probability.
+\newblock {\em J. Stoch. Anal.}, 2(4), 2021.
+\newblock \href{https://arxiv.org/abs/2105.02639}{arXiv:2105.02639}.
+
 \bibitem{fritz2022dseparation}
 Tobias Fritz and Andreas Klingler.
 \newblock The $d$-separation criterion in categorical probability.
@@ -74,6 +91,18 @@ Tobias Fritz and Andreas Klingler.
 Tobias Fritz and Wendong Liang.
 \newblock Free gs-monoidal categories and free {M}arkov categories.
 \newblock {\em CoRR}, abs/2204.02284, 2022.
+
+\bibitem{fritzrischel2019zeroone}
+Tobias Fritz and Eigil~Fjeldgren Rischel.
+\newblock Infinite products and zero-one laws in categorical probability.
+\newblock {\em Compositionality}, 2:3, 2020.
+
+\bibitem{Giry82}
+M.~Giry.
+\newblock A categorical approach to probability theory.
+\newblock In B.~Banaschewski, editor, {\em Categorical Aspects of Topology and
+  Analysis}, volume 915 of {\em Lecture Notes in Mathematics}, pages 68--85.
+  Springer, 1982.
 
 \bibitem{Jacobs1994}
 Bart Jacobs.
@@ -86,6 +115,20 @@ Bart Jacobs.
 \newblock In Ichiro Hasuo, editor, {\em CMCS 2016}, volume 9608 of {\em LNCS},
   pages 53--72. Springer, 2016.
 
+\bibitem{jacobs2021multinomial}
+Bart Jacobs.
+\newblock Multinomial and hypergeometric distributions in {M}arkov categories.
+\newblock In {\em Proceedings of the {T}hirty-{S}eventh {C}onference on the
+  {M}athematical {F}oundations of {P}rogramming {S}emantics ({MFPS}}, volume
+  351 of {\em Electron. Notes Theor. Comput. Sci.}, pages 98--115, 2021.
+\newblock \href{https://arxiv.org/abs/2112.14044}{arXiv:2112.14044}.
+
+\bibitem{jones-plotkin}
+C.~Jones and J.~D. Plotkin.
+\newblock {A Probabilistic Powerdomain of Evaluations}.
+\newblock {\em Proceedings of the Fourth Annual Symposium of Logics in Computer
+  Science}, 1989.
+
 \bibitem{Kock71}
 Anders Kock.
 \newblock Bilinearity and cartesian closed monads.
@@ -96,10 +139,32 @@ Anders Kock.
 \newblock Commutative monads as a theory of distributions.
 \newblock {\em Theory and Applications of Categories}, 26, 2012.
 
+\bibitem{lawvere_unpublished}
+F.~W. Lawvere.
+\newblock The category of probabilistic mappings, 1962.
+\newblock unpublished notes.
+
+\bibitem{moss2022ergodic}
+Sean Moss and Paolo Perrone.
+\newblock A category-theoretic proof of the ergodic decomposition theorem.
+\newblock {\em Ergodic Theory Dynam. Systems}, to appear, 2022.
+\newblock \href{https://arxiv.org/abs/2207.07353}{arXiv:2207.07353}.
+
+\bibitem{ours_entropy}
+Paolo Perrone.
+\newblock Markov categories and entropy, 2022.
+\newblock \href{https://arxiv.org/abs/2212.11719}{arXiv:2212.11719}.
+
 \bibitem{Selinger2011}
 Peter Selinger.
 \newblock A survey of graphical languages for monoidal categories.
 \newblock In Bob Coecke, editor, {\em New Structures for Physics}, volume 813
   of {\em Lecture Notes in Physics}, pages 289--355. Springer, 2011.
+
+\bibitem{swirszcz}
+Tadeusz Świrszcz.
+\newblock Monadic functors and convexity.
+\newblock {\em Bull. Acad. Polon. Sci. Sér. Sci. Math. Astronom. Phys.}, 22,
+  1974.
 
 \end{thebibliography}

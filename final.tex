@@ -169,7 +169,7 @@
 
 \section{Introduction}
 
-The idea of \emph{gs-monoidal categories}, symmetric monoidal categories equipped with copy and discard morphisms making every object a comonoid,
+The idea of \emph{gs-monoidal categories}, which are symmetric monoidal categories equipped with copy and discard morphisms making every object a comonoid,
 %\footnote{See the next section for the full definition.} 
 was first introduced in the context of algebraic approaches to term graph rewriting~\cite{CorradiniGadducci97}, and then
 developed in a series of papers \cite{CorradiniGadducci99, CorradiniGadducci99b, CorradiniGadducci02}.
@@ -187,7 +187,7 @@ In this work we introduce and study an intermediate notion between gs-monoidal a
 These are defined as gs-monoidal categories where for every object its morphisms to the monoidal unit form a group (\Cref{defweaklymarkov}). 
 Weakly Markov categories can be interpreted intuitively as gs-monoidal categories where each morphism is discardable up to an invertible normalisation (see \Cref{weaklydiscardable} for the precise mathematical statement). The choice of the name is due to the fact that every Markov category is (trivially) weakly Markov.
 
-In parallel to weakly Markov categories we also introduce \emph{weakly affine monads}, which are commutative monads on cartesian monoidal categories preserving the (internal) group structure of the terminal object (\Cref{defweaklyaffine}).
+In parallel to weakly Markov categories, we also introduce \emph{weakly affine monads}, which are commutative monads on cartesian monoidal categories preserving the (internal) group structure of the terminal object (\Cref{defweaklyaffine}).
 %[vale per le gs?]
 As a particular concrete example of relevance to probability and measure theory, we consider the monad of finite non-zero measures on $\Set$ (\Cref{ex:nonzero_measures}), and we use it as a running example in the rest of the work.
 As we show (see \Cref{weaklyboth}), a commutative monad on a cartesian monoidal category is weakly affine if and only if its Kleisli category is weakly Markov, analogously to what happens with affine monads and Markov categories. 
@@ -201,7 +201,8 @@ As such, we believe that weak affine monads are relevant to the study of categor
 as they allow to investigate probability without normalisation within an elegant categorical framework.
 
 \paragraph*{Categorical probability}
-In the past few years we have seen a rapid increase in the interest for categorical methods in probability and information theory.
+
+In the past few years, we have seen a rapid increase in the interest for categorical methods in probability and information theory, and we briefly sketch the basic ideas in order to provide context for this paper.
 
 The first works on categories of stochastic maps, almost as old as category theory and information theory themselves, have been proposed by Lawvere~\cite{lawvere_unpublished}, and independently by Chentsov~\cite{chentsov_first}.
 Subsequently, similar intuitions have been expressed in terms of monads by Giry~\cite{Giry82}, as well as by Świrszcz in the context of convex analysis~\cite{swirszcz}, and by Jones and Plotkin in computer science~\cite{jones-plotkin}.
@@ -209,8 +210,8 @@ These monads are collectively and informally known as \emph{probability monads}.
 
 Today, Markov categories \cite{cho_jacobs_2019,Fritz_2020}, which generalize categories of stochastic maps and Kleisli categories of probability monads, have been used to express probabilistic concepts \emph{synthetically}, i.e.~in terms of basic axioms that the categories satisfy, and of which the usual measure-theoretic proofs are a concrete instance.
 
-The advantages of a categorical approach to probability theory are multiple. First of all, it allows an almost-verbatim translation of probabilistic ideas into programming languages, in particular probabilistic programming languages, even in the case of highly complex models.
-Also, categorical probability comes with a graphical formalism similar to the one of Bayesian networks (see~\cite{fritz2022dseparation} for more details), allowing to represent the structure of stochastic interactions in terms of a graph, for easier interpretation by a human. It is a high-order language, in the sense that it expresses visually some ideas of measure-theoretic significance, without actually working with the measure theory itself, similarly to how programming languages such as Python or C spare the programmer from working directly with machine code.
+The advantages of a categorical approach to probability theory are multiple. First of all, it facilitates an almost-verbatim translation of probabilistic ideas into programming languages, in particular probabilistic programming languages, even in the case of highly complex models.
+Also, categorical probability comes with a graphical formalism similar to the one of Bayesian networks (see~\cite{fritz2022dseparation} for more details), allowing to represent the structure of stochastic interactions in terms of a graph, for easier interpretation by a human. It is a high-order language, in the sense that it expresses visually some ideas of measure-theoretic significance, without requiring measure theory itself, similar to how high-level programming languages spare the programmer from working directly with machine code.
 Finally, the categorical formalism \emph{complements} the traditional measure-theoretic one in the sense that several concepts which are hard to express or prove with one method are easier to approach using the other method, once the main structures are in place. In this sense, categorical probability is a novel, additional box of tools which provides shortcuts to proofs that would otherwise be lengthy and counterintuitive.
 
 Among concepts that have been expressed and proven this way, we have
@@ -223,7 +224,7 @@ data processing inequalities in information theory~\cite{ours_entropy},
 the ergodic decomposition theorem in dynamical systems~\cite{moss2022ergodic},
 and results on fresh name generation in theoretical computer science~\cite{fritz2022dilations}.
 
-\paragraph*{Outline.}
+\paragraph*{Outline}
 In \Cref{secbackground} we review the main structures used in this work, in particular group and monoid objects, gs-monoidal and Markov categories, and their interaction with commutative monads.
 
 In \Cref{secweakly} we define the main original concepts, namely weakly Markov categories and weakly affine monads. We study their relationship and we prove that a commutative monad on a cartesian monoidal category is weakly affine if and only if its Kleisli category is weakly Markov (\Cref{weaklyboth}).
