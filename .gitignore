@@ -4,5 +4,6 @@
 *.blg
 *.log
 *.vtc
+*.out
 *.synctex.gz
 main2.pdf
