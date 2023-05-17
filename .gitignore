@@ -1,2 +1,8 @@
 *.fdb_latexmk
 *.fls
+*.aux
+*.blg
+*.log
+*.vtc
+*.synctex.gz
+main2.pdf
