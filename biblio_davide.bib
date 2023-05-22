@@ -445,8 +445,8 @@ author = {Bart Jacobs}
 }
 
 @InProceedings{Giry82,
-author="Giry, M.",
-editor="Banaschewski, B.",
+author="Giry, Mich\`ele",
+editor="Banaschewski, Bernhard",
 title="A categorical approach to probability theory",
 booktitle="Categorical Aspects of Topology and Analysis",
 series = {Lecture Notes in Mathematics}, 
@@ -485,7 +485,7 @@ numpages = {12}
 }
 
 @article{fritz_2020_B,
-   author = {Fritz, T. and Gonda, T. and Perrone, P. and Rischel, E.F.},
+   author = {Fritz, Tobias and Gonda, Tom{\'a}{\v{s}} and Perrone, Paolo and Rischel, Eigil Fjeldgren},
    title = {Representable {M}arkov Categories and Comparison of Statistical Experiments in Categorical Probability},
    journal = {CoRR},
    volume    = {abs/2010.07416},
@@ -493,7 +493,7 @@ numpages = {12}
 }
 
 @article{Fritz_2020,
-  	year = {2020},
+    year = {2020},
     volume = {370},	
     pages = {107239},
     author = {Fritz, Tobias},
@@ -504,11 +504,13 @@ numpages = {12}
 @article{fritz2022,
   author    = {Tobias Fritz and
                Wendong Liang},
-  title     = {Free gs-monoidal categories and free {M}arkov categories},
-  journal   = {CoRR},
-  volume    = {abs/2204.02284},
-  year      = {2022}
-  }
+  title        = {Free gs-Monoidal Categories and Free Markov Categories},
+  journal      = {Applied Categorical Structures},
+  volume       = {31},
+  number       = {2},
+  pages        = {21:1--21:31},
+  year         = {2023}
+}
  
 @article{zan2022,
   author    = {A. Milosavljevic and F. Zanasi},
@@ -805,10 +807,20 @@ pages={1--136}
      PAGES = {441--512},
 }
 
-@misc{fritz2022dilations,
+@article{fgtc2022lax,
+  author = {Fritz, Tobias and Gadducci, Fabio and Trotta, Davide and Corradini, Andrea},
+  title = {Lax completeness for gs-monoidal categories},
+    journal = {CoRR},
+  volume    = {abs/2205.06892},
+  year      = {2022}
+}
+
+@article{fritz2022dilations,
   title={Dilations and Information Flow Axioms in Categorical Probability},
   author={Fritz, Tobias and Gonda, Tom{\'a}{\v{s}} and Houghton-Larsen, Nicholas Gauguin and Perrone, Paolo and Stein, Dario},
-  note = {\href{https://arxiv.org/abs/2211.02507}{arXiv:2211.02507}},
+  journal = {CoRR},
+  volume    = {abs/2211.02507},
+  year      = {2022}
 }
 
 @article {fritz2022dseparation,
@@ -843,7 +855,8 @@ pages={1--136}
      TITLE = {Commutative monads as a theory of distributions},
    JOURNAL = {Theory and Applications of Categories},
     VOLUME = {26},
-      YEAR = {2012}
+      YEAR = {2012},
+      pages = {97--131}
 }
 
 @incollection {coumans2013scalars,
@@ -860,51 +873,52 @@ pages={1--136}
   year      = {2013}
 }
 
-@misc {fgtc2022lax,
-	author = {Fritz, Tobias and Gadducci, Fabio and Trotta, Davide and Corradini, Andrea},
-	title = {Lax completeness for gs-monoidal categories},
-	note = {\href{https://arxiv.org/abs/2205.06892}{arXiv:2205.06892}},
-}
 
-@misc{lawvere_unpublished,
-    author = "Lawvere, F.~W.",
+@unpublished{lawvere_unpublished,
+    author = "Lawvere, Francis W.",
     title = "The category of probabilistic mappings",
-    note = "unpublished notes",
+    note = "Unpublished notes",
     year = "1962"
 }
 
 @article{chentsov_first,
-    author = "Chentsov, N.~N.",
+    author = "Chentsov, Nikolai Nikolaevich",
     title = "The categories of mathematical statistics",
     year = "1965",
     journal = "Doklady Akademii Nauk SSSR",
     volume = "164",
+    number = {3},
     pages = "511-514"
 }
 
 @article{swirszcz,
-	author = {Świrszcz, Tadeusz},
-	journal = {Bull. Acad. Polon. Sci. Sér. Sci. Math. Astronom. Phys.},
+	author = {\'Swirszcz, Tadeusz},
+	journal = {Bulletin de l'Acad\'emie Polonaise des Science, S\'erie des Sciences Math\'ematiques, Astronomiques et Physiques},
 	title = {Monadic functors and convexity},
-	volume = {22},
+	volume = {XXII},
+	number = {1},
+	pages = {39--42},
 	year = {1974}
 }
 
-@article{jones-plotkin,
-	author = "Jones, C. and Plotkin, J. D.",
-	journal = "Proceedings of the Fourth Annual Symposium of Logics in Computer Science",
-	title = "{A Probabilistic Powerdomain of Evaluations}",
-	year = "1989"
+@inproceedings{jones-plotkin,
+  author       = {C. Jones and
+                  Gordon D. Plotkin},
+  title        = {A Probabilistic Powerdomain of Evaluations},
+  booktitle    = {LICS 1989},
+  pages        = {186--195},
+  publisher    = {{IEEE} Computer Society},
+  year         = {1989},
 }
 
 @article {fritz2021definetti,
     AUTHOR = {Fritz, Tobias and Gonda, Tom\'{a}\v{s} and Perrone, Paolo},
      TITLE = {de {F}inetti's theorem in categorical probability},
-   JOURNAL = {J. Stoch. Anal.},
+   JOURNAL = {Journal of Stochastic Analysis},
     VOLUME = {2},
       YEAR = {2021},
     NUMBER = {4},
-    note = {\href{https://arxiv.org/abs/2105.02639}{arXiv:2105.02639}},
+    pages = {6:1--6:26}
 }
 
 @article{fritzrischel2019zeroone,
@@ -912,35 +926,33 @@ pages={1--136}
 	title = {Infinite products and zero-one laws in categorical probability},
 	journal = {Compositionality},
 	volume = {2},
-	pages = {3},
-	year = {2020},
-	doi = {10.32408/compositionality-2-3},
+	number = {3},
+	year = {2020}
 }
 
 @inproceedings {jacobs2021multinomial,
 	author = {Jacobs, Bart},
 	title = {Multinomial and Hypergeometric Distributions in {M}arkov Categories},
- 	BOOKTITLE = {Proceedings of the {T}hirty-{S}eventh {C}onference on the {M}athematical {F}oundations of {P}rogramming {S}emantics ({MFPS}},
-	SERIES = {Electron. Notes Theor. Comput. Sci.},
+ 	BOOKTITLE = {MFPS XXXVII},
+	editor       = {Ana Sokolova},
+	SERIES = {ENTCS},
 	volume = {351},
 	pages = {98--115},
-	year = {2021},
-	note = {\href{https://arxiv.org/abs/2112.14044}{arXiv:2112.14044}},
+	year = {2021}
 }
 
 @article{moss2022ergodic,
     author = {Moss, Sean and Perrone, Paolo},
     title = {A category-theoretic proof of the ergodic decomposition theorem},
-    year = {2022},
-    journal = {Ergodic Theory Dynam. Systems},
-    volume = {to appear},
+    journal = {Ergodic Theory and Dynamical Systems},
     year = {2023},
-    note = {\href{https://arxiv.org/abs/2207.07353}{arXiv:2207.07353}},
+    note = {To appear, available at \href{https://arxiv.org/abs/2207.07353}{arXiv:2207.07353}},
 }
 
-@misc{ours_entropy,
+@article{ours_entropy,
     author = "Perrone, Paolo",
     title = "Markov Categories and Entropy",
+    journal = {CoRR},
     year = "2022",
-    note = "\href{https://arxiv.org/abs/2212.11719}{arXiv:2212.11719}"
+  volume    = {abs/2212.11719}
 }

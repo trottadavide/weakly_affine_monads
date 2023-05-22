@@ -1,9 +1,9 @@
 \begin{thebibliography}{10}
 
 \bibitem{chentsov_first}
-N.~N. Chentsov.
+Nikolai~Nikolaevich Chentsov.
 \newblock The categories of mathematical statistics.
-\newblock {\em Doklady Akademii Nauk SSSR}, 164:511--514, 1965.
+\newblock {\em Doklady Akademii Nauk SSSR}, 164(3):511--514, 1965.
 
 \bibitem{cho_jacobs_2019}
 Kenta Cho and Bart Jacobs.
@@ -53,12 +53,6 @@ Thomas Fox.
 \newblock Coalgebras and cartesian categories.
 \newblock {\em Communications in Algebra}, 4(7):665--667, 1976.
 
-\bibitem{fritz_2020_B}
-T.~Fritz, T.~Gonda, P.~Perrone, and E.F. Rischel.
-\newblock Representable {M}arkov categories and comparison of statistical
-  experiments in categorical probability.
-\newblock {\em CoRR}, abs/2010.07416, 2020.
-
 \bibitem{Fritz_2020}
 Tobias Fritz.
 \newblock A synthetic approach to {M}arkov kernels, conditional independence
@@ -68,19 +62,25 @@ Tobias Fritz.
 \bibitem{fgtc2022lax}
 Tobias Fritz, Fabio Gadducci, Davide Trotta, and Andrea Corradini.
 \newblock Lax completeness for gs-monoidal categories.
-\newblock \href{https://arxiv.org/abs/2205.06892}{arXiv:2205.06892}.
+\newblock {\em CoRR}, abs/2205.06892, 2022.
 
 \bibitem{fritz2022dilations}
 Tobias Fritz, Tom{\'a}{\v{s}} Gonda, Nicholas~Gauguin Houghton-Larsen, Paolo
   Perrone, and Dario Stein.
 \newblock Dilations and information flow axioms in categorical probability.
-\newblock \href{https://arxiv.org/abs/2211.02507}{arXiv:2211.02507}.
+\newblock {\em CoRR}, abs/2211.02507, 2022.
+
+\bibitem{fritz_2020_B}
+Tobias Fritz, Tom{\'a}{\v{s}} Gonda, Paolo Perrone, and Eigil~Fjeldgren
+  Rischel.
+\newblock Representable {M}arkov categories and comparison of statistical
+  experiments in categorical probability.
+\newblock {\em CoRR}, abs/2010.07416, 2020.
 
 \bibitem{fritz2021definetti}
 Tobias Fritz, Tom\'{a}\v{s} Gonda, and Paolo Perrone.
 \newblock de {F}inetti's theorem in categorical probability.
-\newblock {\em J. Stoch. Anal.}, 2(4), 2021.
-\newblock \href{https://arxiv.org/abs/2105.02639}{arXiv:2105.02639}.
+\newblock {\em Journal of Stochastic Analysis}, 2(4):6:1--6:26, 2021.
 
 \bibitem{fritz2022dseparation}
 Tobias Fritz and Andreas Klingler.
@@ -89,20 +89,20 @@ Tobias Fritz and Andreas Klingler.
 
 \bibitem{fritz2022}
 Tobias Fritz and Wendong Liang.
-\newblock Free gs-monoidal categories and free {M}arkov categories.
-\newblock {\em CoRR}, abs/2204.02284, 2022.
+\newblock Free gs-monoidal categories and free markov categories.
+\newblock {\em Applied Categorical Structures}, 31(2):21:1--21:31, 2023.
 
 \bibitem{fritzrischel2019zeroone}
 Tobias Fritz and Eigil~Fjeldgren Rischel.
 \newblock Infinite products and zero-one laws in categorical probability.
-\newblock {\em Compositionality}, 2:3, 2020.
+\newblock {\em Compositionality}, 2(3), 2020.
 
 \bibitem{Giry82}
-M.~Giry.
+Mich\`ele Giry.
 \newblock A categorical approach to probability theory.
-\newblock In B.~Banaschewski, editor, {\em Categorical Aspects of Topology and
-  Analysis}, volume 915 of {\em Lecture Notes in Mathematics}, pages 68--85.
-  Springer, 1982.
+\newblock In Bernhard Banaschewski, editor, {\em Categorical Aspects of
+  Topology and Analysis}, volume 915 of {\em Lecture Notes in Mathematics},
+  pages 68--85. Springer, 1982.
 
 \bibitem{Jacobs1994}
 Bart Jacobs.
@@ -118,16 +118,13 @@ Bart Jacobs.
 \bibitem{jacobs2021multinomial}
 Bart Jacobs.
 \newblock Multinomial and hypergeometric distributions in {M}arkov categories.
-\newblock In {\em Proceedings of the {T}hirty-{S}eventh {C}onference on the
-  {M}athematical {F}oundations of {P}rogramming {S}emantics ({MFPS}}, volume
-  351 of {\em Electron. Notes Theor. Comput. Sci.}, pages 98--115, 2021.
-\newblock \href{https://arxiv.org/abs/2112.14044}{arXiv:2112.14044}.
+\newblock In Ana Sokolova, editor, {\em MFPS XXXVII}, volume 351 of {\em
+  ENTCS}, pages 98--115, 2021.
 
 \bibitem{jones-plotkin}
-C.~Jones and J.~D. Plotkin.
-\newblock {A Probabilistic Powerdomain of Evaluations}.
-\newblock {\em Proceedings of the Fourth Annual Symposium of Logics in Computer
-  Science}, 1989.
+C.~Jones and Gordon~D. Plotkin.
+\newblock A probabilistic powerdomain of evaluations.
+\newblock In {\em LICS 1989}, pages 186--195. {IEEE} Computer Society, 1989.
 
 \bibitem{Kock71}
 Anders Kock.
@@ -137,23 +134,24 @@ Anders Kock.
 \bibitem{kock2012distributions}
 Anders Kock.
 \newblock Commutative monads as a theory of distributions.
-\newblock {\em Theory and Applications of Categories}, 26, 2012.
+\newblock {\em Theory and Applications of Categories}, 26:97--131, 2012.
 
 \bibitem{lawvere_unpublished}
-F.~W. Lawvere.
-\newblock The category of probabilistic mappings, 1962.
-\newblock unpublished notes.
+Francis~W. Lawvere.
+\newblock The category of probabilistic mappings.
+\newblock Unpublished notes, 1962.
 
 \bibitem{moss2022ergodic}
 Sean Moss and Paolo Perrone.
 \newblock A category-theoretic proof of the ergodic decomposition theorem.
-\newblock {\em Ergodic Theory Dynam. Systems}, to appear, 2022.
-\newblock \href{https://arxiv.org/abs/2207.07353}{arXiv:2207.07353}.
+\newblock {\em Ergodic Theory and Dynamical Systems}, 2023.
+\newblock To appear, available at
+  \href{https://arxiv.org/abs/2207.07353}{arXiv:2207.07353}.
 
 \bibitem{ours_entropy}
 Paolo Perrone.
-\newblock Markov categories and entropy, 2022.
-\newblock \href{https://arxiv.org/abs/2212.11719}{arXiv:2212.11719}.
+\newblock Markov categories and entropy.
+\newblock {\em CoRR}, abs/2212.11719, 2022.
 
 \bibitem{Selinger2011}
 Peter Selinger.
@@ -162,9 +160,9 @@ Peter Selinger.
   of {\em Lecture Notes in Physics}, pages 289--355. Springer, 2011.
 
 \bibitem{swirszcz}
-Tadeusz Świrszcz.
+Tadeusz \'Swirszcz.
 \newblock Monadic functors and convexity.
-\newblock {\em Bull. Acad. Polon. Sci. Sér. Sci. Math. Astronom. Phys.}, 22,
-  1974.
+\newblock {\em Bulletin de l'Acad\'emie Polonaise des Science, S\'erie des
+  Sciences Math\'ematiques, Astronomiques et Physiques}, XXII(1):39--42, 1974.
 
 \end{thebibliography}
