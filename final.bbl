@@ -1,7 +1,7 @@
 \begin{thebibliography}{10}
 
 \bibitem{chentsov_first}
-Nikolai~Nikolaevich Chentsov.
+Nikolai~N. Chentsov.
 \newblock The categories of mathematical statistics.
 \newblock {\em Doklady Akademii Nauk SSSR}, 164(3):511--514, 1965.
 
@@ -65,14 +65,13 @@ Tobias Fritz, Fabio Gadducci, Davide Trotta, and Andrea Corradini.
 \newblock {\em CoRR}, abs/2205.06892, 2022.
 
 \bibitem{fritz2022dilations}
-Tobias Fritz, Tom{\'a}{\v{s}} Gonda, Nicholas~Gauguin Houghton-Larsen, Paolo
+Tobias Fritz, Tom{\'a}{\v{s}} Gonda, Nicholas~G. Houghton-Larsen, Paolo
   Perrone, and Dario Stein.
 \newblock Dilations and information flow axioms in categorical probability.
 \newblock {\em CoRR}, abs/2211.02507, 2022.
 
 \bibitem{fritz_2020_B}
-Tobias Fritz, Tom{\'a}{\v{s}} Gonda, Paolo Perrone, and Eigil~Fjeldgren
-  Rischel.
+Tobias Fritz, Tom{\'a}{\v{s}} Gonda, Paolo Perrone, and Eigil~F. Rischel.
 \newblock Representable {M}arkov categories and comparison of statistical
   experiments in categorical probability.
 \newblock {\em CoRR}, abs/2010.07416, 2020.
@@ -89,11 +88,11 @@ Tobias Fritz and Andreas Klingler.
 
 \bibitem{fritz2022}
 Tobias Fritz and Wendong Liang.
-\newblock Free gs-monoidal categories and free markov categories.
+\newblock Free gs-monoidal categories and free {M}arkov categories.
 \newblock {\em Applied Categorical Structures}, 31(2):21:1--21:31, 2023.
 
 \bibitem{fritzrischel2019zeroone}
-Tobias Fritz and Eigil~Fjeldgren Rischel.
+Tobias Fritz and Eigil~F. Rischel.
 \newblock Infinite products and zero-one laws in categorical probability.
 \newblock {\em Compositionality}, 2(3), 2020.
 
@@ -101,8 +100,8 @@ Tobias Fritz and Eigil~Fjeldgren Rischel.
 Mich\`ele Giry.
 \newblock A categorical approach to probability theory.
 \newblock In Bernhard Banaschewski, editor, {\em Categorical Aspects of
-  Topology and Analysis}, volume 915 of {\em Lecture Notes in Mathematics},
-  pages 68--85. Springer, 1982.
+  Topology and Analysis}, volume 915 of {\em LNM}, pages 68--85. Springer,
+  1982.
 
 \bibitem{Jacobs1994}
 Bart Jacobs.
@@ -157,7 +156,7 @@ Paolo Perrone.
 Peter Selinger.
 \newblock A survey of graphical languages for monoidal categories.
 \newblock In Bob Coecke, editor, {\em New Structures for Physics}, volume 813
-  of {\em Lecture Notes in Physics}, pages 289--355. Springer, 2011.
+  of {\em LNP}, pages 289--355. Springer, 2011.
 
 \bibitem{swirszcz}
 Tadeusz \'Swirszcz.
