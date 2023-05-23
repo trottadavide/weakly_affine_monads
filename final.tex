@@ -511,6 +511,7 @@ Clearly, every Markov category is weakly Markov: for every object $X$, the monoi
 
 Note that if $a\cdot f=g$ for some $a$, then $a$ is unique. This can be seen by discarding $Y$ in the following diagram
 \ctikzfig{free-action}
+which shows that taking $a \coloneqq (\mathrm{del_Y} \, f)^{-1} \cdot (\mathrm{del}_Y \, g)$ is the only possibility.
 In other words, the action of $\mC(X,I)$ on $\mC(X,Y)$ is free, i.e.~it has trivial stabilisers.
 
 For the next statement, let us first call the \emph{mass} of a morphism $f:X\to Y$ in a gs-monoidal category $\mC$ 
@@ -677,6 +678,7 @@ but up to equivalence: an arrow exhibits conditional independence if and only if
  For $n=2$, a morphism $f:A\to X\otimes Y$ in a weakly Markov category $\mC$ exhibits conditional independence of $X$ and $Y$ given $A$ 
  if and only if the following equation holds
  \ctikzfig{cond-ind2} 
+ Indeed this arises as a consequence of \cref{eqcondind} by noting that both sides of the equation describe the same element of $\mC(A,I)$ upon marginalising.
 \end{myremark}
 
 
@@ -792,7 +794,7 @@ By \Cref{indepkleisli}, this amounts to a Kleisli morphism $f^\sharp:A\to T(X\ti
  If $T$ is weakly affine, then taking $X = Y = Z = 1$ in~\eqref{assoc_pullback} shows that this monoid must be an abelian group: we obtain a unique arrow $\freccia{T1}{\iota}{T1}$ making the following diagram commute
 	\[
 		\begin{tikzcd}
-			T1 \ar{dr}[description]{(\id,\iota,\id)} \ar[bend left=15]{drr}{(\id,\eta_1 \mathrm{del}_{T1})} \ar[bend right,swap]{ddr}{(\eta_1 \mathrm{del}_{T1},\id)} \\
+			T1 \ar{dr}[description]{(\id,\iota,\id)} \ar[bend left=15]{drrr}{(\id,\eta_1 \mathrm{del}_{T1})} \ar[bend right,swap]{dddr}{(\eta_1 \mathrm{del}_{T1},\id)} \\
 			&	T1 \times T1 \times T1 \ar{r}{\id \times c_{1,1}} \ar[swap]{d}{c_{1,1} \times \id}	& T1 \times T(1\times 1) \ar{d}{c_{1,1\times 1}} \ar{r}{\cong} & T1\times T1 \ar{d}{c_{1,1}}	\\
 			&	T(1\times 1) \times T1 \ar{r}{c_{1\times 1,1}} \ar{d}[swap]{\cong}	& T(1\times 1\times 1) \ar{d}{\cong} \ar{r}{\cong} & T(1\times 1) \ar{d}{\cong} \\
 			& T1\times T1 \ar{r}[swap]{c_{1,1}} & T(1\times 1) \ar{r}[swap]{\cong} & T1
